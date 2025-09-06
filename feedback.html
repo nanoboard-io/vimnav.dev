@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback & Support - VimNav</title>
+    <meta name="description" content="Report bugs, request features, or get help with VimNav. We value your feedback and want to make VimNav even better.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <img src="assets/icon.png" alt="VimNav" class="nav-logo">
+                <span class="nav-title">VimNav</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#pro" class="nav-link">Pro</a>
+                <a href="index.html#support" class="nav-link">Support</a>
+                <button class="nav-button" disabled data-tooltip="Coming soon!">Install Extension</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Feedback Section -->
+    <section class="feedback-section">
+        <div class="container">
+            <div class="feedback-header">
+                <h1 class="feedback-title">We Value Your Feedback</h1>
+                <p class="feedback-subtitle">
+                    Help us make VimNav better by reporting bugs, requesting features, or sharing your experience.
+                </p>
+            </div>
+
+            <div class="feedback-content">
+                <div class="feedback-info">
+                    <div class="info-card">
+                        <div class="info-icon">🐛</div>
+                        <h3>Bug Reports</h3>
+                        <p>Found something broken? Help us fix it by providing detailed information about the issue.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">💡</div>
+                        <h3>Feature Requests</h3>
+                        <p>Have an idea for a new feature or improvement? We'd love to hear your suggestions.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">❓</div>
+                        <h3>General Support</h3>
+                        <p>Need help using VimNav or have questions about functionality? We're here to help.</p>
+                    </div>
+                    
+                    <div class="response-info">
+                        <h4>Response Time</h4>
+                        <p>We typically respond to feedback within <strong>24-48 hours</strong> for pro users. For urgent issues, please include "URGENT" in your subject line.</p>
+                        
+                        <h4>Before Submitting</h4>
+                        <ul>
+                            <li>Check if you're using the latest version of VimNav</li>
+                            <li>Try refreshing the page or restarting your browser</li>
+                            <li>Review the <a href="docs.html">documentation</a> for common solutions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feedback-form-container">
+                    <form class="feedback-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="feedback-type" class="form-label">Type of Feedback *</label>
+                            <select id="feedback-type" name="feedback-type" class="form-select" required>
+                                <option value="">Select feedback type</option>
+                                <option value="bug-report">🐛 Bug Report</option>
+                                <option value="feature-request">💡 Feature Request</option>
+                                <option value="general-support">❓ General Support</option>
+                                <option value="other">💬 Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Optional">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject *</label>
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder="Brief description of your feedback" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description" class="form-label">Description *</label>
+                            <textarea id="description" name="description" class="form-textarea" rows="6" placeholder="Please provide detailed information about your feedback. For bug reports, include steps to reproduce the issue, what you expected to happen, and what actually happened." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="browser-info" class="form-label">Browser & System Information</label>
+                            <textarea id="browser-info" name="browser-info" class="form-textarea" rows="3" placeholder="Chrome version, operating system, VimNav version (optional but helpful for bug reports)"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reproduction-steps" class="form-label">Steps to Reproduce (for bugs)</label>
+                            <textarea id="reproduction-steps" name="reproduction-steps" class="form-textarea" rows="4" placeholder="1. Go to...&#10;2. Click on...&#10;3. Press key...&#10;4. See error..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="cta-primary">
+                                <span>Submit Feedback</span>
+                                <svg class="cta-icon" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </button>
+                            <button type="reset" class="cta-secondary">Clear Form</button>
+                        </div>
+                    </form>
+
+                    <div class="form-footer">
+                        <p><strong>Privacy Note:</strong> Your feedback and email address will only be used to respond to your submission and improve VimNav. We never share your information with third parties.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alternative Contact Methods -->
+    <section class="contact-alternatives">
+        <div class="container">
+            <h2 class="section-title">Other Ways to Reach Us</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Direct Email</h3>
+                    <p>For sensitive issues or direct communication</p>
+                    <a href="mailto:support@vimnav.dev" class="contact-link">support@vimnav.dev</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>Community Discussion</h3>
+                    <p>Connect with other users and share tips</p>
+                    <a href="#" class="contact-link">Join Community</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">📚</div>
+                    <h3>Documentation</h3>
+                    <p>Self-service help and guides</p>
+                    <a href="index.html#support" class="contact-link">View Documentation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/icon.png" alt="VimNav" class="footer-logo">
+                    <span class="footer-title">VimNav</span>
+                    <p class="footer-tagline">Professional vim-style browser navigation</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="index.html#features">Features</a>
+                        <a href="index.html#pro">VimNav Pro</a>
+                        <a href="index.html#install">Installation</a>
+                        <a href="#">Changelog</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="index.html#support">Documentation</a>
+                        <a href="#">Community</a>
+                        <a href="feedback.html">Bug Reports</a>
+                        <a href="mailto:support@vimnav.dev">Contact</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 VimNav. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.feedback-form');
+            const feedbackType = document.getElementById('feedback-type');
+            const reproductionSteps = document.querySelector('[name="reproduction-steps"]').closest('.form-group');
+            
+            // Show/hide reproduction steps based on feedback type
+            function toggleReproductionSteps() {
+                if (feedbackType.value === 'bug-report') {
+                    reproductionSteps.style.display = 'block';
+                } else {
+                    reproductionSteps.style.display = 'none';
+                }
+            }
+            
+            feedbackType.addEventListener('change', toggleReproductionSteps);
+            toggleReproductionSteps(); // Initial check
+            
+            // Form submission (replace with actual endpoint)
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your feedback! We\'ll get back to you soon.\n\n(Note: This is a demo form. In production, this would submit to your server.)');
+            });
+        });
+    </script>
+</body>
+</html>

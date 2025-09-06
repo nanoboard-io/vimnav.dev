@@ -78,8 +78,9 @@ kbd {
 .nav-logo {
     width: 32px;
     height: 32px;
-    border-radius: 1px;
-    background: linear-gradient(135deg, #001122 0%, #223333 100%);
+    border-radius: 8px;
+    background: linear-gradient(135deg, #000000 0%, #1a0d2e 100%);
+    padding: 4px;
 }
 
 .nav-title {
@@ -838,7 +839,7 @@ kbd {
 
 /* Footer */
 .footer {
-    background: #1a1a1a;
+    background: linear-gradient(135deg, #000000 0%, #1a0d2e 100%);
     color: #cbd5e0;
     padding: 4rem 0 2rem;
 }
@@ -859,7 +860,8 @@ kbd {
     width: 40px;
     height: 40px;
     border-radius: 8px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #000000 0%, #1a0d2e 100%);
+    padding: 6px;
     margin-bottom: 1rem;
 }
 
@@ -1041,6 +1043,16 @@ kbd {
     border-radius: 20px;
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
     border: 1px solid #e2e8f0;
+}
+
+.feedback-form-wrapper {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .feedback-form {
@@ -1617,12 +1629,22 @@ kbd {
         font-size: 2.5rem;
     }
 
+    .privacy-policy-content{
+        display: flex;
+        justify-content: middle;
+        gap: 2rem;
+    }
+
     .feedback-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
     .feedback-form-container {
+        padding: 2rem;
+    }
+    
+    .feedback-form-wrapper {
         padding: 2rem;
     }
 

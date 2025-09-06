@@ -1043,6 +1043,16 @@ kbd {
     border: 1px solid #e2e8f0;
 }
 
+.feedback-form-wrapper {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 .feedback-form {
     display: flex;
     flex-direction: column;
@@ -1617,12 +1627,22 @@ kbd {
         font-size: 2.5rem;
     }
 
+    .privacy-policy-content{
+        display: flex;
+        justify-content: middle;
+        gap: 2rem;
+    }
+
     .feedback-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
     .feedback-form-container {
+        padding: 2rem;
+    }
+    
+    .feedback-form-wrapper {
         padding: 2rem;
     }
 

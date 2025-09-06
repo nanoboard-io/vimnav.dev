@@ -215,13 +215,11 @@
     </footer>
 
     <script>
-        // Simple form enhancement
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.querySelector('.feedback-form');
             const feedbackType = document.getElementById('feedback-type');
             const reproductionSteps = document.querySelector('[name="reproduction-steps"]').closest('.form-group');
             
-            // Show/hide reproduction steps based on feedback type
             function toggleReproductionSteps() {
                 if (feedbackType.value === 'bug-report') {
                     reproductionSteps.style.display = 'block';
@@ -232,12 +230,6 @@
             
             feedbackType.addEventListener('change', toggleReproductionSteps);
             toggleReproductionSteps(); // Initial check
-            
-            // Form submission (replace with actual endpoint)
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your feedback! We\'ll get back to you soon.\n\n(Note: This is a demo form. In production, this would submit to your server.)');
-            });
         });
     </script>
 </body>

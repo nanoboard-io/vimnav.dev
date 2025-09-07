@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vimnav.dev/sitemap.xml
+
+# Block common bot paths that don't add SEO value
+Disallow: /assets/
+Disallow: *.css$
+Disallow: *.js$

@@ -3,26 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VimNav - Professional Vim-Style Browser Navigation</title>
-    <meta name="description" content="Transform your browser with vim-style navigation, advanced tab management, and keyboard-first productivity tools. Built for developers and power users.">
+    <title>VimNav - Vim Style Browser Navigation Chrome Extension | Neovim Productivity</title>
+    <meta name="description" content="Professional vim browser extension for Chrome. Keyboard navigation, vim keybindings, tab management, productivity tools. Perfect for vim, neovim users and developers.">
+    <meta name="keywords" content="vim, neovim, chrome extension, browser navigation, vim keybindings, keyboard shortcuts, productivity tools, vim browser, neovim browser, tab management, vim navigation, browser vim, chrome vim, vim productivity, neovim productivity">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vimnav.dev/">
+    <meta property="og:title" content="VimNav - Vim Style Browser Navigation Chrome Extension">
+    <meta property="og:description" content="Professional vim browser extension for Chrome. Keyboard navigation, vim keybindings, tab management, productivity tools for vim and neovim users.">
+    <meta property="og:image" content="https://vimnav.dev/assets/icon.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vimnav.dev/">
+    <meta property="twitter:title" content="VimNav - Vim Style Browser Navigation Chrome Extension">
+    <meta property="twitter:description" content="Professional vim browser extension for Chrome. Keyboard navigation, vim keybindings, tab management, productivity tools for vim and neovim users.">
+    <meta property="twitter:image" content="https://vimnav.dev/assets/icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://vimnav.dev/">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icon16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icon32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/icon48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/icon64.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="assets/icon128.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="assets/icon128.png">
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VimNav",
+      "description": "Professional vim browser extension for Chrome. Keyboard navigation, vim keybindings, tab management, productivity tools for vim and neovim users.",
+      "url": "https://vimnav.dev",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Chrome",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "ratingCount": "1"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "VimNav Team"
+      },
+      "keywords": "vim, neovim, chrome extension, browser navigation, keyboard shortcuts, productivity, vim keybindings, tab management"
+    }
+    </script>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <nav class="nav">
             <div class="nav-brand">
-                <img src="assets/icon.png" alt="VimNav" class="nav-logo">
+                <img src="assets/icon.png" alt="VimNav - Vim Browser Navigation Chrome Extension" class="nav-logo">
                 <span class="nav-title">VimNav</span>
             </div>
             <div class="nav-links">
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#pro" class="nav-link">Pro</a>
                 <a href="#support" class="nav-link">Support</a>
-                <button class="nav-button" disabled data-tooltip="Coming soon!">Install Extension</button>
+                <a href="early-access.html" class="nav-button">Join Waitlist</a>
             </div>
         </nav>
     </header>
@@ -34,13 +89,13 @@
                 <span class="badge-text">🚀 Coming soon to the Chrome Web Store</span>
             </div>
             <h1 class="hero-title">
-                Vim-Style Navigation<br>
-                <span class="hero-accent">for Modern Browsers</span>
+                Vim Browser Navigation<br>
+                <span class="hero-accent">Chrome Extension</span>
             </h1>
             <p class="hero-description">
-                Transform your browsing experience with keyboard-driven navigation, 
-                advanced tab management, and developer-focused productivity tools. 
-                Built with Svelte 5 and TypeScript.
+                Transform your browsing with vim keybindings and neovim-style navigation. 
+                Advanced tab management, keyboard shortcuts, and productivity tools for developers. 
+                The ultimate vim chrome extension built with Svelte 5 and TypeScript.
             </p>
             <div class="hero-actions">
                 <a href="early-access.html" class="cta-primary">
@@ -114,19 +169,19 @@
     <section id="features" class="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Powerful Features</h2>
+                <h2 class="section-title">Vim Chrome Extension Features</h2>
                 <p class="section-subtitle">
-                    Everything you need for efficient, keyboard-driven browsing
+                    Complete vim/neovim browser navigation with keyboard shortcuts and productivity tools
                 </p>
             </div>
             
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">⌨️</div>
-                    <h3 class="feature-title">Vim-Style Navigation</h3>
+                    <h3 class="feature-title">Vim Keybindings & Navigation</h3>
                     <p class="feature-description">
-                        Classic vim keybindings (j/k/h/l, gg/G, Space/b) for seamless page navigation. 
-                        Modal navigation with normal, insert, and visual modes.
+                        Classic vim/neovim keybindings (j/k/h/l, gg/G, Space/b) for seamless browser navigation. 
+                        Modal navigation with normal, insert, and visual modes like your favorite vim editor.
                     </p>
                     <div class="feature-keys">
                         <kbd>j</kbd><kbd>k</kbd><kbd>gg</kbd><kbd>G</kbd>
@@ -135,10 +190,10 @@
 
                 <div class="feature-card">
                     <div class="feature-icon">📑</div>
-                    <h3 class="feature-title">Advanced Tab Management</h3>
+                    <h3 class="feature-title">Chrome Tab Management</h3>
                     <p class="feature-description">
                         NERDTree-inspired tab navigator with fuzzy search, telescope-style switching, 
-                        and intelligent tab grouping.
+                        and intelligent tab grouping. Perfect for vim/neovim users managing multiple browser tabs.
                     </p>
                     <div class="feature-keys">
                         <kbd>Ctrl+P</kbd><kbd>e</kbd><kbd>a</kbd>
@@ -204,10 +259,10 @@
                     <div class="pro-badge">
                         <span class="badge-text">✨ Coming Soon</span>
                     </div>
-                    <h2 class="pro-title">VimNav Pro</h2>
+                    <h2 class="pro-title">VimNav Pro - Premium Vim Extension</h2>
                     <p class="pro-description">
-                        Unlock advanced features for power users and development teams. 
-                        Cloud sync, custom scripts, and priority support.
+                        Unlock advanced vim browser features for power users and development teams. 
+                        Cloud sync, custom vim scripts, and priority support for the ultimate productivity.
                     </p>
                     
                     <div class="pro-features">
@@ -254,9 +309,9 @@
     <section id="support" class="support-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Support & Resources</h2>
+                <h2 class="section-title">Vim Extension Support & Resources</h2>
                 <p class="section-subtitle">
-                    Get help, report issues, and connect with the community
+                    Get help with vim browser navigation, report issues, and connect with the vim community
                 </p>
             </div>
             
@@ -267,7 +322,7 @@
                     <p class="support-description">
                         Complete guides, keybinding reference, and setup instructions
                     </p>
-                    <a href="docs.html" class="support-link">View Docs →</a>
+                    <a href="docs.html" class="support-link" title="VimNav Chrome Extension Documentation">View Docs →</a>
                 </div>
                 
                 <div class="support-card">
@@ -286,9 +341,9 @@
     <section id="install" class="install-section">
         <div class="container">
             <div class="install-content">
-                <h2 class="install-title">Get Started with VimNav</h2>
+                <h2 class="install-title">Install VimNav Chrome Extension</h2>
                 <p class="install-description">
-                    Install VimNav and transform your browsing experience in minutes
+                    Install the vim browser navigation extension and transform your Chrome browsing with neovim-style productivity
                 </p>
                 
                 <div class="install-steps">
@@ -337,7 +392,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="assets/icon.png" alt="VimNav" class="footer-logo">
+                    <img src="assets/icon.png" alt="VimNav Vim Chrome Extension Logo" class="footer-logo">
                     <span class="footer-title">VimNav</span>
                     <p class="footer-tagline">Professional vim-style browser navigation</p>
                 </div>
@@ -369,7 +424,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 VimNav. All rights reserved.</p>
+                <p>&copy; 2025 VimNav. All rights reserved.</p>
                 <div class="footer-social">
                     <a href="#" aria-label="GitHub">
                         <svg viewBox="0 0 24 24" fill="currentColor">

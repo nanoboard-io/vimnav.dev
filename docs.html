@@ -1,1278 +1,1890 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Documentation - VimNav</title>
-    <meta name="description" content="Complete documentation for VimNav - vim-style browser navigation. Learn all keybindings, features, and advanced usage.">
-    <link rel="stylesheet" href="styles.css">
-    
+    <meta
+      name="description"
+      content="Complete documentation for VimNav - vim-style browser navigation. Learn all keybindings, features, and advanced usage."
+    />
+    <link rel="stylesheet" href="styles.css" />
+
     <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/icon16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icon32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="assets/icon48.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="assets/icon64.png">
-    <link rel="icon" type="image/png" sizes="128x128" href="assets/icon128.png">
-    <link rel="apple-touch-icon" sizes="128x128" href="assets/icon128.png">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icon16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icon32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/icon48.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/icon64.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="128x128"
+      href="assets/icon128.png"
+    />
+    <link rel="apple-touch-icon" sizes="128x128" href="assets/icon128.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <img src="assets/icon.png" alt="VimNav" class="nav-logo">
-                <span class="nav-title">VimNav</span>
-            </div>
-            <div class="nav-links">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="index.html#features" class="nav-link">Features</a>
-                <a href="index.html#pro" class="nav-link">Pro</a>
-                <a href="index.html#support" class="nav-link">Support</a>
-                <a href="early-access.html" class="nav-button">Join Waitlist</a>
-            </div>
-        </nav>
+      <nav class="nav">
+        <div class="nav-brand">
+          <img src="assets/icon.png" alt="VimNav" class="nav-logo" />
+          <span class="nav-title">VimNav</span>
+        </div>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html#features" class="nav-link">Features</a>
+          <a href="index.html#pro" class="nav-link">Pro</a>
+          <a href="index.html#support" class="nav-link">Support</a>
+          <a href="early-access.html" class="nav-button">Join Waitlist</a>
+        </div>
+      </nav>
     </header>
 
     <!-- Documentation Header -->
     <section class="docs-header">
-        <div class="container">
-            <h1 class="docs-title">VimNav Documentation</h1>
-            <p class="docs-subtitle">
-                Complete guide to vim-style browser navigation with keyboard shortcuts, advanced features, and configuration options.
-            </p>
-            <div class="docs-quick-nav">
-                <a href="#getting-started" class="quick-nav-link">Getting Started</a>
-                <a href="#navigation" class="quick-nav-link">Navigation</a>
-                <a href="#quick-navigation" class="quick-nav-link">Quick Nav</a>
-                <a href="#modes" class="quick-nav-link">Modes</a>
-                <a href="#commands" class="quick-nav-link">Commands</a>
-                <a href="#configuration" class="quick-nav-link">Configuration</a>
-                <a href="#advanced" class="quick-nav-link">Advanced</a>
-            </div>
+      <div class="container">
+        <h1 class="docs-title">VimNav Documentation</h1>
+        <p class="docs-subtitle">
+          Complete guide to vim-style browser navigation with keyboard
+          shortcuts, advanced features, and configuration options.
+        </p>
+        <div class="docs-quick-nav">
+          <a href="#getting-started" class="quick-nav-link">Getting Started</a>
+          <a href="#navigation" class="quick-nav-link">Navigation</a>
+          <a href="#quick-navigation" class="quick-nav-link">Quick Nav</a>
+          <a href="#modes" class="quick-nav-link">Modes</a>
+          <a href="#commands" class="quick-nav-link">Commands</a>
+          <a href="#configuration" class="quick-nav-link">Configuration</a>
+          <a href="#advanced" class="quick-nav-link">Advanced</a>
         </div>
+      </div>
     </section>
 
     <!-- Table of Contents -->
     <section class="docs-toc">
-        <div class="container">
-            <div class="toc-card">
-                <h3>Quick Reference</h3>
-                <p>Press <kbd>?</kbd> anytime in VimNav to see the help overlay with all keybindings.</p>
-            </div>
+      <div class="container">
+        <div class="toc-card">
+          <h3>Quick Reference</h3>
+          <p>
+            Press <kbd>?</kbd> anytime in VimNav to see the help overlay with
+            all keybindings.
+          </p>
         </div>
+      </div>
     </section>
 
     <!-- Documentation Content -->
     <div class="docs-content">
-        <div class="container">
-            <div class="docs-layout">
-                <!-- Sidebar Navigation -->
-                <div class="docs-sidebar">
-                    <nav class="docs-nav">
-                        <div class="docs-nav-section">
-                            <h4>Getting Started</h4>
-                            <a href="#installation" class="docs-nav-link">Installation</a>
-                            <a href="#first-steps" class="docs-nav-link">First Steps</a>
-                            <a href="#basic-usage" class="docs-nav-link">Basic Usage</a>
-                        </div>
-                        
-                        <div class="docs-nav-section">
-                            <h4>Core Features</h4>
-                            <a href="#navigation" class="docs-nav-link">Page Navigation</a>
-                            <a href="#quick-navigation" class="docs-nav-link">Quick Navigation</a>
-                            <a href="#modes" class="docs-nav-link">Mode System</a>
-                            <a href="#search" class="docs-nav-link">Search & Find</a>
-                            <a href="#tabs" class="docs-nav-link">Tab Management</a>
-                        </div>
-                        
-                        <div class="docs-nav-section">
-                            <h4>Advanced Features</h4>
-                            <a href="#hint-mode" class="docs-nav-link">Hint Mode</a>
-                            <a href="#visual-mode" class="docs-nav-link">Visual Mode</a>
-                            <a href="#marks" class="docs-nav-link">Marks System</a>
-                            <a href="#commands" class="docs-nav-link">Command Mode</a>
-                            <a href="#history" class="docs-nav-link">History Search</a>
-                        </div>
-                        
-                        <div class="docs-nav-section">
-                            <h4>Configuration</h4>
-                            <a href="#configuration" class="docs-nav-link">Extension Configuration</a>
-                            <a href="#settings" class="docs-nav-link">Settings</a>
-                            <a href="#customization" class="docs-nav-link">Customization</a>
-                            <a href="#troubleshooting" class="docs-nav-link">Troubleshooting</a>
-                        </div>
-                    </nav>
+      <div class="container">
+        <div class="docs-layout">
+          <!-- Sidebar Navigation -->
+          <div class="docs-sidebar">
+            <nav class="docs-nav">
+              <div class="docs-nav-section">
+                <h4>Getting Started</h4>
+                <a href="#installation" class="docs-nav-link">Installation</a>
+                <a href="#first-steps" class="docs-nav-link">First Steps</a>
+                <a href="#basic-usage" class="docs-nav-link">Basic Usage</a>
+              </div>
+
+              <div class="docs-nav-section">
+                <h4>Core Features</h4>
+                <a href="#navigation" class="docs-nav-link">Page Navigation</a>
+                <a href="#quick-navigation" class="docs-nav-link"
+                  >Quick Navigation</a
+                >
+                <a href="#modes" class="docs-nav-link">Mode System</a>
+                <a href="#search" class="docs-nav-link">Search & Find</a>
+                <a href="#tabs" class="docs-nav-link">Tab Management</a>
+              </div>
+
+              <div class="docs-nav-section">
+                <h4>Advanced Features</h4>
+                <a href="#hint-mode" class="docs-nav-link">Hint Mode</a>
+                <a href="#visual-mode" class="docs-nav-link">Visual Mode</a>
+                <a href="#marks" class="docs-nav-link">Marks System</a>
+                <a href="#commands" class="docs-nav-link">Command Mode</a>
+                <a href="#history" class="docs-nav-link">History Search</a>
+              </div>
+
+              <div class="docs-nav-section">
+                <h4>Configuration</h4>
+                <a href="#configuration" class="docs-nav-link"
+                  >Extension Configuration</a
+                >
+                <a href="#settings" class="docs-nav-link">Settings</a>
+                <a href="#customization" class="docs-nav-link">Customization</a>
+                <a href="#troubleshooting" class="docs-nav-link"
+                  >Troubleshooting</a
+                >
+              </div>
+            </nav>
+          </div>
+
+          <!-- Main Documentation -->
+          <div class="docs-main">
+            <!-- Getting Started -->
+            <section id="getting-started" class="docs-section">
+              <h2>🚀 Getting Started</h2>
+
+              <div id="installation" class="docs-subsection">
+                <h3>Installation</h3>
+                <p>
+                  VimNav is available as a Chrome extension. Follow these steps
+                  to get started:
+                </p>
+                <ol>
+                  <li>
+                    Install VimNav from the
+                    <a href="#" class="docs-link">Chrome Web Store</a>
+                  </li>
+                  <li>Pin the extension to your toolbar for easy access</li>
+                  <li>
+                    Visit any webpage and start using vim keybindings
+                    immediately
+                  </li>
+                </ol>
+                <div class="docs-note">
+                  <strong>Note:</strong> VimNav works on all websites and
+                  requires no additional setup or configuration.
+                </div>
+              </div>
+
+              <div id="first-steps" class="docs-subsection">
+                <h3>First Steps</h3>
+                <p>
+                  Once installed, VimNav is immediately active on all web pages.
+                  Try these basic commands:
+                </p>
+                <div class="keybinding-list">
+                  <div class="keybinding-item">
+                    <kbd>?</kbd>
+                    <span>Show the help overlay with all keybindings</span>
+                  </div>
+                  <div class="keybinding-item">
+                    <kbd>j</kbd><kbd>k</kbd>
+                    <span>Scroll down and up on any page</span>
+                  </div>
+                  <div class="keybinding-item">
+                    <kbd>e</kbd>
+                    <span>Open the tab navigator overlay</span>
+                  </div>
+                  <div class="keybinding-item">
+                    <kbd>o</kbd>
+                    <span
+                      >Open the url search for quick navigation to new urls,
+                      history or search</span
+                    >
+                  </div>
+                  <div class="keybinding-item">
+                    <kbd>f</kbd>
+                    <span>Enter hint mode to click links with keyboard</span>
+                  </div>
+                </div>
+              </div>
+
+              <div id="basic-usage" class="docs-subsection">
+                <h3>Basic Usage Patterns</h3>
+                <p>
+                  VimNav follows vim's modal philosophy. You're always in one of
+                  several modes:
+                </p>
+                <ul>
+                  <li>
+                    <strong>Normal Mode</strong> - Default mode for navigation
+                    and commands
+                  </li>
+                  <li>
+                    <strong>Insert Mode</strong> - For typing in form fields
+                    (enters automatically)
+                  </li>
+                  <li>
+                    <strong>Visual Mode</strong> - For text selection and
+                    manipulation
+                  </li>
+                  <li>
+                    <strong>Hint Mode</strong> - For keyboard-only link clicking
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Page Navigation -->
+            <section id="navigation" class="docs-section">
+              <h2>🧭 Page Navigation</h2>
+              <p>
+                Navigate web pages using familiar vim keybindings for scrolling
+                and browser controls.
+              </p>
+
+              <h3>Scrolling</h3>
+              <div class="keybinding-grid">
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>j</kbd></div>
+                  <div class="keybinding-desc">
+                    Scroll down (smooth scrolling)
+                  </div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>k</kbd></div>
+                  <div class="keybinding-desc">
+                    Scroll up (smooth scrolling)
+                  </div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>gg</kbd></div>
+                  <div class="keybinding-desc">Jump to top of page</div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>G</kbd></div>
+                  <div class="keybinding-desc">Jump to bottom of page</div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>Space</kbd></div>
+                  <div class="keybinding-desc">Page down (80% of viewport)</div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>b</kbd></div>
+                  <div class="keybinding-desc">Page up (80% of viewport)</div>
+                </div>
+              </div>
+
+              <h3>Browser Controls</h3>
+              <div class="keybinding-grid">
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>[</kbd></div>
+                  <div class="keybinding-desc">
+                    Browser back (same as back button)
+                  </div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>]</kbd></div>
+                  <div class="keybinding-desc">Browser forward</div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>r</kbd></div>
+                  <div class="keybinding-desc">Reload current page</div>
+                </div>
+              </div>
+
+              <h3>Scroll Target Mode</h3>
+              <p>Choose specific scrollable elements on complex pages:</p>
+              <div class="keybinding-list">
+                <div class="keybinding-item">
+                  <kbd>s</kbd>
+                  <span
+                    >Enter scroll select mode - choose custom scroll
+                    container</span
+                  >
+                </div>
+                <div class="keybinding-item">
+                  <kbd>a-z</kbd>
+                  <span>Type hint characters to select scrollable element</span>
+                </div>
+                <div class="keybinding-item">
+                  <kbd>Enter</kbd>
+                  <span>Set selected element as scroll target for j/k</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- Mode System -->
+            <section id="modes" class="docs-section">
+              <h2>🔄 Mode System</h2>
+              <p>
+                VimNav uses vim's modal system for different types of
+                interaction.
+              </p>
+
+              <div class="mode-card">
+                <h3>Normal Mode</h3>
+                <p>
+                  The default mode for navigation and commands. Most keybindings
+                  work in normal mode.
+                </p>
+                <div class="keybinding-list">
+                  <div class="keybinding-item">
+                    <kbd>Esc</kbd>
+                    <span
+                      >Always returns you to normal mode from any other
+                      mode</span
+                    >
+                  </div>
+                  <div class="keybinding-item">
+                    <kbd>Esc</kbd><kbd>Esc</kbd>
+                    <span>Focus main body for reliable vim navigation</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mode-card">
+                <h3>Insert Mode</h3>
+                <p>
+                  Automatically activated when you focus input fields, text
+                  areas, or contenteditable elements.
+                </p>
+                <div class="keybinding-list">
+                  <div class="keybinding-item">
+                    <kbd>i</kbd>
+                    <span
+                      >Manually enter insert mode (finds nearest input)</span
+                    >
+                  </div>
+                  <div class="keybinding-item">
+                    <kbd>Esc</kbd>
+                    <span>Exit insert mode and return to normal mode</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mode-card">
+                <h3>Visual Mode</h3>
+                <p>
+                  Select and manipulate text elements on the page. See the
+                  <a href="#visual-mode" class="docs-link"
+                    >Visual Mode section</a
+                  >
+                  for details.
+                </p>
+              </div>
+
+              <div class="mode-card">
+                <h3>Hint Mode</h3>
+                <p>
+                  Click links and interactive elements using keyboard hints. See
+                  the
+                  <a href="#hint-mode" class="docs-link">Hint Mode section</a>
+                  for details.
+                </p>
+              </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <section id="quick-navigation" class="docs-section">
+              <h2>🌐 Quick Navigation</h2>
+              <p>
+                Instantly navigate to URLs, search engines, or browse history
+                with the URL search overlay.
+              </p>
+
+              <div class="keybinding-list">
+                <div class="keybinding-item">
+                  <kbd>o</kbd>
+                  <span>Open URL search overlay for quick navigation</span>
+                </div>
+              </div>
+
+              <h3>Navigation Features</h3>
+              <p>
+                The URL search overlay provides multiple navigation options:
+              </p>
+              <ul>
+                <li>
+                  <strong>Direct URLs</strong> - Type any URL to navigate
+                  directly (auto-adds https://)
+                </li>
+                <li>
+                  <strong>Search Engines</strong> - Type search terms to search
+                  with your default search engine
+                </li>
+                <li>
+                  <strong>History Search</strong> - Searches your browser
+                  history as you type
+                </li>
+                <li>
+                  <strong>Bookmarks</strong> - Finds matching bookmarks in your
+                  browser
+                </li>
+                <li>
+                  <strong>Smart Suggestions</strong> - Provides intelligent
+                  suggestions based on your input
+                </li>
+              </ul>
+
+              <h3>Navigation Controls</h3>
+              <div class="keybinding-grid">
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>j</kbd><kbd>k</kbd></div>
+                  <div class="keybinding-desc">
+                    Navigate up/down through URL suggestions
+                  </div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>Enter</kbd></div>
+                  <div class="keybinding-desc">
+                    Navigate to selected URL or search term
+                  </div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>Ctrl+Enter</kbd></div>
+                  <div class="keybinding-desc">
+                    Open selected URL in new tab
+                  </div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>Esc</kbd></div>
+                  <div class="keybinding-desc">Close URL search overlay</div>
+                </div>
+              </div>
+
+              <div class="docs-tip">
+                <strong>Pro Tips:</strong>
+                <ul>
+                  <li>
+                    Use search terms without domain type strings to search with
+                    your default engine
+                  </li>
+                  <li>
+                    History results show page titles and URLs for easy
+                    identification
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Search & Find -->
+            <section id="search" class="docs-section">
+              <h2>🔍 Search & Find</h2>
+              <p>Search within page content using vim-style search commands.</p>
+
+              <h3>Page Search</h3>
+              <div class="keybinding-list">
+                <div class="keybinding-item">
+                  <kbd>/</kbd>
+                  <span
+                    >Open search input - type to search within current
+                    page</span
+                  >
+                </div>
+                <div class="keybinding-item">
+                  <kbd>n</kbd>
+                  <span>Jump to next search result</span>
+                </div>
+                <div class="keybinding-item">
+                  <kbd>N</kbd>
+                  <span>Jump to previous search result</span>
+                </div>
+                <div class="keybinding-item">
+                  <kbd>Esc</kbd>
+                  <span>Close search and clear highlights</span>
+                </div>
+              </div>
+
+              <div class="docs-tip">
+                <strong>Tip:</strong> Search highlights matching text and
+                automatically scrolls to results. Use n/N to cycle through all
+                matches on the page.
+              </div>
+            </section>
+
+            <!-- Tab Management -->
+            <section id="tabs" class="docs-section">
+              <h2>📑 Tab Management</h2>
+              <p>
+                VimNav provides powerful tab navigation and management inspired
+                by NERDTree.
+              </p>
+
+              <h3>Opening Tab Navigator</h3>
+              <div class="keybinding-list">
+                <div class="keybinding-item">
+                  <kbd>e</kbd>
+                  <span
+                    >Toggle tabs overlay - shows all open tabs in current
+                    window</span
+                  >
+                </div>
+                <div class="keybinding-item">
+                  <kbd>Ctrl+P</kbd>
+                  <span
+                    >Telescope-style tab search (Chrome shortcut
+                    integration)</span
+                  >
+                </div>
+              </div>
+
+              <h3>Tab Navigation</h3>
+              <p>When the tabs overlay is open:</p>
+              <div class="keybinding-grid">
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>j</kbd><kbd>k</kbd></div>
+                  <div class="keybinding-desc">Navigate tabs up/down</div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>gg</kbd></div>
+                  <div class="keybinding-desc">Jump to first tab</div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>G</kbd></div>
+                  <div class="keybinding-desc">Jump to last tab</div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>Enter</kbd></div>
+                  <div class="keybinding-desc">Switch to selected tab</div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>x</kbd><kbd>d</kbd></div>
+                  <div class="keybinding-desc">Close selected tab</div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>/</kbd></div>
+                  <div class="keybinding-desc">Focus tab search input</div>
+                </div>
+              </div>
+
+              <h3>Tab Actions</h3>
+              <div class="keybinding-list">
+                <div class="keybinding-item">
+                  <kbd>r</kbd>
+                  <span>Reload selected tab</span>
+                </div>
+                <div class="keybinding-item">
+                  <kbd>a</kbd>
+                  <span>Show tab group editor for organizing tabs</span>
+                </div>
+                <div class="keybinding-item">
+                  <kbd>Esc</kbd>
+                  <span>Close tabs overlay and return to normal mode</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- Hint Mode -->
+            <section id="hint-mode" class="docs-section">
+              <h2>🎯 Hint Mode</h2>
+              <p>
+                Click links, buttons, and interactive elements without using the
+                mouse.
+              </p>
+
+              <h3>Using Hint Mode</h3>
+              <div class="keybinding-list">
+                <div class="keybinding-item">
+                  <kbd>f</kbd>
+                  <span
+                    >Enter hint mode - shows letter hints on clickable
+                    elements</span
+                  >
+                </div>
+                <div class="keybinding-item">
+                  <kbd>a-z</kbd>
+                  <span>Type hint characters to narrow down selection</span>
+                </div>
+                <div class="keybinding-item">
+                  <kbd>Enter</kbd>
+                  <span>Click the selected element</span>
+                </div>
+                <div class="keybinding-item">
+                  <kbd>Backspace</kbd>
+                  <span>Delete last character or exit hint mode</span>
+                </div>
+                <div class="keybinding-item">
+                  <kbd>Esc</kbd>
+                  <span>Exit hint mode without clicking</span>
+                </div>
+              </div>
+
+              <h3>Hint Targets</h3>
+              <p>Hint mode automatically detects and highlights:</p>
+              <ul>
+                <li>Links (<code>&lt;a&gt;</code> elements)</li>
+                <li>Buttons (<code>&lt;button&gt;</code> elements)</li>
+                <li>Form inputs (input, select, textarea)</li>
+                <li>Clickable elements with click handlers</li>
+                <li>
+                  Elements with <code>role="button"</code> or
+                  <code>tabindex</code>
+                </li>
+              </ul>
+
+              <div class="docs-tip">
+                <strong>Tip:</strong> Hint characters are case-insensitive. Type
+                partial hints to filter - you don't always need to complete the
+                full hint sequence.
+              </div>
+            </section>
+
+            <!-- Visual Mode -->
+            <section id="visual-mode" class="docs-section">
+              <h2>👁️ Visual Mode</h2>
+              <p>
+                Select and manipulate text content on web pages using vim-style
+                text selection.
+              </p>
+
+              <h3>Entering Visual Mode</h3>
+              <div class="keybinding-list">
+                <div class="keybinding-item">
+                  <kbd>v</kbd>
+                  <span>Enter visual mode - shows hints on text elements</span>
+                </div>
+                <div class="keybinding-item">
+                  <kbd>a-z</kbd>
+                  <span
+                    >Type hint to select a text element for manipulation</span
+                  >
+                </div>
+                <div class="keybinding-item">
+                  <kbd>Enter</kbd>
+                  <span>Start text selection within the chosen element</span>
+                </div>
+              </div>
+
+              <h3>Text Selection</h3>
+              <p>
+                Once you've selected an element and entered text selection mode:
+              </p>
+              <div class="keybinding-grid">
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>h</kbd><kbd>l</kbd></div>
+                  <div class="keybinding-desc">
+                    Extend selection left/right by character
+                  </div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>j</kbd><kbd>k</kbd></div>
+                  <div class="keybinding-desc">
+                    Extend selection down/up by line
+                  </div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>w</kbd><kbd>b</kbd></div>
+                  <div class="keybinding-desc">
+                    Extend selection by word forward/backward
+                  </div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>gg</kbd></div>
+                  <div class="keybinding-desc">
+                    Extend selection to start of element
+                  </div>
+                </div>
+                <div class="keybinding-card">
+                  <div class="keybinding-keys"><kbd>G</kbd></div>
+                  <div class="keybinding-desc">
+                    Extend selection to end of element
+                  </div>
+                </div>
+              </div>
+
+              <h3>Text Actions</h3>
+              <div class="keybinding-list">
+                <div class="keybinding-item">
+                  <kbd>y</kbd>
+                  <span
+                    >Copy selected text to clipboard and exit visual mode</span
+                  >
+                </div>
+                <div class="keybinding-item">
+                  <kbd>d</kbd>
+                  <span>Delete selected text and exit visual mode</span>
+                </div>
+                <div class="keybinding-item">
+                  <kbd>Esc</kbd>
+                  <span>Exit visual mode without performing any action</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- Marks System -->
+            <section id="marks" class="docs-section">
+              <h2>📍 Marks System</h2>
+              <p>
+                Set bookmarks on pages and navigate between them quickly,
+                similar to vim marks.
+              </p>
+
+              <h3>Creating Marks</h3>
+              <div class="keybinding-list">
+                <div class="keybinding-item">
+                  <kbd>m</kbd>
+                  <span>Enter mark creation mode</span>
+                </div>
+                <div class="keybinding-item">
+                  <kbd>a-z</kbd>
+                  <span
+                    >Create local mark (remembers position on current page
+                    only)</span
+                  >
+                </div>
+                <div class="keybinding-item">
+                  <kbd>A-Z</kbd>
+                  <span
+                    >Create global mark (remembers page URL and position across
+                    tabs)</span
+                  >
+                </div>
+              </div>
+
+              <h3>Navigating to Marks</h3>
+              <div class="keybinding-list">
+                <div class="keybinding-item">
+                  <kbd>'</kbd>
+                  <span>Enter mark navigation mode</span>
+                </div>
+                <div class="keybinding-item">
+                  <kbd>a-z</kbd>
+                  <span
+                    >Jump to local mark (scrolls to position on current
+                    page)</span
+                  >
+                </div>
+                <div class="keybinding-item">
+                  <kbd>A-Z</kbd>
+                  <span
+                    >Jump to global mark (opens tab if needed and scrolls to
+                    position)</span
+                  >
+                </div>
+              </div>
+
+              <h3>Mark Management</h3>
+              <p>Use command mode for advanced mark management:</p>
+              <div class="keybinding-list">
+                <div class="keybinding-item">
+                  <kbd>:marks</kbd>
+                  <span>Show all marks with their locations</span>
+                </div>
+                <div class="keybinding-item">
+                  <kbd>:marks clear</kbd>
+                  <span>Clear all local marks for current page</span>
+                </div>
+                <div class="keybinding-item">
+                  <kbd>:marks clearAll</kbd>
+                  <span>Clear all marks (local and global)</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- Command Mode -->
+            <section id="commands" class="docs-section">
+              <h2>⚡ Command Mode</h2>
+              <p>
+                Execute vim-style commands for advanced functionality and
+                extension features.
+              </p>
+
+              <h3>Opening Command Mode</h3>
+              <div class="keybinding-list">
+                <div class="keybinding-item">
+                  <kbd>:</kbd>
+                  <span
+                    >Open command input - type commands and press Enter to
+                    execute</span
+                  >
+                </div>
+              </div>
+
+              <h3>Tab Commands</h3>
+              <div class="command-list">
+                <div class="command-item">
+                  <div class="command-syntax"><kbd>:tabs</kbd></div>
+                  <div class="command-desc">
+                    Open tabs overlay (same as pressing 'e')
+                  </div>
+                </div>
+              </div>
+
+              <h3>Marks Commands</h3>
+              <div class="command-list">
+                <div class="command-item">
+                  <div class="command-syntax"><kbd>:marks</kbd></div>
+                  <div class="command-desc">
+                    Show all marks with their page URLs and positions
+                  </div>
+                </div>
+                <div class="command-item">
+                  <div class="command-syntax"><kbd>:marks clear</kbd></div>
+                  <div class="command-desc">
+                    Clear all local marks for the current page
+                  </div>
+                </div>
+                <div class="command-item">
+                  <div class="command-syntax"><kbd>:marks clearAll</kbd></div>
+                  <div class="command-desc">
+                    Clear all marks (both local and global)
+                  </div>
+                </div>
+                <div class="command-item">
+                  <div class="command-syntax"><kbd>:marks remove a</kbd></div>
+                  <div class="command-desc">
+                    Remove a specific mark (replace 'a' with mark name)
+                  </div>
+                </div>
+                <div class="command-item">
+                  <div class="command-syntax"><kbd>:marks navigate A</kbd></div>
+                  <div class="command-desc">
+                    Jump to specific mark (replace 'A' with mark name)
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- History Search -->
+            <section id="history" class="docs-section">
+              <h2>📚 History Search</h2>
+              <p>
+                Search and filter your browser history with powerful regex and
+                date filtering.
+              </p>
+
+              <h3>Basic History</h3>
+              <div class="command-list">
+                <div class="command-item">
+                  <div class="command-syntax"><kbd>:history</kbd></div>
+                  <div class="command-desc">
+                    Show browser history from the last 7 days
+                  </div>
+                </div>
+              </div>
+
+              <h3>History with Regex Filtering</h3>
+              <div class="command-list">
+                <div class="command-item">
+                  <div class="command-syntax">
+                    <kbd>:history regex{vimnav.*}</kbd>
+                  </div>
+                  <div class="command-desc">
+                    Filter history entries matching regex pattern
+                  </div>
+                </div>
+                <div class="command-item">
+                  <div class="command-syntax">
+                    <kbd>:history regex{github.*issues}</kbd>
+                  </div>
+                  <div class="command-desc">
+                    Find GitHub issues in your history
+                  </div>
+                </div>
+              </div>
+
+              <h3>History with Time Filters</h3>
+              <div class="command-list">
+                <div class="command-item">
+                  <div class="command-syntax">
+                    <kbd>:history back{24h}</kbd>
+                  </div>
+                  <div class="command-desc">
+                    Show history from last 24 hours (supports: s/m/h/d)
+                  </div>
+                </div>
+                <div class="command-item">
+                  <div class="command-syntax"><kbd>:history back{3d}</kbd></div>
+                  <div class="command-desc">Show history from last 3 days</div>
+                </div>
+                <div class="command-item">
+                  <div class="command-syntax">
+                    <kbd>:history from{12-24-2025}</kbd>
+                  </div>
+                  <div class="command-desc">
+                    Show history from specific date forward
+                  </div>
+                </div>
+              </div>
+
+              <h3>Combined Filters</h3>
+              <div class="command-list">
+                <div class="command-item">
+                  <div class="command-syntax">
+                    <kbd>:history regex{docs.*} back{7d}</kbd>
+                  </div>
+                  <div class="command-desc">
+                    Find documentation pages from the last week
+                  </div>
+                </div>
+                <div class="command-item">
+                  <div class="command-syntax">
+                    <kbd>:history from{8-1-2025,8-3-2025}</kbd>
+                  </div>
+                  <div class="command-desc">
+                    Show history between two specific dates
+                  </div>
+                </div>
+              </div>
+
+              <div class="docs-tip">
+                <strong>Pro Tip:</strong> History search is perfect for finding
+                that article or documentation you visited but can't remember the
+                exact URL. Use regex patterns to search by domain or keywords.
+              </div>
+            </section>
+
+            <!-- Extension Configuration -->
+            <section id="configuration" class="docs-section">
+              <h2>⚙️ Extension Configuration</h2>
+              <p>
+                VimNav provides two ways to configure the extension: through the
+                <strong>Side Panel</strong> and the
+                <strong>Extension Settings Page</strong>.
+              </p>
+
+              <div id="side-panel-config" class="docs-subsection">
+                <h3>Side Panel Configuration</h3>
+                <p>
+                  The side panel provides quick access to essential VimNav
+                  features and settings.
+                </p>
+
+                <h4>Opening the Side Panel</h4>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Chrome menu</strong>
+                    </div>
+                    <div class="command-desc">
+                      Right-click the VimNav extension icon → "Open side panel"
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Extension menu</strong>
+                    </div>
+                    <div class="command-desc">
+                      Click the VimNav extension icon in the toolbar
+                    </div>
+                  </div>
                 </div>
 
-                <!-- Main Documentation -->
-                <div class="docs-main">
-                    <!-- Getting Started -->
-                    <section id="getting-started" class="docs-section">
-                        <h2>🚀 Getting Started</h2>
-                        
-                        <div id="installation" class="docs-subsection">
-                            <h3>Installation</h3>
-                            <p>VimNav is available as a Chrome extension. Follow these steps to get started:</p>
-                            <ol>
-                                <li>Install VimNav from the <a href="#" class="docs-link">Chrome Web Store</a></li>
-                                <li>Pin the extension to your toolbar for easy access</li>
-                                <li>Visit any webpage and start using vim keybindings immediately</li>
-                            </ol>
-                            <div class="docs-note">
-                                <strong>Note:</strong> VimNav works on all websites and requires no additional setup or configuration.
-                            </div>
-                        </div>
-
-                        <div id="first-steps" class="docs-subsection">
-                            <h3>First Steps</h3>
-                            <p>Once installed, VimNav is immediately active on all web pages. Try these basic commands:</p>
-                            <div class="keybinding-list">
-                                <div class="keybinding-item">
-                                    <kbd>?</kbd>
-                                    <span>Show the help overlay with all keybindings</span>
-                                </div>
-                                <div class="keybinding-item">
-                                    <kbd>j</kbd><kbd>k</kbd>
-                                    <span>Scroll down and up on any page</span>
-                                </div>
-                                <div class="keybinding-item">
-                                    <kbd>e</kbd>
-                                    <span>Open the tab navigator overlay</span>
-                                </div>
-                                <div class="keybinding-item">
-                                    <kbd>o</kbd>
-                                    <span>Open the url search for quick navigation to new urls, history or search</span>
-                                </div>
-                                <div class="keybinding-item">
-                                    <kbd>f</kbd>
-                                    <span>Enter hint mode to click links with keyboard</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="basic-usage" class="docs-subsection">
-                            <h3>Basic Usage Patterns</h3>
-                            <p>VimNav follows vim's modal philosophy. You're always in one of several modes:</p>
-                            <ul>
-                                <li><strong>Normal Mode</strong> - Default mode for navigation and commands</li>
-                                <li><strong>Insert Mode</strong> - For typing in form fields (enters automatically)</li>
-                                <li><strong>Visual Mode</strong> - For text selection and manipulation</li>
-                                <li><strong>Hint Mode</strong> - For keyboard-only link clicking</li>
-                            </ul>
-                        </div>
-                    </section>
-
-                    <!-- Page Navigation -->
-                    <section id="navigation" class="docs-section">
-                        <h2>🧭 Page Navigation</h2>
-                        <p>Navigate web pages using familiar vim keybindings for scrolling and browser controls.</p>
-                        
-                        <h3>Scrolling</h3>
-                        <div class="keybinding-grid">
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>j</kbd></div>
-                                <div class="keybinding-desc">Scroll down (smooth scrolling)</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>k</kbd></div>
-                                <div class="keybinding-desc">Scroll up (smooth scrolling)</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>gg</kbd></div>
-                                <div class="keybinding-desc">Jump to top of page</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>G</kbd></div>
-                                <div class="keybinding-desc">Jump to bottom of page</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>Space</kbd></div>
-                                <div class="keybinding-desc">Page down (80% of viewport)</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>b</kbd></div>
-                                <div class="keybinding-desc">Page up (80% of viewport)</div>
-                            </div>
-                        </div>
-
-                        <h3>Browser Controls</h3>
-                        <div class="keybinding-grid">
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>[</kbd></div>
-                                <div class="keybinding-desc">Browser back (same as back button)</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>]</kbd></div>
-                                <div class="keybinding-desc">Browser forward</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>r</kbd></div>
-                                <div class="keybinding-desc">Reload current page</div>
-                            </div>
-                        </div>
-
-                        <h3>Scroll Target Mode</h3>
-                        <p>Choose specific scrollable elements on complex pages:</p>
-                        <div class="keybinding-list">
-                            <div class="keybinding-item">
-                                <kbd>s</kbd>
-                                <span>Enter scroll select mode - choose custom scroll container</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>a-z</kbd>
-                                <span>Type hint characters to select scrollable element</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>Enter</kbd>
-                                <span>Set selected element as scroll target for j/k</span>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Mode System -->
-                    <section id="modes" class="docs-section">
-                        <h2>🔄 Mode System</h2>
-                        <p>VimNav uses vim's modal system for different types of interaction.</p>
-
-                        <div class="mode-card">
-                            <h3>Normal Mode</h3>
-                            <p>The default mode for navigation and commands. Most keybindings work in normal mode.</p>
-                            <div class="keybinding-list">
-                                <div class="keybinding-item">
-                                    <kbd>Esc</kbd>
-                                    <span>Always returns you to normal mode from any other mode</span>
-                                </div>
-                                <div class="keybinding-item">
-                                    <kbd>Esc</kbd><kbd>Esc</kbd>
-                                    <span>Focus main body for reliable vim navigation</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mode-card">
-                            <h3>Insert Mode</h3>
-                            <p>Automatically activated when you focus input fields, text areas, or contenteditable elements.</p>
-                            <div class="keybinding-list">
-                                <div class="keybinding-item">
-                                    <kbd>i</kbd>
-                                    <span>Manually enter insert mode (finds nearest input)</span>
-                                </div>
-                                <div class="keybinding-item">
-                                    <kbd>Esc</kbd>
-                                    <span>Exit insert mode and return to normal mode</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mode-card">
-                            <h3>Visual Mode</h3>
-                            <p>Select and manipulate text elements on the page. See the <a href="#visual-mode" class="docs-link">Visual Mode section</a> for details.</p>
-                        </div>
-
-                        <div class="mode-card">
-                            <h3>Hint Mode</h3>
-                            <p>Click links and interactive elements using keyboard hints. See the <a href="#hint-mode" class="docs-link">Hint Mode section</a> for details.</p>
-                        </div>
-                    </section>
-
-                    <!-- Quick Navigation -->
-                    <section id="quick-navigation" class="docs-section">
-                        <h2>🌐 Quick Navigation</h2>
-                        <p>Instantly navigate to URLs, search engines, or browse history with the URL search overlay.</p>
-                        
-                        <div class="keybinding-list">
-                            <div class="keybinding-item">
-                                <kbd>o</kbd>
-                                <span>Open URL search overlay for quick navigation</span>
-                            </div>
-                        </div>
-
-                        <h3>Navigation Features</h3>
-                        <p>The URL search overlay provides multiple navigation options:</p>
-                        <ul>
-                            <li><strong>Direct URLs</strong> - Type any URL to navigate directly (auto-adds https://)</li>
-                            <li><strong>Search Engines</strong> - Type search terms to search with your default search engine</li>
-                            <li><strong>History Search</strong> - Searches your browser history as you type</li>
-                            <li><strong>Bookmarks</strong> - Finds matching bookmarks in your browser</li>
-                            <li><strong>Smart Suggestions</strong> - Provides intelligent suggestions based on your input</li>
-                        </ul>
-
-                        <h3>Navigation Controls</h3>
-                        <div class="keybinding-grid">
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>j</kbd><kbd>k</kbd></div>
-                                <div class="keybinding-desc">Navigate up/down through URL suggestions</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>Enter</kbd></div>
-                                <div class="keybinding-desc">Navigate to selected URL or search term</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>Ctrl+Enter</kbd></div>
-                                <div class="keybinding-desc">Open selected URL in new tab</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>Esc</kbd></div>
-                                <div class="keybinding-desc">Close URL search overlay</div>
-                            </div>
-                        </div>
-
-                        <div class="docs-tip">
-                            <strong>Pro Tips:</strong> 
-                            <ul>
-                                <li>Use search terms without domain type strings to search with your default engine</li>
-                                <li>History results show page titles and URLs for easy identification</li>
-                            </ul>
-                        </div>
-                    </section>
-
-                    <!-- Search & Find -->
-                    <section id="search" class="docs-section">
-                        <h2>🔍 Search & Find</h2>
-                        <p>Search within page content using vim-style search commands.</p>
-
-                        <h3>Page Search</h3>
-                        <div class="keybinding-list">
-                            <div class="keybinding-item">
-                                <kbd>/</kbd>
-                                <span>Open search input - type to search within current page</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>n</kbd>
-                                <span>Jump to next search result</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>N</kbd>
-                                <span>Jump to previous search result</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>Esc</kbd>
-                                <span>Close search and clear highlights</span>
-                            </div>
-                        </div>
-
-                        <div class="docs-tip">
-                            <strong>Tip:</strong> Search highlights matching text and automatically scrolls to results. Use n/N to cycle through all matches on the page.
-                        </div>
-                    </section>
-
-                    <!-- Tab Management -->
-                    <section id="tabs" class="docs-section">
-                        <h2>📑 Tab Management</h2>
-                        <p>VimNav provides powerful tab navigation and management inspired by NERDTree.</p>
-
-                        <h3>Opening Tab Navigator</h3>
-                        <div class="keybinding-list">
-                            <div class="keybinding-item">
-                                <kbd>e</kbd>
-                                <span>Toggle tabs overlay - shows all open tabs in current window</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>Ctrl+P</kbd>
-                                <span>Telescope-style tab search (Chrome shortcut integration)</span>
-                            </div>
-                        </div>
-
-                        <h3>Tab Navigation</h3>
-                        <p>When the tabs overlay is open:</p>
-                        <div class="keybinding-grid">
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>j</kbd><kbd>k</kbd></div>
-                                <div class="keybinding-desc">Navigate tabs up/down</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>gg</kbd></div>
-                                <div class="keybinding-desc">Jump to first tab</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>G</kbd></div>
-                                <div class="keybinding-desc">Jump to last tab</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>Enter</kbd></div>
-                                <div class="keybinding-desc">Switch to selected tab</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>x</kbd><kbd>d</kbd></div>
-                                <div class="keybinding-desc">Close selected tab</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>/</kbd></div>
-                                <div class="keybinding-desc">Focus tab search input</div>
-                            </div>
-                        </div>
-
-                        <h3>Tab Actions</h3>
-                        <div class="keybinding-list">
-                            <div class="keybinding-item">
-                                <kbd>r</kbd>
-                                <span>Reload selected tab</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>a</kbd>
-                                <span>Show tab group editor for organizing tabs</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>Esc</kbd>
-                                <span>Close tabs overlay and return to normal mode</span>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Hint Mode -->
-                    <section id="hint-mode" class="docs-section">
-                        <h2>🎯 Hint Mode</h2>
-                        <p>Click links, buttons, and interactive elements without using the mouse.</p>
-
-                        <h3>Using Hint Mode</h3>
-                        <div class="keybinding-list">
-                            <div class="keybinding-item">
-                                <kbd>f</kbd>
-                                <span>Enter hint mode - shows letter hints on clickable elements</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>a-z</kbd>
-                                <span>Type hint characters to narrow down selection</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>Enter</kbd>
-                                <span>Click the selected element</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>Backspace</kbd>
-                                <span>Delete last character or exit hint mode</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>Esc</kbd>
-                                <span>Exit hint mode without clicking</span>
-                            </div>
-                        </div>
-
-                        <h3>Hint Targets</h3>
-                        <p>Hint mode automatically detects and highlights:</p>
-                        <ul>
-                            <li>Links (<code>&lt;a&gt;</code> elements)</li>
-                            <li>Buttons (<code>&lt;button&gt;</code> elements)</li>
-                            <li>Form inputs (input, select, textarea)</li>
-                            <li>Clickable elements with click handlers</li>
-                            <li>Elements with <code>role="button"</code> or <code>tabindex</code></li>
-                        </ul>
-
-                        <div class="docs-tip">
-                            <strong>Tip:</strong> Hint characters are case-insensitive. Type partial hints to filter - you don't always need to complete the full hint sequence.
-                        </div>
-                    </section>
-
-                    <!-- Visual Mode -->
-                    <section id="visual-mode" class="docs-section">
-                        <h2>👁️ Visual Mode</h2>
-                        <p>Select and manipulate text content on web pages using vim-style text selection.</p>
-
-                        <h3>Entering Visual Mode</h3>
-                        <div class="keybinding-list">
-                            <div class="keybinding-item">
-                                <kbd>v</kbd>
-                                <span>Enter visual mode - shows hints on text elements</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>a-z</kbd>
-                                <span>Type hint to select a text element for manipulation</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>Enter</kbd>
-                                <span>Start text selection within the chosen element</span>
-                            </div>
-                        </div>
-
-                        <h3>Text Selection</h3>
-                        <p>Once you've selected an element and entered text selection mode:</p>
-                        <div class="keybinding-grid">
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>h</kbd><kbd>l</kbd></div>
-                                <div class="keybinding-desc">Extend selection left/right by character</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>j</kbd><kbd>k</kbd></div>
-                                <div class="keybinding-desc">Extend selection down/up by line</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>w</kbd><kbd>b</kbd></div>
-                                <div class="keybinding-desc">Extend selection by word forward/backward</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>gg</kbd></div>
-                                <div class="keybinding-desc">Extend selection to start of element</div>
-                            </div>
-                            <div class="keybinding-card">
-                                <div class="keybinding-keys"><kbd>G</kbd></div>
-                                <div class="keybinding-desc">Extend selection to end of element</div>
-                            </div>
-                        </div>
-
-                        <h3>Text Actions</h3>
-                        <div class="keybinding-list">
-                            <div class="keybinding-item">
-                                <kbd>y</kbd>
-                                <span>Copy selected text to clipboard and exit visual mode</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>d</kbd>
-                                <span>Delete selected text and exit visual mode</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>Esc</kbd>
-                                <span>Exit visual mode without performing any action</span>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Marks System -->
-                    <section id="marks" class="docs-section">
-                        <h2>📍 Marks System</h2>
-                        <p>Set bookmarks on pages and navigate between them quickly, similar to vim marks.</p>
-
-                        <h3>Creating Marks</h3>
-                        <div class="keybinding-list">
-                            <div class="keybinding-item">
-                                <kbd>m</kbd>
-                                <span>Enter mark creation mode</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>a-z</kbd>
-                                <span>Create local mark (remembers position on current page only)</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>A-Z</kbd>
-                                <span>Create global mark (remembers page URL and position across tabs)</span>
-                            </div>
-                        </div>
-
-                        <h3>Navigating to Marks</h3>
-                        <div class="keybinding-list">
-                            <div class="keybinding-item">
-                                <kbd>'</kbd>
-                                <span>Enter mark navigation mode</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>a-z</kbd>
-                                <span>Jump to local mark (scrolls to position on current page)</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>A-Z</kbd>
-                                <span>Jump to global mark (opens tab if needed and scrolls to position)</span>
-                            </div>
-                        </div>
-
-                        <h3>Mark Management</h3>
-                        <p>Use command mode for advanced mark management:</p>
-                        <div class="keybinding-list">
-                            <div class="keybinding-item">
-                                <kbd>:marks</kbd>
-                                <span>Show all marks with their locations</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>:marks clear</kbd>
-                                <span>Clear all local marks for current page</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>:marks clearAll</kbd>
-                                <span>Clear all marks (local and global)</span>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Command Mode -->
-                    <section id="commands" class="docs-section">
-                        <h2>⚡ Command Mode</h2>
-                        <p>Execute vim-style commands for advanced functionality and extension features.</p>
-
-                        <h3>Opening Command Mode</h3>
-                        <div class="keybinding-list">
-                            <div class="keybinding-item">
-                                <kbd>:</kbd>
-                                <span>Open command input - type commands and press Enter to execute</span>
-                            </div>
-                        </div>
-
-                        <h3>Tab Commands</h3>
-                        <div class="command-list">
-                            <div class="command-item">
-                                <div class="command-syntax"><kbd>:tabs</kbd></div>
-                                <div class="command-desc">Open tabs overlay (same as pressing 'e')</div>
-                            </div>
-                        </div>
-
-                        <h3>Marks Commands</h3>
-                        <div class="command-list">
-                            <div class="command-item">
-                                <div class="command-syntax"><kbd>:marks</kbd></div>
-                                <div class="command-desc">Show all marks with their page URLs and positions</div>
-                            </div>
-                            <div class="command-item">
-                                <div class="command-syntax"><kbd>:marks clear</kbd></div>
-                                <div class="command-desc">Clear all local marks for the current page</div>
-                            </div>
-                            <div class="command-item">
-                                <div class="command-syntax"><kbd>:marks clearAll</kbd></div>
-                                <div class="command-desc">Clear all marks (both local and global)</div>
-                            </div>
-                            <div class="command-item">
-                                <div class="command-syntax"><kbd>:marks remove a</kbd></div>
-                                <div class="command-desc">Remove a specific mark (replace 'a' with mark name)</div>
-                            </div>
-                            <div class="command-item">
-                                <div class="command-syntax"><kbd>:marks navigate A</kbd></div>
-                                <div class="command-desc">Jump to specific mark (replace 'A' with mark name)</div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- History Search -->
-                    <section id="history" class="docs-section">
-                        <h2>📚 History Search</h2>
-                        <p>Search and filter your browser history with powerful regex and date filtering.</p>
-
-                        <h3>Basic History</h3>
-                        <div class="command-list">
-                            <div class="command-item">
-                                <div class="command-syntax"><kbd>:history</kbd></div>
-                                <div class="command-desc">Show browser history from the last 7 days</div>
-                            </div>
-                        </div>
-
-                        <h3>History with Regex Filtering</h3>
-                        <div class="command-list">
-                            <div class="command-item">
-                                <div class="command-syntax"><kbd>:history regex{vimnav.*}</kbd></div>
-                                <div class="command-desc">Filter history entries matching regex pattern</div>
-                            </div>
-                            <div class="command-item">
-                                <div class="command-syntax"><kbd>:history regex{github.*issues}</kbd></div>
-                                <div class="command-desc">Find GitHub issues in your history</div>
-                            </div>
-                        </div>
-
-                        <h3>History with Time Filters</h3>
-                        <div class="command-list">
-                            <div class="command-item">
-                                <div class="command-syntax"><kbd>:history back{24h}</kbd></div>
-                                <div class="command-desc">Show history from last 24 hours (supports: s/m/h/d)</div>
-                            </div>
-                            <div class="command-item">
-                                <div class="command-syntax"><kbd>:history back{3d}</kbd></div>
-                                <div class="command-desc">Show history from last 3 days</div>
-                            </div>
-                            <div class="command-item">
-                                <div class="command-syntax"><kbd>:history from{12-24-2025}</kbd></div>
-                                <div class="command-desc">Show history from specific date forward</div>
-                            </div>
-                        </div>
-
-                        <h3>Combined Filters</h3>
-                        <div class="command-list">
-                            <div class="command-item">
-                                <div class="command-syntax"><kbd>:history regex{docs.*} back{7d}</kbd></div>
-                                <div class="command-desc">Find documentation pages from the last week</div>
-                            </div>
-                            <div class="command-item">
-                                <div class="command-syntax"><kbd>:history from{8-1-2025,8-3-2025}</kbd></div>
-                                <div class="command-desc">Show history between two specific dates</div>
-                            </div>
-                        </div>
-
-                        <div class="docs-tip">
-                            <strong>Pro Tip:</strong> History search is perfect for finding that article or documentation you visited but can't remember the exact URL. Use regex patterns to search by domain or keywords.
-                        </div>
-                    </section>
-
-                    <!-- Extension Configuration -->
-                    <section id="configuration" class="docs-section">
-                        <h2>⚙️ Extension Configuration</h2>
-                        <p>VimNav provides two ways to configure the extension: through the <strong>Side Panel</strong> and the <strong>Extension Settings Page</strong>.</p>
-
-                        <div id="side-panel-config" class="docs-subsection">
-                            <h3>Side Panel Configuration</h3>
-                            <p>The side panel provides quick access to essential VimNav features and settings.</p>
-                            
-                            <h4>Opening the Side Panel</h4>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Chrome menu</strong></div>
-                                    <div class="command-desc">Right-click the VimNav extension icon → "Open side panel"</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Extension menu</strong></div>
-                                    <div class="command-desc">Click the VimNav extension icon in the toolbar</div>
-                                </div>
-                            </div>
-
-                            <h4>Side Panel Features</h4>
-                            <p>The side panel includes:</p>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Status Overview</strong></div>
-                                    <div class="command-desc">View extension status and active tab count</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Vim Mode Toggle</strong></div>
-                                    <div class="command-desc">Enable/disable vim navigation globally</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Mode Indicator Settings</strong></div>
-                                    <div class="command-desc">Configure visual mode indicators and key help display</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Performance Settings</strong></div>
-                                    <div class="command-desc">Adjust element limits and shadow DOM support</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>URL Filtering</strong></div>
-                                    <div class="command-desc">Configure site-specific blocking/allowing with blacklist/whitelist modes</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="options-page-config" class="docs-subsection">
-                            <h3>Extension Options Page</h3>
-                            <p>VimNav provides a dedicated options page for additional settings not available in the side panel.</p>
-                            
-                            <h4>Opening the Options Page</h4>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Chrome extensions page</strong></div>
-                                    <div class="command-desc">Go to <code>chrome://extensions/</code> → Find VimNav → Click "Details" → Click "Extension options"</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Right-click extension icon</strong></div>
-                                    <div class="command-desc">Right-click VimNav icon → "Options"</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Direct URL</strong></div>
-                                    <div class="command-desc">Navigate to <code>chrome-extension://[extension-id]/options.html</code></div>
-                                </div>
-                            </div>
-
-                            <h4>Options Page Settings</h4>
-                            <p>The options page contains settings focused on scrolling behavior and keyboard navigation:</p>
-
-                            <h5>Scrolling Settings</h5>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Scroll Behavior</strong></div>
-                                    <div class="command-desc">Choose between smooth or instant scrolling animations</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Small Scroll Distance</strong></div>
-                                    <div class="command-desc">Configure pixel distance for j/k key scrolling (10-200px, default: 100px)</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Page Scroll Ratio</strong></div>
-                                    <div class="command-desc">Set fraction of viewport height for page up/down (0.1-1.0, default: 0.8)</div>
-                                </div>
-                            </div>
-
-                            <h5>Panel Settings</h5>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Sidepanel Position Info</strong></div>
-                                    <div class="command-desc">Instructions for changing Chrome's side panel position (controlled by browser, not extension)</div>
-                                </div>
-                            </div>
-
-                            <h5>Keyboard Settings</h5>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Vim Keys Toggle</strong></div>
-                                    <div class="command-desc">Enable/disable vim-style navigation keys (j/k for scroll, gg/G for top/bottom)</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="side-panel-settings" class="docs-subsection">
-                            <h3>Available Settings in Side Panel</h3>
-
-                            <h4>Status Overview</h4>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Extension Status</strong></div>
-                                    <div class="command-desc">Shows current state (Ready/Active)</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Active Tab Count</strong></div>
-                                    <div class="command-desc">Displays total number of open tabs</div>
-                                </div>
-                            </div>
-
-                            <h4>Vim Mode Control</h4>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Controls Toggle</strong></div>
-                                    <div class="command-desc">Enable/disable vim navigation across all tabs</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Real-time Updates</strong></div>
-                                    <div class="command-desc">Changes apply immediately to all active tabs</div>
-                                </div>
-                            </div>
-
-                            <h4>Mode Indicator Settings</h4>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Mode Indicator</strong></div>
-                                    <div class="command-desc">Toggle display of current mode (NORMAL, VISUAL, etc.)</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Key Help Display</strong></div>
-                                    <div class="command-desc">Show/hide keybinding help menu</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Instant Updates</strong></div>
-                                    <div class="command-desc">Changes apply immediately without refresh</div>
-                                </div>
-                            </div>
-
-                            <h4>Performance Settings</h4>
-                            <p><strong>Element Limits</strong>: Configure maximum elements to performance issues on large pages</p>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Hint Mode Limit</strong></div>
-                                    <div class="command-desc">Default 150 elements (range: 50-1000)</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Visual Mode Limit</strong></div>
-                                    <div class="command-desc">Default 100 elements (range: 50-500)</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Scroll Target Limit</strong></div>
-                                    <div class="command-desc">Default 50 elements (range: 25-200)</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Tabs Overlay Limit</strong></div>
-                                    <div class="command-desc">Default 200 tabs (range: 100-2000)</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>URL Search Limit</strong></div>
-                                    <div class="command-desc">Default 500 items (range: 200-1000)</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Shadow DOM Support</strong></div>
-                                    <div class="command-desc">Enable/disable shadow DOM element detection</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Reset to Defaults</strong></div>
-                                    <div class="command-desc">Restore all performance settings to recommended values</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="url-filtering" class="docs-subsection">
-                            <h3>URL Filtering System</h3>
-                            <p>The URL filtering system provides granular control over where VimNav is enabled.</p>
-
-                            <h4>Core Features</h4>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>On/Off Toggle</strong></div>
-                                    <div class="command-desc">Enable/disable URL-based site filtering</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Dual Mode Operation</strong></div>
-                                    <div class="command-desc">Switch between blacklist and whitelist approaches</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Pattern Management</strong></div>
-                                    <div class="command-desc">Add/remove URL patterns with wildcard support</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Current Site Quick Add</strong></div>
-                                    <div class="command-desc">One-click add current website to filter list</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Real-time Updates</strong></div>
-                                    <div class="command-desc">Changes apply immediately to all tabs</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Privacy Protection</strong></div>
-                                    <div class="command-desc">All filtering happens locally - no data sent to servers</div>
-                                </div>
-                            </div>
-
-                            <h4>Filtering Modes Explained</h4>
-                            
-                            <div class="mode-card">
-                                <h5>Blacklist Mode (Recommended for Most Users)</h5>
-                                <div class="command-list">
-                                    <div class="command-item">
-                                        <div class="command-syntax"><strong>Default Behavior</strong></div>
-                                        <div class="command-desc">VimNav works on ALL websites by default</div>
-                                    </div>
-                                    <div class="command-item">
-                                        <div class="command-syntax"><strong>Pattern Effect</strong></div>
-                                        <div class="command-desc">Only BLOCKS VimNav on sites matching your patterns</div>
-                                    </div>
-                                    <div class="command-item">
-                                        <div class="command-syntax"><strong>Use Case</strong></div>
-                                        <div class="command-desc">Perfect for blocking problematic sites (webmail, internal apps, etc.)</div>
-                                    </div>
-                                    <div class="command-item">
-                                        <div class="command-syntax"><strong>Empty List</strong></div>
-                                        <div class="command-desc">VimNav works everywhere</div>
-                                    </div>
-                                    <div class="command-item">
-                                        <div class="command-syntax"><strong>Example</strong></div>
-                                        <div class="command-desc">Block on <code>*://mail.google.com/*</code> but work everywhere else</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mode-card">
-                                <h5>Whitelist Mode (Restrictive/Enterprise)</h5>
-                                <div class="command-list">
-                                    <div class="command-item">
-                                        <div class="command-syntax"><strong>Default Behavior</strong></div>
-                                        <div class="command-desc">VimNav is BLOCKED on all websites by default</div>
-                                    </div>
-                                    <div class="command-item">
-                                        <div class="command-syntax"><strong>Pattern Effect</strong></div>
-                                        <div class="command-desc">Only ALLOWS VimNav on sites matching your patterns</div>
-                                    </div>
-                                    <div class="command-item">
-                                        <div class="command-syntax"><strong>Use Case</strong></div>
-                                        <div class="command-desc">Perfect for restricted environments or focused workflows</div>
-                                    </div>
-                                    <div class="command-item">
-                                        <div class="command-syntax"><strong>Empty List</strong></div>
-                                        <div class="command-desc">VimNav blocked everywhere</div>
-                                    </div>
-                                    <div class="command-item">
-                                        <div class="command-syntax"><strong>Example</strong></div>
-                                        <div class="command-desc">Only allow on <code>*://github.com/*</code> and <code>*://stackoverflow.com/*</code></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <h4>URL Pattern Format</h4>
-                            <div class="keybinding-list">
-                                <div class="keybinding-item">
-                                    <kbd>*://example.com/*</kbd>
-                                    <span>All protocols, entire domain and all paths</span>
-                                </div>
-                                <div class="keybinding-item">
-                                    <kbd>https://example.com/*</kbd>
-                                    <span>HTTPS only, entire domain and all paths</span>
-                                </div>
-                                <div class="keybinding-item">
-                                    <kbd>*://subdomain.example.com/*</kbd>
-                                    <span>All protocols, specific subdomain</span>
-                                </div>
-                                <div class="keybinding-item">
-                                    <kbd>*://example.com/app/*</kbd>
-                                    <span>All protocols, specific path prefix</span>
-                                </div>
-                                <div class="keybinding-item">
-                                    <kbd>*://internal.company.com/admin*</kbd>
-                                    <span>All protocols, specific admin paths</span>
-                                </div>
-                            </div>
-
-                            <h4>Pattern Matching Rules</h4>
-                            <div class="keybinding-list">
-                                <div class="keybinding-item">
-                                    <kbd>*</kbd>
-                                    <span>Matches any character sequence</span>
-                                </div>
-                                <div class="keybinding-item">
-                                    <kbd>Case Sensitivity</kbd>
-                                    <span>Patterns are case-insensitive</span>
-                                </div>
-                                <div class="keybinding-item">
-                                    <kbd>*://</kbd>
-                                    <span>Protocol wildcards match both <code>http://</code> and <code>https://</code></span>
-                                </div>
-                                <div class="keybinding-item">
-                                    <kbd>/*</kbd>
-                                    <span>Path wildcards: <code>/*</code> matches any path, <code>/app*</code> matches paths starting with <code>/app</code></span>
-                                </div>
-                                <div class="keybinding-item">
-                                    <kbd>Query Parameters</kbd>
-                                    <span>Query parameters are ignored in matching</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="configuration-tips" class="docs-subsection">
-                            <h3>Configuration Tips</h3>
-
-                            <h4>For New Users</h4>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>1. Default Settings</strong></div>
-                                    <div class="command-desc">Start with default settings - they work well for most users</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>2. Mode Indicators</strong></div>
-                                    <div class="command-desc">Enable <strong>Mode Indicators</strong> to see current vim mode while learning</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>3. Performance Settings</strong></div>
-                                    <div class="command-desc">Adjust <strong>Performance Settings</strong> if experiencing slow performance on complex pages</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>4. URL Filtering</strong></div>
-                                    <div class="command-desc">Use <strong>URL Filtering</strong> to disable VimNav on sites that conflict with vim keybindings</div>
-                                </div>
-                            </div>
-
-                            <h4>For Organizations/Power Users</h4>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>1. URL Filtering Control</strong></div>
-                                    <div class="command-desc">Use <strong>URL Filtering</strong> to control deployment across company websites</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>2. Performance Limits</strong></div>
-                                    <div class="command-desc">Set <strong>Performance Limits</strong> based on typical hardware and usage patterns</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>3. Mode Indicators</strong></div>
-                                    <div class="command-desc">Configure <strong>Mode Indicators</strong> for user training and support</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>4. Blacklist Mode</strong></div>
-                                    <div class="command-desc">Use <strong>Blacklist Mode</strong> to block VimNav on internal web applications</div>
-                                </div>
-                            </div>
-
-                            <h4>Performance Optimization</h4>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Reduce Element Limits</strong></div>
-                                    <div class="command-desc">On slower machines or complex websites</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Disable Shadow DOM Support</strong></div>
-                                    <div class="command-desc">If not needed (slight performance gain)</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Use URL Filtering</strong></div>
-                                    <div class="command-desc">For JavaScript-heavy applications that conflict</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Monitor Active Tab Count</strong></div>
-                                    <div class="command-desc">Performance may degrade with 100+ tabs</div>
-                                </div>
-                            </div>
-
-                            <h4>URL Filtering Best Practices</h4>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Blacklist Mode</strong></div>
-                                    <div class="command-desc">Start with this for most users - only block problematic sites</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Whitelist Mode</strong></div>
-                                    <div class="command-desc">Use for restricted environments - only allow on approved sites</div>
-                                </div>
-                            </div>
-                            
-                            <div class="docs-tip">
-                                <strong>Pattern Examples:</strong>
-                                <ul>
-                                    <li><code>*://internal.company.com/*</code> - Block/allow entire internal domain</li>
-                                    <li><code>https://app.example.com/*</code> - HTTPS only, specific application</li>
-                                    <li><code>*://mail.google.com/*</code> - All protocols, specific service</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div id="settings-persistence" class="docs-subsection">
-                            <h3>Settings Persistence</h3>
-                            <p>All VimNav settings are automatically saved to Chrome's local storage.</p>
-
-                            <h4>Automatic Saving</h4>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Immediate Save</strong></div>
-                                    <div class="command-desc">Settings save immediately when changed</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>No Manual Action</strong></div>
-                                    <div class="command-desc">No manual save/export required</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Browser Restart</strong></div>
-                                    <div class="command-desc">Syncs across browser restarts</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Updates</strong></div>
-                                    <div class="command-desc">Preserved during extension updates</div>
-                                </div>
-                            </div>
-
-                            <h4>Settings Backup</h4>
-                            <p>Settings are stored locally in Chrome's extension storage and are not automatically synced across devices. For manual backup:</p>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Chrome DevTools Access</strong></div>
-                                    <div class="command-desc">Settings are accessible via Chrome DevTools → Application → Storage → Extension Storage</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Advanced API Backup</strong></div>
-                                    <div class="command-desc">Advanced users can backup via <code>chrome.storage.local</code> API</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Future Import/Export</strong></div>
-                                    <div class="command-desc">Future versions may include import/export functionality</div>
-                                </div>
-                            </div>
-
-                            <h4>Troubleshooting Settings</h4>
-                            <div class="command-list">
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Settings not applying</strong></div>
-                                    <div class="command-desc">Refresh active tabs after changes</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Settings reset</strong></div>
-                                    <div class="command-desc">Check if extension was reinstalled (clears local storage)</div>
-                                </div>
-                                <div class="command-item">
-                                    <div class="command-syntax"><strong>Performance issues</strong></div>
-                                    <div class="command-desc">Reset performance settings to defaults and adjust gradually</div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Settings -->
-                    <section id="settings" class="docs-section">
-                        <h2>⚙️ Settings & Configuration</h2>
-                        <p>Customize VimNav behavior and appearance to match your workflow.</p>
-
-                        <h3>Debug & UI Options</h3>
-                        <div class="keybinding-list">
-                            <div class="keybinding-item">
-                                <kbd>M</kbd>
-                                <span>Toggle UI indicators (mode display, keybinding hints)</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>Shift+D</kbd>
-                                <span>Toggle debug mode for development and troubleshooting</span>
-                            </div>
-                            <div class="keybinding-item">
-                                <kbd>?</kbd>
-                                <span>Show help overlay with all keybindings</span>
-                            </div>
-                        </div>
-
-                        <h3>Extension Settings</h3>
-                        <p>Access VimNav settings through the Chrome extension management:</p>
-                        <div class="command-list">
-                            <div class="command-item">
-                                <div class="command-syntax"><strong>1. Right-click Extension Icon</strong></div>
-                                <div class="command-desc">Right-click the VimNav extension icon</div>
-                            </div>
-                            <div class="command-item">
-                                <div class="command-syntax"><strong>2. Select Options</strong></div>
-                                <div class="command-desc">Select "Options" from the context menu</div>
-                            </div>
-                            <div class="command-item">
-                                <div class="command-syntax"><strong>3. Configure Settings</strong></div>
-                                <div class="command-desc">Configure performance limits, keybinding preferences, and UI options</div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Troubleshooting -->
-                    <section id="troubleshooting" class="docs-section">
-                        <h2>🛠️ Troubleshooting</h2>
-                        
-                        <h3>Common Issues</h3>
-                        
-                        <div class="trouble-item">
-                            <h4>Keybindings Not Working</h4>
-                            <p><strong>Solution:</strong> Press <kbd>Esc</kbd><kbd>Esc</kbd> to focus the main page body and ensure vim navigation is active.</p>
-                        </div>
-
-                        <div class="trouble-item">
-                            <h4>Conflicts with Website Shortcuts</h4>
-                            <p><strong>Solution:</strong> VimNav automatically disables vim keybindings when you're typing in input fields. If there are conflicts, press <kbd>i</kbd> to enter insert mode temporarily.</p>
-                        </div>
-
-                        <div class="trouble-item">
-                            <h4>Extension Not Loading</h4>
-                            <p><strong>Solution:</strong> Refresh the page, or check that the extension is enabled in Chrome's extension management page.</p>
-                        </div>
-
-                        <div class="trouble-item">
-                            <h4>Performance Issues on Large Pages</h4>
-                            <p><strong>Solution:</strong> VimNav includes performance limits to prevent browser freezing. Access extension options to adjust limits if needed.</p>
-                        </div>
-
-                        <h3>Getting Help</h3>
-                        <p>If you encounter issues not covered here:</p>
-                        <ul>
-                            <li>Check the browser console for error messages</li>
-                            <li><a href="feedback.html" class="docs-link">Submit a bug report</a> with details about your browser and the issue</li>
-                            <li>Email support at <a href="mailto:support@vimnav.dev" class="docs-link">support@vimnav.dev</a></li>
-                        </ul>
-                    </section>
+                <h4>Side Panel Features</h4>
+                <p>The side panel includes:</p>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Status Overview</strong>
+                    </div>
+                    <div class="command-desc">
+                      View extension status and active tab count
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Vim Mode Toggle</strong>
+                    </div>
+                    <div class="command-desc">
+                      Enable/disable vim navigation globally
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Mode Indicator Settings</strong>
+                    </div>
+                    <div class="command-desc">
+                      Configure visual mode indicators and key help display
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Performance Settings</strong>
+                    </div>
+                    <div class="command-desc">
+                      Adjust element limits and shadow DOM support
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>URL Filtering</strong>
+                    </div>
+                    <div class="command-desc">
+                      Configure site-specific blocking/allowing with
+                      blacklist/whitelist modes
+                    </div>
+                  </div>
                 </div>
-            </div>
+              </div>
+
+              <div id="options-page-config" class="docs-subsection">
+                <h3>Extension Options Page</h3>
+                <p>
+                  VimNav provides a dedicated options page for additional
+                  settings not available in the side panel.
+                </p>
+
+                <h4>Opening the Options Page</h4>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Chrome extensions page</strong>
+                    </div>
+                    <div class="command-desc">
+                      Go to <code>chrome://extensions/</code> → Find VimNav →
+                      Click "Details" → Click "Extension options"
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Right-click extension icon</strong>
+                    </div>
+                    <div class="command-desc">
+                      Right-click VimNav icon → "Options"
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Direct URL</strong>
+                    </div>
+                    <div class="command-desc">
+                      Navigate to
+                      <code
+                        >chrome-extension://[extension-id]/options.html</code
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <h4>Options Page Settings</h4>
+                <p>
+                  The options page contains settings focused on scrolling
+                  behavior and keyboard navigation:
+                </p>
+
+                <h5>Scrolling Settings</h5>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Scroll Behavior</strong>
+                    </div>
+                    <div class="command-desc">
+                      Choose between smooth or instant scrolling animations
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Small Scroll Distance</strong>
+                    </div>
+                    <div class="command-desc">
+                      Configure pixel distance for j/k key scrolling (10-200px,
+                      default: 100px)
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Page Scroll Ratio</strong>
+                    </div>
+                    <div class="command-desc">
+                      Set fraction of viewport height for page up/down (0.1-1.0,
+                      default: 0.8)
+                    </div>
+                  </div>
+                </div>
+
+                <h5>Panel Settings</h5>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Sidepanel Position Info</strong>
+                    </div>
+                    <div class="command-desc">
+                      Instructions for changing Chrome's side panel position
+                      (controlled by browser, not extension)
+                    </div>
+                  </div>
+                </div>
+
+                <h5>Keyboard Settings</h5>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Vim Keys Toggle</strong>
+                    </div>
+                    <div class="command-desc">
+                      Enable/disable vim-style navigation keys (j/k for scroll,
+                      gg/G for top/bottom)
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="side-panel-settings" class="docs-subsection">
+                <h3>Available Settings in Side Panel</h3>
+
+                <h4>Status Overview</h4>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Extension Status</strong>
+                    </div>
+                    <div class="command-desc">
+                      Shows current state (Ready/Active)
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Active Tab Count</strong>
+                    </div>
+                    <div class="command-desc">
+                      Displays total number of open tabs
+                    </div>
+                  </div>
+                </div>
+
+                <h4>Vim Mode Control</h4>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Controls Toggle</strong>
+                    </div>
+                    <div class="command-desc">
+                      Enable/disable vim navigation across all tabs
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Real-time Updates</strong>
+                    </div>
+                    <div class="command-desc">
+                      Changes apply immediately to all active tabs
+                    </div>
+                  </div>
+                </div>
+
+                <h4>Mode Indicator Settings</h4>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Mode Indicator</strong>
+                    </div>
+                    <div class="command-desc">
+                      Toggle display of current mode (NORMAL, VISUAL, etc.)
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Key Help Display</strong>
+                    </div>
+                    <div class="command-desc">
+                      Show/hide keybinding help menu
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Instant Updates</strong>
+                    </div>
+                    <div class="command-desc">
+                      Changes apply immediately without refresh
+                    </div>
+                  </div>
+                </div>
+
+                <h4>Performance Settings</h4>
+                <p>
+                  <strong>Element Limits</strong>: Configure maximum elements to
+                  performance issues on large pages
+                </p>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Hint Mode Limit</strong>
+                    </div>
+                    <div class="command-desc">
+                      Default 150 elements (range: 50-1000)
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Visual Mode Limit</strong>
+                    </div>
+                    <div class="command-desc">
+                      Default 100 elements (range: 50-500)
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Scroll Target Limit</strong>
+                    </div>
+                    <div class="command-desc">
+                      Default 50 elements (range: 25-200)
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Tabs Overlay Limit</strong>
+                    </div>
+                    <div class="command-desc">
+                      Default 200 tabs (range: 100-2000)
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>URL Search Limit</strong>
+                    </div>
+                    <div class="command-desc">
+                      Default 500 items (range: 200-1000)
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Shadow DOM Support</strong>
+                    </div>
+                    <div class="command-desc">
+                      Enable/disable shadow DOM element detection
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Reset to Defaults</strong>
+                    </div>
+                    <div class="command-desc">
+                      Restore all performance settings to recommended values
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="url-filtering" class="docs-subsection">
+                <h3>URL Filtering System</h3>
+                <p>
+                  The URL filtering system provides granular control over where
+                  VimNav is enabled.
+                </p>
+
+                <h4>Core Features</h4>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>On/Off Toggle</strong>
+                    </div>
+                    <div class="command-desc">
+                      Enable/disable URL-based site filtering
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Dual Mode Operation</strong>
+                    </div>
+                    <div class="command-desc">
+                      Switch between blacklist and whitelist approaches
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Pattern Management</strong>
+                    </div>
+                    <div class="command-desc">
+                      Add/remove URL patterns with wildcard support
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Current Site Quick Add</strong>
+                    </div>
+                    <div class="command-desc">
+                      One-click add current website to filter list
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Real-time Updates</strong>
+                    </div>
+                    <div class="command-desc">
+                      Changes apply immediately to all tabs
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Privacy Protection</strong>
+                    </div>
+                    <div class="command-desc">
+                      All filtering happens locally - no data sent to servers
+                    </div>
+                  </div>
+                </div>
+
+                <h4>Filtering Modes Explained</h4>
+
+                <div class="mode-card">
+                  <h5>Blacklist Mode (Recommended for Most Users)</h5>
+                  <div class="command-list">
+                    <div class="command-item">
+                      <div class="command-syntax">
+                        <strong>Default Behavior</strong>
+                      </div>
+                      <div class="command-desc">
+                        VimNav works on ALL websites by default
+                      </div>
+                    </div>
+                    <div class="command-item">
+                      <div class="command-syntax">
+                        <strong>Pattern Effect</strong>
+                      </div>
+                      <div class="command-desc">
+                        Only BLOCKS VimNav on sites matching your patterns
+                      </div>
+                    </div>
+                    <div class="command-item">
+                      <div class="command-syntax">
+                        <strong>Use Case</strong>
+                      </div>
+                      <div class="command-desc">
+                        Perfect for blocking problematic sites (webmail,
+                        internal apps, etc.)
+                      </div>
+                    </div>
+                    <div class="command-item">
+                      <div class="command-syntax">
+                        <strong>Empty List</strong>
+                      </div>
+                      <div class="command-desc">VimNav works everywhere</div>
+                    </div>
+                    <div class="command-item">
+                      <div class="command-syntax"><strong>Example</strong></div>
+                      <div class="command-desc">
+                        Block on <code>*://mail.google.com/*</code> but work
+                        everywhere else
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mode-card">
+                  <h5>Whitelist Mode (Restrictive/Enterprise)</h5>
+                  <div class="command-list">
+                    <div class="command-item">
+                      <div class="command-syntax">
+                        <strong>Default Behavior</strong>
+                      </div>
+                      <div class="command-desc">
+                        VimNav is BLOCKED on all websites by default
+                      </div>
+                    </div>
+                    <div class="command-item">
+                      <div class="command-syntax">
+                        <strong>Pattern Effect</strong>
+                      </div>
+                      <div class="command-desc">
+                        Only ALLOWS VimNav on sites matching your patterns
+                      </div>
+                    </div>
+                    <div class="command-item">
+                      <div class="command-syntax">
+                        <strong>Use Case</strong>
+                      </div>
+                      <div class="command-desc">
+                        Perfect for restricted environments or focused workflows
+                      </div>
+                    </div>
+                    <div class="command-item">
+                      <div class="command-syntax">
+                        <strong>Empty List</strong>
+                      </div>
+                      <div class="command-desc">VimNav blocked everywhere</div>
+                    </div>
+                    <div class="command-item">
+                      <div class="command-syntax"><strong>Example</strong></div>
+                      <div class="command-desc">
+                        Only allow on <code>*://github.com/*</code> and
+                        <code>*://stackoverflow.com/*</code>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <h4>URL Pattern Format</h4>
+                <div class="keybinding-list">
+                  <div class="keybinding-item">
+                    <kbd>*://example.com/*</kbd>
+                    <span>All protocols, entire domain and all paths</span>
+                  </div>
+                  <div class="keybinding-item">
+                    <kbd>https://example.com/*</kbd>
+                    <span>HTTPS only, entire domain and all paths</span>
+                  </div>
+                  <div class="keybinding-item">
+                    <kbd>*://subdomain.example.com/*</kbd>
+                    <span>All protocols, specific subdomain</span>
+                  </div>
+                  <div class="keybinding-item">
+                    <kbd>*://example.com/app/*</kbd>
+                    <span>All protocols, specific path prefix</span>
+                  </div>
+                  <div class="keybinding-item">
+                    <kbd>*://internal.company.com/admin*</kbd>
+                    <span>All protocols, specific admin paths</span>
+                  </div>
+                </div>
+
+                <h4>Pattern Matching Rules</h4>
+                <div class="keybinding-list">
+                  <div class="keybinding-item">
+                    <kbd>*</kbd>
+                    <span>Matches any character sequence</span>
+                  </div>
+                  <div class="keybinding-item">
+                    <kbd>Case Sensitivity</kbd>
+                    <span>Patterns are case-insensitive</span>
+                  </div>
+                  <div class="keybinding-item">
+                    <kbd>*://</kbd>
+                    <span
+                      >Protocol wildcards match both <code>http://</code> and
+                      <code>https://</code></span
+                    >
+                  </div>
+                  <div class="keybinding-item">
+                    <kbd>/*</kbd>
+                    <span
+                      >Path wildcards: <code>/*</code> matches any path,
+                      <code>/app*</code> matches paths starting with
+                      <code>/app</code></span
+                    >
+                  </div>
+                  <div class="keybinding-item">
+                    <kbd>Query Parameters</kbd>
+                    <span>Query parameters are ignored in matching</span>
+                  </div>
+                </div>
+              </div>
+
+              <div id="configuration-tips" class="docs-subsection">
+                <h3>Configuration Tips</h3>
+
+                <h4>For New Users</h4>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>1. Default Settings</strong>
+                    </div>
+                    <div class="command-desc">
+                      Start with default settings - they work well for most
+                      users
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>2. Mode Indicators</strong>
+                    </div>
+                    <div class="command-desc">
+                      Enable <strong>Mode Indicators</strong> to see current vim
+                      mode while learning
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>3. Performance Settings</strong>
+                    </div>
+                    <div class="command-desc">
+                      Adjust <strong>Performance Settings</strong> if
+                      experiencing slow performance on complex pages
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>4. URL Filtering</strong>
+                    </div>
+                    <div class="command-desc">
+                      Use <strong>URL Filtering</strong> to disable VimNav on
+                      sites that conflict with vim keybindings
+                    </div>
+                  </div>
+                </div>
+
+                <h4>For Organizations/Power Users</h4>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>1. URL Filtering Control</strong>
+                    </div>
+                    <div class="command-desc">
+                      Use <strong>URL Filtering</strong> to control deployment
+                      across company websites
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>2. Performance Limits</strong>
+                    </div>
+                    <div class="command-desc">
+                      Set <strong>Performance Limits</strong> based on typical
+                      hardware and usage patterns
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>3. Mode Indicators</strong>
+                    </div>
+                    <div class="command-desc">
+                      Configure <strong>Mode Indicators</strong> for user
+                      training and support
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>4. Blacklist Mode</strong>
+                    </div>
+                    <div class="command-desc">
+                      Use <strong>Blacklist Mode</strong> to block VimNav on
+                      internal web applications
+                    </div>
+                  </div>
+                </div>
+
+                <h4>Performance Optimization</h4>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Reduce Element Limits</strong>
+                    </div>
+                    <div class="command-desc">
+                      On slower machines or complex websites
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Disable Shadow DOM Support</strong>
+                    </div>
+                    <div class="command-desc">
+                      If not needed (slight performance gain)
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Use URL Filtering</strong>
+                    </div>
+                    <div class="command-desc">
+                      For JavaScript-heavy applications that conflict
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Monitor Active Tab Count</strong>
+                    </div>
+                    <div class="command-desc">
+                      Performance may degrade with 100+ tabs
+                    </div>
+                  </div>
+                </div>
+
+                <h4>URL Filtering Best Practices</h4>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Blacklist Mode</strong>
+                    </div>
+                    <div class="command-desc">
+                      Start with this for most users - only block problematic
+                      sites
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Whitelist Mode</strong>
+                    </div>
+                    <div class="command-desc">
+                      Use for restricted environments - only allow on approved
+                      sites
+                    </div>
+                  </div>
+                </div>
+
+                <div class="docs-tip">
+                  <strong>Pattern Examples:</strong>
+                  <ul>
+                    <li>
+                      <code>*://internal.company.com/*</code> - Block/allow
+                      entire internal domain
+                    </li>
+                    <li>
+                      <code>https://app.example.com/*</code> - HTTPS only,
+                      specific application
+                    </li>
+                    <li>
+                      <code>*://mail.google.com/*</code> - All protocols,
+                      specific service
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div id="settings-persistence" class="docs-subsection">
+                <h3>Settings Persistence</h3>
+                <p>
+                  All VimNav settings are automatically saved to Chrome's local
+                  storage.
+                </p>
+
+                <h4>Automatic Saving</h4>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Immediate Save</strong>
+                    </div>
+                    <div class="command-desc">
+                      Settings save immediately when changed
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>No Manual Action</strong>
+                    </div>
+                    <div class="command-desc">
+                      No manual save/export required
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Browser Restart</strong>
+                    </div>
+                    <div class="command-desc">
+                      Syncs across browser restarts
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax"><strong>Updates</strong></div>
+                    <div class="command-desc">
+                      Preserved during extension updates
+                    </div>
+                  </div>
+                </div>
+
+                <h4>Settings Backup</h4>
+                <p>
+                  Settings are stored locally in Chrome's extension storage and
+                  are not automatically synced across devices. For manual
+                  backup:
+                </p>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Chrome DevTools Access</strong>
+                    </div>
+                    <div class="command-desc">
+                      Settings are accessible via Chrome DevTools → Application
+                      → Storage → Extension Storage
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Advanced API Backup</strong>
+                    </div>
+                    <div class="command-desc">
+                      Advanced users can backup via
+                      <code>chrome.storage.local</code> API
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Future Import/Export</strong>
+                    </div>
+                    <div class="command-desc">
+                      Future versions may include import/export functionality
+                    </div>
+                  </div>
+                </div>
+
+                <h4>Troubleshooting Settings</h4>
+                <div class="command-list">
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Settings not applying</strong>
+                    </div>
+                    <div class="command-desc">
+                      Refresh active tabs after changes
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Settings reset</strong>
+                    </div>
+                    <div class="command-desc">
+                      Check if extension was reinstalled (clears local storage)
+                    </div>
+                  </div>
+                  <div class="command-item">
+                    <div class="command-syntax">
+                      <strong>Performance issues</strong>
+                    </div>
+                    <div class="command-desc">
+                      Reset performance settings to defaults and adjust
+                      gradually
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Settings -->
+            <section id="settings" class="docs-section">
+              <h2>⚙️ Settings & Configuration</h2>
+              <p>
+                Customize VimNav behavior and appearance to match your workflow.
+              </p>
+
+              <h3>Debug & UI Options</h3>
+              <div class="keybinding-list">
+                <div class="keybinding-item">
+                  <kbd>M</kbd>
+                  <span
+                    >Toggle UI indicators (mode display, keybinding hints)</span
+                  >
+                </div>
+                <div class="keybinding-item">
+                  <kbd>Shift+D</kbd>
+                  <span
+                    >Toggle debug mode for development and troubleshooting</span
+                  >
+                </div>
+                <div class="keybinding-item">
+                  <kbd>?</kbd>
+                  <span>Show help overlay with all keybindings</span>
+                </div>
+              </div>
+
+              <h3>Extension Settings</h3>
+              <p>
+                Access VimNav settings through the Chrome extension management:
+              </p>
+              <div class="command-list">
+                <div class="command-item">
+                  <div class="command-syntax">
+                    <strong>1. Right-click Extension Icon</strong>
+                  </div>
+                  <div class="command-desc">
+                    Right-click the VimNav extension icon
+                  </div>
+                </div>
+                <div class="command-item">
+                  <div class="command-syntax">
+                    <strong>2. Select Options</strong>
+                  </div>
+                  <div class="command-desc">
+                    Select "Options" from the context menu
+                  </div>
+                </div>
+                <div class="command-item">
+                  <div class="command-syntax">
+                    <strong>3. Configure Settings</strong>
+                  </div>
+                  <div class="command-desc">
+                    Configure performance limits, keybinding preferences, and UI
+                    options
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Troubleshooting -->
+            <section id="troubleshooting" class="docs-section">
+              <h2>🛠️ Troubleshooting</h2>
+
+              <h3>Common Issues</h3>
+
+              <div class="trouble-item">
+                <h4>Keybindings Not Working</h4>
+                <p>
+                  <strong>Solution:</strong> Press <kbd>Esc</kbd
+                  ><kbd>Esc</kbd> to focus the main page body and ensure vim
+                  navigation is active.
+                </p>
+              </div>
+
+              <div class="trouble-item">
+                <h4>Conflicts with Website Shortcuts</h4>
+                <p>
+                  <strong>Solution:</strong> VimNav automatically disables vim
+                  keybindings when you're typing in input fields. If there are
+                  conflicts, press <kbd>i</kbd> to enter insert mode
+                  temporarily.
+                </p>
+              </div>
+
+              <div class="trouble-item">
+                <h4>Extension Not Loading</h4>
+                <p>
+                  <strong>Solution:</strong> Refresh the page, or check that the
+                  extension is enabled in Chrome's extension management page.
+                </p>
+              </div>
+
+              <div class="trouble-item">
+                <h4>Performance Issues on Large Pages</h4>
+                <p>
+                  <strong>Solution:</strong> VimNav includes performance limits
+                  to prevent browser freezing. Access extension options to
+                  adjust limits if needed.
+                </p>
+              </div>
+
+              <h3>Getting Help</h3>
+              <p>If you encounter issues not covered here:</p>
+              <ul>
+                <li>Check the browser console for error messages</li>
+                <li>
+                  <a href="feedback.html" class="docs-link"
+                    >Submit a bug report</a
+                  >
+                  with details about your browser and the issue
+                </li>
+                <li>
+                  Email support at
+                  <a href="mailto:support@vimnav.dev" class="docs-link"
+                    >support@vimnav.dev</a
+                  >
+                </li>
+              </ul>
+            </section>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="assets/icon.png" alt="VimNav" class="footer-logo">
-                    <span class="footer-title">VimNav</span>
-                    <p class="footer-tagline">Professional vim-style browser navigation</p>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Product</h4>
-                        <a href="index.html#features">Features</a>
-                        <a href="index.html#pro">VimNav Pro</a>
-                        <a href="index.html#install">Installation</a>
-                        <a href="#">Changelog</a>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Support</h4>
-                        <a href="docs.html">Documentation</a>
-                        <a href="#">Community</a>
-                        <a href="feedback.html">Bug Reports</a>
-                        <a href="mailto:support@vimnav.dev">Contact</a>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Legal</h4>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Cookie Policy</a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <img src="assets/icon.png" alt="VimNav" class="footer-logo" />
+            <span class="footer-title">VimNav</span>
+            <p class="footer-tagline">
+              Professional vim-style browser navigation
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Product</h4>
+              <a href="index.html#features">Features</a>
+              <a href="index.html#pro">VimNav Pro</a>
+              <a href="index.html#install">Installation</a>
+              <a href="#">Changelog</a>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 VimNav. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Twitter">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                        </svg>
-                    </a>
-                </div>
+
+            <div class="footer-column">
+              <h4>Support</h4>
+              <a href="docs.html">Documentation</a>
+              <a href="#">Community</a>
+              <a href="feedback.html">Bug Reports</a>
+              <a href="mailto:support@vimnav.dev">Contact</a>
             </div>
+
+            <div class="footer-column">
+              <h4>Legal</h4>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 VimNav. All rights reserved.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

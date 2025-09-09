@@ -50,6 +50,7 @@
                 <a href="#quick-navigation" class="quick-nav-link">Quick Nav</a>
                 <a href="#modes" class="quick-nav-link">Modes</a>
                 <a href="#commands" class="quick-nav-link">Commands</a>
+                <a href="#configuration" class="quick-nav-link">Configuration</a>
                 <a href="#advanced" class="quick-nav-link">Advanced</a>
             </div>
         </div>
@@ -99,6 +100,7 @@
                         
                         <div class="docs-nav-section">
                             <h4>Configuration</h4>
+                            <a href="#configuration" class="docs-nav-link">Extension Configuration</a>
                             <a href="#settings" class="docs-nav-link">Settings</a>
                             <a href="#customization" class="docs-nav-link">Customization</a>
                             <a href="#troubleshooting" class="docs-nav-link">Troubleshooting</a>
@@ -687,6 +689,465 @@
                         </div>
                     </section>
 
+                    <!-- Extension Configuration -->
+                    <section id="configuration" class="docs-section">
+                        <h2>⚙️ Extension Configuration</h2>
+                        <p>VimNav provides two ways to configure the extension: through the <strong>Side Panel</strong> and the <strong>Extension Settings Page</strong>.</p>
+
+                        <div id="side-panel-config" class="docs-subsection">
+                            <h3>Side Panel Configuration</h3>
+                            <p>The side panel provides quick access to essential VimNav features and settings.</p>
+                            
+                            <h4>Opening the Side Panel</h4>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Chrome menu</strong></div>
+                                    <div class="command-desc">Right-click the VimNav extension icon → "Open side panel"</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Extension menu</strong></div>
+                                    <div class="command-desc">Click the VimNav extension icon in the toolbar</div>
+                                </div>
+                            </div>
+
+                            <h4>Side Panel Features</h4>
+                            <p>The side panel includes:</p>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Status Overview</strong></div>
+                                    <div class="command-desc">View extension status and active tab count</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Vim Mode Toggle</strong></div>
+                                    <div class="command-desc">Enable/disable vim navigation globally</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Mode Indicator Settings</strong></div>
+                                    <div class="command-desc">Configure visual mode indicators and key help display</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Performance Settings</strong></div>
+                                    <div class="command-desc">Adjust element limits and shadow DOM support</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>URL Filtering</strong></div>
+                                    <div class="command-desc">Configure site-specific blocking/allowing with blacklist/whitelist modes</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="options-page-config" class="docs-subsection">
+                            <h3>Extension Options Page</h3>
+                            <p>VimNav provides a dedicated options page for additional settings not available in the side panel.</p>
+                            
+                            <h4>Opening the Options Page</h4>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Chrome extensions page</strong></div>
+                                    <div class="command-desc">Go to <code>chrome://extensions/</code> → Find VimNav → Click "Details" → Click "Extension options"</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Right-click extension icon</strong></div>
+                                    <div class="command-desc">Right-click VimNav icon → "Options"</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Direct URL</strong></div>
+                                    <div class="command-desc">Navigate to <code>chrome-extension://[extension-id]/options.html</code></div>
+                                </div>
+                            </div>
+
+                            <h4>Options Page Settings</h4>
+                            <p>The options page contains settings focused on scrolling behavior and keyboard navigation:</p>
+
+                            <h5>Scrolling Settings</h5>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Scroll Behavior</strong></div>
+                                    <div class="command-desc">Choose between smooth or instant scrolling animations</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Small Scroll Distance</strong></div>
+                                    <div class="command-desc">Configure pixel distance for j/k key scrolling (10-200px, default: 100px)</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Page Scroll Ratio</strong></div>
+                                    <div class="command-desc">Set fraction of viewport height for page up/down (0.1-1.0, default: 0.8)</div>
+                                </div>
+                            </div>
+
+                            <h5>Panel Settings</h5>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Sidepanel Position Info</strong></div>
+                                    <div class="command-desc">Instructions for changing Chrome's side panel position (controlled by browser, not extension)</div>
+                                </div>
+                            </div>
+
+                            <h5>Keyboard Settings</h5>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Vim Keys Toggle</strong></div>
+                                    <div class="command-desc">Enable/disable vim-style navigation keys (j/k for scroll, gg/G for top/bottom)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="side-panel-settings" class="docs-subsection">
+                            <h3>Available Settings in Side Panel</h3>
+
+                            <h4>Status Overview</h4>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Extension Status</strong></div>
+                                    <div class="command-desc">Shows current state (Ready/Active)</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Active Tab Count</strong></div>
+                                    <div class="command-desc">Displays total number of open tabs</div>
+                                </div>
+                            </div>
+
+                            <h4>Vim Mode Control</h4>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Controls Toggle</strong></div>
+                                    <div class="command-desc">Enable/disable vim navigation across all tabs</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Real-time Updates</strong></div>
+                                    <div class="command-desc">Changes apply immediately to all active tabs</div>
+                                </div>
+                            </div>
+
+                            <h4>Mode Indicator Settings</h4>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Mode Indicator</strong></div>
+                                    <div class="command-desc">Toggle display of current mode (NORMAL, VISUAL, etc.)</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Key Help Display</strong></div>
+                                    <div class="command-desc">Show/hide keybinding help menu</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Instant Updates</strong></div>
+                                    <div class="command-desc">Changes apply immediately without refresh</div>
+                                </div>
+                            </div>
+
+                            <h4>Performance Settings</h4>
+                            <p><strong>Element Limits</strong>: Configure maximum elements to performance issues on large pages</p>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Hint Mode Limit</strong></div>
+                                    <div class="command-desc">Default 150 elements (range: 50-1000)</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Visual Mode Limit</strong></div>
+                                    <div class="command-desc">Default 100 elements (range: 50-500)</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Scroll Target Limit</strong></div>
+                                    <div class="command-desc">Default 50 elements (range: 25-200)</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Tabs Overlay Limit</strong></div>
+                                    <div class="command-desc">Default 200 tabs (range: 100-2000)</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>URL Search Limit</strong></div>
+                                    <div class="command-desc">Default 500 items (range: 200-1000)</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Shadow DOM Support</strong></div>
+                                    <div class="command-desc">Enable/disable shadow DOM element detection</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Reset to Defaults</strong></div>
+                                    <div class="command-desc">Restore all performance settings to recommended values</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="url-filtering" class="docs-subsection">
+                            <h3>URL Filtering System</h3>
+                            <p>The URL filtering system provides granular control over where VimNav is enabled.</p>
+
+                            <h4>Core Features</h4>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>On/Off Toggle</strong></div>
+                                    <div class="command-desc">Enable/disable URL-based site filtering</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Dual Mode Operation</strong></div>
+                                    <div class="command-desc">Switch between blacklist and whitelist approaches</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Pattern Management</strong></div>
+                                    <div class="command-desc">Add/remove URL patterns with wildcard support</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Current Site Quick Add</strong></div>
+                                    <div class="command-desc">One-click add current website to filter list</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Real-time Updates</strong></div>
+                                    <div class="command-desc">Changes apply immediately to all tabs</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Privacy Protection</strong></div>
+                                    <div class="command-desc">All filtering happens locally - no data sent to servers</div>
+                                </div>
+                            </div>
+
+                            <h4>Filtering Modes Explained</h4>
+                            
+                            <div class="mode-card">
+                                <h5>Blacklist Mode (Recommended for Most Users)</h5>
+                                <div class="command-list">
+                                    <div class="command-item">
+                                        <div class="command-syntax"><strong>Default Behavior</strong></div>
+                                        <div class="command-desc">VimNav works on ALL websites by default</div>
+                                    </div>
+                                    <div class="command-item">
+                                        <div class="command-syntax"><strong>Pattern Effect</strong></div>
+                                        <div class="command-desc">Only BLOCKS VimNav on sites matching your patterns</div>
+                                    </div>
+                                    <div class="command-item">
+                                        <div class="command-syntax"><strong>Use Case</strong></div>
+                                        <div class="command-desc">Perfect for blocking problematic sites (webmail, internal apps, etc.)</div>
+                                    </div>
+                                    <div class="command-item">
+                                        <div class="command-syntax"><strong>Empty List</strong></div>
+                                        <div class="command-desc">VimNav works everywhere</div>
+                                    </div>
+                                    <div class="command-item">
+                                        <div class="command-syntax"><strong>Example</strong></div>
+                                        <div class="command-desc">Block on <code>*://mail.google.com/*</code> but work everywhere else</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mode-card">
+                                <h5>Whitelist Mode (Restrictive/Enterprise)</h5>
+                                <div class="command-list">
+                                    <div class="command-item">
+                                        <div class="command-syntax"><strong>Default Behavior</strong></div>
+                                        <div class="command-desc">VimNav is BLOCKED on all websites by default</div>
+                                    </div>
+                                    <div class="command-item">
+                                        <div class="command-syntax"><strong>Pattern Effect</strong></div>
+                                        <div class="command-desc">Only ALLOWS VimNav on sites matching your patterns</div>
+                                    </div>
+                                    <div class="command-item">
+                                        <div class="command-syntax"><strong>Use Case</strong></div>
+                                        <div class="command-desc">Perfect for restricted environments or focused workflows</div>
+                                    </div>
+                                    <div class="command-item">
+                                        <div class="command-syntax"><strong>Empty List</strong></div>
+                                        <div class="command-desc">VimNav blocked everywhere</div>
+                                    </div>
+                                    <div class="command-item">
+                                        <div class="command-syntax"><strong>Example</strong></div>
+                                        <div class="command-desc">Only allow on <code>*://github.com/*</code> and <code>*://stackoverflow.com/*</code></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h4>URL Pattern Format</h4>
+                            <div class="keybinding-list">
+                                <div class="keybinding-item">
+                                    <kbd>*://example.com/*</kbd>
+                                    <span>All protocols, entire domain and all paths</span>
+                                </div>
+                                <div class="keybinding-item">
+                                    <kbd>https://example.com/*</kbd>
+                                    <span>HTTPS only, entire domain and all paths</span>
+                                </div>
+                                <div class="keybinding-item">
+                                    <kbd>*://subdomain.example.com/*</kbd>
+                                    <span>All protocols, specific subdomain</span>
+                                </div>
+                                <div class="keybinding-item">
+                                    <kbd>*://example.com/app/*</kbd>
+                                    <span>All protocols, specific path prefix</span>
+                                </div>
+                                <div class="keybinding-item">
+                                    <kbd>*://internal.company.com/admin*</kbd>
+                                    <span>All protocols, specific admin paths</span>
+                                </div>
+                            </div>
+
+                            <h4>Pattern Matching Rules</h4>
+                            <div class="keybinding-list">
+                                <div class="keybinding-item">
+                                    <kbd>*</kbd>
+                                    <span>Matches any character sequence</span>
+                                </div>
+                                <div class="keybinding-item">
+                                    <kbd>Case Sensitivity</kbd>
+                                    <span>Patterns are case-insensitive</span>
+                                </div>
+                                <div class="keybinding-item">
+                                    <kbd>*://</kbd>
+                                    <span>Protocol wildcards match both <code>http://</code> and <code>https://</code></span>
+                                </div>
+                                <div class="keybinding-item">
+                                    <kbd>/*</kbd>
+                                    <span>Path wildcards: <code>/*</code> matches any path, <code>/app*</code> matches paths starting with <code>/app</code></span>
+                                </div>
+                                <div class="keybinding-item">
+                                    <kbd>Query Parameters</kbd>
+                                    <span>Query parameters are ignored in matching</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="configuration-tips" class="docs-subsection">
+                            <h3>Configuration Tips</h3>
+
+                            <h4>For New Users</h4>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>1. Default Settings</strong></div>
+                                    <div class="command-desc">Start with default settings - they work well for most users</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>2. Mode Indicators</strong></div>
+                                    <div class="command-desc">Enable <strong>Mode Indicators</strong> to see current vim mode while learning</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>3. Performance Settings</strong></div>
+                                    <div class="command-desc">Adjust <strong>Performance Settings</strong> if experiencing slow performance on complex pages</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>4. URL Filtering</strong></div>
+                                    <div class="command-desc">Use <strong>URL Filtering</strong> to disable VimNav on sites that conflict with vim keybindings</div>
+                                </div>
+                            </div>
+
+                            <h4>For Organizations/Power Users</h4>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>1. URL Filtering Control</strong></div>
+                                    <div class="command-desc">Use <strong>URL Filtering</strong> to control deployment across company websites</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>2. Performance Limits</strong></div>
+                                    <div class="command-desc">Set <strong>Performance Limits</strong> based on typical hardware and usage patterns</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>3. Mode Indicators</strong></div>
+                                    <div class="command-desc">Configure <strong>Mode Indicators</strong> for user training and support</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>4. Blacklist Mode</strong></div>
+                                    <div class="command-desc">Use <strong>Blacklist Mode</strong> to block VimNav on internal web applications</div>
+                                </div>
+                            </div>
+
+                            <h4>Performance Optimization</h4>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Reduce Element Limits</strong></div>
+                                    <div class="command-desc">On slower machines or complex websites</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Disable Shadow DOM Support</strong></div>
+                                    <div class="command-desc">If not needed (slight performance gain)</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Use URL Filtering</strong></div>
+                                    <div class="command-desc">For JavaScript-heavy applications that conflict</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Monitor Active Tab Count</strong></div>
+                                    <div class="command-desc">Performance may degrade with 100+ tabs</div>
+                                </div>
+                            </div>
+
+                            <h4>URL Filtering Best Practices</h4>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Blacklist Mode</strong></div>
+                                    <div class="command-desc">Start with this for most users - only block problematic sites</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Whitelist Mode</strong></div>
+                                    <div class="command-desc">Use for restricted environments - only allow on approved sites</div>
+                                </div>
+                            </div>
+                            
+                            <div class="docs-tip">
+                                <strong>Pattern Examples:</strong>
+                                <ul>
+                                    <li><code>*://internal.company.com/*</code> - Block/allow entire internal domain</li>
+                                    <li><code>https://app.example.com/*</code> - HTTPS only, specific application</li>
+                                    <li><code>*://mail.google.com/*</code> - All protocols, specific service</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="settings-persistence" class="docs-subsection">
+                            <h3>Settings Persistence</h3>
+                            <p>All VimNav settings are automatically saved to Chrome's local storage.</p>
+
+                            <h4>Automatic Saving</h4>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Immediate Save</strong></div>
+                                    <div class="command-desc">Settings save immediately when changed</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>No Manual Action</strong></div>
+                                    <div class="command-desc">No manual save/export required</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Browser Restart</strong></div>
+                                    <div class="command-desc">Syncs across browser restarts</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Updates</strong></div>
+                                    <div class="command-desc">Preserved during extension updates</div>
+                                </div>
+                            </div>
+
+                            <h4>Settings Backup</h4>
+                            <p>Settings are stored locally in Chrome's extension storage and are not automatically synced across devices. For manual backup:</p>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Chrome DevTools Access</strong></div>
+                                    <div class="command-desc">Settings are accessible via Chrome DevTools → Application → Storage → Extension Storage</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Advanced API Backup</strong></div>
+                                    <div class="command-desc">Advanced users can backup via <code>chrome.storage.local</code> API</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Future Import/Export</strong></div>
+                                    <div class="command-desc">Future versions may include import/export functionality</div>
+                                </div>
+                            </div>
+
+                            <h4>Troubleshooting Settings</h4>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Settings not applying</strong></div>
+                                    <div class="command-desc">Refresh active tabs after changes</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Settings reset</strong></div>
+                                    <div class="command-desc">Check if extension was reinstalled (clears local storage)</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command-syntax"><strong>Performance issues</strong></div>
+                                    <div class="command-desc">Reset performance settings to defaults and adjust gradually</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                     <!-- Settings -->
                     <section id="settings" class="docs-section">
                         <h2>⚙️ Settings & Configuration</h2>
@@ -710,11 +1171,20 @@
 
                         <h3>Extension Settings</h3>
                         <p>Access VimNav settings through the Chrome extension management:</p>
-                        <ol>
-                            <li>Right-click the VimNav extension icon</li>
-                            <li>Select "Options" from the context menu</li>
-                            <li>Configure performance limits, keybinding preferences, and UI options</li>
-                        </ol>
+                        <div class="command-list">
+                            <div class="command-item">
+                                <div class="command-syntax"><strong>1. Right-click Extension Icon</strong></div>
+                                <div class="command-desc">Right-click the VimNav extension icon</div>
+                            </div>
+                            <div class="command-item">
+                                <div class="command-syntax"><strong>2. Select Options</strong></div>
+                                <div class="command-desc">Select "Options" from the context menu</div>
+                            </div>
+                            <div class="command-item">
+                                <div class="command-syntax"><strong>3. Configure Settings</strong></div>
+                                <div class="command-desc">Configure performance limits, keybinding preferences, and UI options</div>
+                            </div>
+                        </div>
                     </section>
 
                     <!-- Troubleshooting -->

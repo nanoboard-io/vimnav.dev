@@ -78,8 +78,8 @@
         <div class="version-selector">
           <label for="version-select">Version:</label>
           <select id="version-select" class="version-dropdown">
-            <option value="v1.2.0" selected>v1.2.0 (Latest)</option>
-            <option value="v1.0.2">v1.0.2</option>
+            <option value="v1.2.0">v1.2.0 (Latest)</option>
+            <option value="v1.0.2" selected>v1.0.2</option>
           </select>
         </div>
         <div class="docs-quick-nav">
@@ -87,7 +87,6 @@
           <a href="#navigation" class="quick-nav-link">Navigation</a>
           <a href="#quick-navigation" class="quick-nav-link">Quick Nav</a>
           <a href="#modes" class="quick-nav-link">Modes</a>
-          <a href="#vimedit-mode" class="quick-nav-link">VimEdit</a>
           <a href="#commands" class="quick-nav-link">Commands</a>
           <a href="#configuration" class="quick-nav-link">Configuration</a>
           <a href="#advanced" class="quick-nav-link">Advanced</a>
@@ -129,7 +128,6 @@
                   >Quick Navigation</a
                 >
                 <a href="#modes" class="docs-nav-link">Mode System</a>
-                <a href="#vimedit-mode" class="docs-nav-link">VimEdit Mode</a>
                 <a href="#search" class="docs-nav-link">Search & Find</a>
                 <a href="#tabs" class="docs-nav-link">Tab Management</a>
               </div>
@@ -392,335 +390,6 @@
                   <a href="#hint-mode" class="docs-link">Hint Mode section</a>
                   for details.
                 </p>
-              </div>
-            </section>
-
-            <!-- VimEdit Mode -->
-            <section id="vimedit-mode" class="docs-section">
-              <h2>📝 VimEdit Mode</h2>
-              <p>
-                VimNav includes a powerful VimEdit feature that opens a full vim editor for any input field on web pages. This allows you to edit form fields, text areas, and contenteditable elements using vim's complete editing capabilities.
-              </p>
-
-              <h3>Entering VimEdit Mode</h3>
-              <div class="keybinding-list">
-                <div class="keybinding-item">
-                  <kbd>Ctrl+i</kbd>
-                  <span>Activate input field selection with visual hints</span>
-                </div>
-                <div class="keybinding-item">
-                  <kbd>a-z</kbd>
-                  <span>Type hint letters to select the desired input field</span>
-                </div>
-                <div class="keybinding-item">
-                  <kbd>Enter</kbd>
-                  <span>Confirm selection when multiple fields match</span>
-                </div>
-              </div>
-
-              <h3>The VimEdit Interface</h3>
-              <p>Once a field is selected, VimEdit opens with:</p>
-              <ul>
-                <li><strong>Full vim modal interface</strong> with transparent overlay</li>
-                <li><strong>Line numbers</strong> for multi-line editing</li>
-                <li><strong>Color-coded status bar</strong> showing current mode and cursor position</li>
-                <li><strong>Command line</strong> for vim commands (<code>:w</code>, <code>:q</code>, etc.)</li>
-                <li><strong>Visual mode indicators</strong> with distinct colors for different selection types</li>
-              </ul>
-
-              <h3>Vim Modes in VimEdit</h3>
-
-              <div class="mode-card">
-                <h4>Normal Mode (Default)</h4>
-                <p>Standard vim navigation and text manipulation:</p>
-
-                <h5>Movement</h5>
-                <div class="keybinding-grid">
-                  <div class="keybinding-card">
-                    <div class="keybinding-keys"><kbd>h</kbd><kbd>j</kbd><kbd>k</kbd><kbd>l</kbd></div>
-                    <div class="keybinding-desc">Character/line movement</div>
-                  </div>
-                  <div class="keybinding-card">
-                    <div class="keybinding-keys"><kbd>w</kbd><kbd>b</kbd><kbd>e</kbd></div>
-                    <div class="keybinding-desc">Word movement (treats punctuation as separate words)</div>
-                  </div>
-                  <div class="keybinding-card">
-                    <div class="keybinding-keys"><kbd>W</kbd><kbd>B</kbd><kbd>E</kbd></div>
-                    <div class="keybinding-desc">WORD movement (treats non-whitespace as single words)</div>
-                  </div>
-                  <div class="keybinding-card">
-                    <div class="keybinding-keys"><kbd>0</kbd><kbd>$</kbd></div>
-                    <div class="keybinding-desc">Line start/end</div>
-                  </div>
-                  <div class="keybinding-card">
-                    <div class="keybinding-keys"><kbd>gg</kbd><kbd>G</kbd></div>
-                    <div class="keybinding-desc">File start/end</div>
-                  </div>
-                  <div class="keybinding-card">
-                    <div class="keybinding-keys"><kbd>f{char}</kbd><kbd>F{char}</kbd></div>
-                    <div class="keybinding-desc">Find character</div>
-                  </div>
-                </div>
-
-                <h5>Editing</h5>
-                <div class="keybinding-grid">
-                  <div class="keybinding-card">
-                    <div class="keybinding-keys"><kbd>x</kbd><kbd>X</kbd></div>
-                    <div class="keybinding-desc">Delete character</div>
-                  </div>
-                  <div class="keybinding-card">
-                    <div class="keybinding-keys"><kbd>dd</kbd></div>
-                    <div class="keybinding-desc">Delete line</div>
-                  </div>
-                  <div class="keybinding-card">
-                    <div class="keybinding-keys"><kbd>yy</kbd></div>
-                    <div class="keybinding-desc">Yank (copy) entire line</div>
-                  </div>
-                  <div class="keybinding-card">
-                    <div class="keybinding-keys"><kbd>p</kbd><kbd>P</kbd></div>
-                    <div class="keybinding-desc">Paste (line-based or character-based)</div>
-                  </div>
-                  <div class="keybinding-card">
-                    <div class="keybinding-keys"><kbd>dw</kbd><kbd>cw</kbd><kbd>yw</kbd></div>
-                    <div class="keybinding-desc">Word operations (small words)</div>
-                  </div>
-                  <div class="keybinding-card">
-                    <div class="keybinding-keys"><kbd>u</kbd><kbd>Ctrl+r</kbd></div>
-                    <div class="keybinding-desc">Undo/Redo last change</div>
-                  </div>
-                </div>
-
-                <h5>Mode Transitions</h5>
-                <div class="keybinding-list">
-                  <div class="keybinding-item">
-                    <kbd>i</kbd>
-                    <span>Insert mode at cursor</span>
-                  </div>
-                  <div class="keybinding-item">
-                    <kbd>a</kbd>
-                    <span>Insert after cursor</span>
-                  </div>
-                  <div class="keybinding-item">
-                    <kbd>o</kbd><kbd>O</kbd>
-                    <span>Open new line below/above</span>
-                  </div>
-                  <div class="keybinding-item">
-                    <kbd>v</kbd>
-                    <span>Visual mode</span>
-                  </div>
-                  <div class="keybinding-item">
-                    <kbd>V</kbd>
-                    <span>Visual line mode</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mode-card">
-                <h4>Insert Mode</h4>
-                <p>Standard text insertion with vim keybindings:</p>
-                <div class="keybinding-list">
-                  <div class="keybinding-item">
-                    <kbd>Esc</kbd>
-                    <span>Return to normal mode</span>
-                  </div>
-                  <div class="keybinding-item">
-                    <kbd>Backspace</kbd><kbd>Delete</kbd>
-                    <span>Character deletion</span>
-                  </div>
-                  <div class="keybinding-item">
-                    <kbd>Enter</kbd>
-                    <span>New line</span>
-                  </div>
-                  <div class="keybinding-item">
-                    <kbd>Tab</kbd>
-                    <span>Insert spaces (configurable)</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mode-card">
-                <h4>Visual Mode</h4>
-                <p>Text selection and manipulation with enhanced visual feedback:</p>
-
-                <h5>Character Visual Mode (<kbd>v</kbd>)</h5>
-                <div class="keybinding-list">
-                  <div class="keybinding-item">
-                    <kbd>Blue highlighting</kbd>
-                    <span>Precise character-level selection</span>
-                  </div>
-                  <div class="keybinding-item">
-                    <kbd>Movement keys</kbd>
-                    <span>Extend selection character by character</span>
-                  </div>
-                </div>
-
-                <h5>Line Visual Mode (<kbd>V</kbd>)</h5>
-                <div class="keybinding-list">
-                  <div class="keybinding-item">
-                    <kbd>Orange highlighting</kbd>
-                    <span>Full-line selection</span>
-                  </div>
-                  <div class="keybinding-item">
-                    <kbd>Movement keys</kbd>
-                    <span>Extend selection line by line</span>
-                  </div>
-                </div>
-
-                <h5>Operations</h5>
-                <div class="keybinding-list">
-                  <div class="keybinding-item">
-                    <kbd>d</kbd><kbd>x</kbd>
-                    <span>Delete selection</span>
-                  </div>
-                  <div class="keybinding-item">
-                    <kbd>y</kbd>
-                    <span>Yank selection</span>
-                  </div>
-                  <div class="keybinding-item">
-                    <kbd>c</kbd>
-                    <span>Change selection (delete and enter insert mode)</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mode-card">
-                <h4>Command Mode</h4>
-                <p>Vim command-line interface:</p>
-                <div class="keybinding-list">
-                  <div class="keybinding-item">
-                    <kbd>:</kbd>
-                    <span>Enter command mode</span>
-                  </div>
-                  <div class="keybinding-item">
-                    <kbd>:w</kbd>
-                    <span>Save changes to input field</span>
-                  </div>
-                  <div class="keybinding-item">
-                    <kbd>:q</kbd>
-                    <span>Quit VimEdit</span>
-                  </div>
-                  <div class="keybinding-item">
-                    <kbd>:wq</kbd>
-                    <span>Save and quit</span>
-                  </div>
-                  <div class="keybinding-item">
-                    <kbd>:q!</kbd>
-                    <span>Quit without saving</span>
-                  </div>
-                </div>
-              </div>
-
-              <h3>Mode Indicators</h3>
-              <p>VimEdit provides visual feedback through color-coded indicators:</p>
-
-              <h4>Status Bar Mode Colors</h4>
-              <div class="keybinding-list">
-                <div class="keybinding-item">
-                  <span class="mode-indicator-normal">-- NORMAL --</span>
-                  <span>Gray-blue background (#565f89)</span>
-                </div>
-                <div class="keybinding-item">
-                  <span class="mode-indicator-insert">-- INSERT --</span>
-                  <span>Green background (#9ece6a)</span>
-                </div>
-                <div class="keybinding-item">
-                  <span class="mode-indicator-visual">-- VISUAL --</span>
-                  <span>Purple background (#bb9af7)</span>
-                </div>
-                <div class="keybinding-item">
-                  <span class="mode-indicator-command">-- REPLACE --</span>
-                  <span>Red-pink background (#f7768e)</span>
-                </div>
-              </div>
-
-              <h4>Visual Selection Colors</h4>
-              <div class="keybinding-list">
-                <div class="keybinding-item">
-                  <kbd>Blue highlighting</kbd>
-                  <span>Character visual mode (<kbd>v</kbd>) for precise selection</span>
-                </div>
-                <div class="keybinding-item">
-                  <kbd>Orange highlighting</kbd>
-                  <span>Line visual mode (<kbd>V</kbd>) for full-line selection</span>
-                </div>
-              </div>
-
-              <h3>Smart Clipboard System</h3>
-              <p>VimEdit automatically detects whether clipboard content should be pasted as lines or characters:</p>
-
-              <h4>Line-based Operations</h4>
-              <div class="keybinding-list">
-                <div class="keybinding-item">
-                  <kbd>yy</kbd><kbd>dd</kbd><kbd>cc</kbd>
-                  <span>Commands that yank entire lines</span>
-                </div>
-                <div class="keybinding-item">
-                  <kbd>p</kbd>
-                  <span>Paste line below current line</span>
-                </div>
-                <div class="keybinding-item">
-                  <kbd>P</kbd>
-                  <span>Paste line above current line</span>
-                </div>
-              </div>
-
-              <h4>Character-based Operations</h4>
-              <div class="keybinding-list">
-                <div class="keybinding-item">
-                  <kbd>yw</kbd><kbd>y$</kbd><kbd>df{char}</kbd>
-                  <span>Commands that yank character ranges</span>
-                </div>
-                <div class="keybinding-item">
-                  <kbd>p</kbd>
-                  <span>Paste after cursor position</span>
-                </div>
-                <div class="keybinding-item">
-                  <kbd>P</kbd>
-                  <span>Paste before cursor position</span>
-                </div>
-              </div>
-
-              <h3>Usage Examples</h3>
-
-              <h4>Basic Form Editing</h4>
-              <div class="docs-tip">
-                <ol>
-                  <li>Navigate to any web form</li>
-                  <li>Press <kbd>Ctrl+i</kbd> to see input field hints</li>
-                  <li>Type the hint letter (e.g., <kbd>a</kbd>) to select first field</li>
-                  <li>Edit using vim commands:
-                    <ul>
-                      <li><kbd>i</kbd> to start typing</li>
-                      <li><kbd>Esc</kbd> to return to normal mode</li>
-                      <li><kbd>:wq</kbd> to save and close</li>
-                    </ul>
-                  </li>
-                </ol>
-              </div>
-
-              <h4>Advanced Text Manipulation</h4>
-              <div class="docs-tip">
-                <strong>Example workflow:</strong>
-                <ol>
-                  <li><kbd>Ctrl+i</kbd> → <kbd>b</kbd> (Select field with hint 'b')</li>
-                  <li><kbd>gg</kbd> (Go to start)</li>
-                  <li><kbd>dw</kbd> (Delete first word)</li>
-                  <li><kbd>u</kbd> (Undo deletion)</li>
-                  <li><kbd>d3w</kbd> (Delete 3 words)</li>
-                  <li><kbd>Ctrl+r</kbd> (Redo)</li>
-                  <li><kbd>A</kbd> (Insert at end of line)</li>
-                  <li><kbd>:wq</kbd> (Save and exit)</li>
-                </ol>
-              </div>
-
-              <div class="docs-tip">
-                <strong>Pro Tips:</strong>
-                <ul>
-                  <li>Use <kbd>w</kbd>/<kbd>e</kbd> for precise punctuation handling, <kbd>W</kbd>/<kbd>E</kbd> for speed</li>
-                  <li><kbd>df{char}</kbd> includes the character, <kbd>dt{char}</kbd> excludes it</li>
-                  <li>Blue highlighting for character selection, orange for line selection</li>
-                  <li><kbd>Ctrl+I</kbd> toggles maximize mode for distraction-free editing</li>
-                </ul>
               </div>
             </section>
 
@@ -2248,8 +1917,8 @@
       // Ensure dropdown shows correct version on page load
       document.addEventListener('DOMContentLoaded', function() {
         const versionSelect = document.getElementById('version-select');
-        // Reset to v1.2.0 for docs.html
-        versionSelect.value = 'v1.2.0';
+        // Reset to v1.0.2 for v1.0.2.html
+        versionSelect.value = 'v1.0.2';
       });
 
       // Handle version selector navigation

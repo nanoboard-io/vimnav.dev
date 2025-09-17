@@ -1,0 +1,105 @@
+<%
+  // Set page-specific variables for the base layout
+  const pageTitle = meta.title || 'Documentation - VimNav';
+  const pageDescription = meta.description || 'Complete documentation for VimNav - vim-style browser navigation. Learn all keybindings, features, and advanced usage.';
+  const canonical = meta.canonical || version.canonical;
+
+  // Page-specific scripts for version navigation
+  const pageScripts = `
+    <script>
+      // Ensure dropdown shows correct version on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        const versionSelect = document.getElementById('version-select');
+        // Set to current version
+        versionSelect.value = '${version.id}';
+      });
+
+      // Handle version selector navigation
+      document.getElementById('version-select').addEventListener('change', function(e) {
+        const selectedVersion = e.target.value;
+        if (selectedVersion === 'v1.0.2') {
+          window.location.href = 'v1.0.2.html';
+        } else if (selectedVersion === 'v1.2.0') {
+          window.location.href = 'docs.html';
+        }
+      });
+    </script>
+  `;
+
+  // Build the content
+  const content = `
+    <!-- Documentation Header -->
+    <section class="docs-header">
+      <div class="container">
+        <h1 class="docs-title">${meta.title || 'VimNav Documentation'}</h1>
+        <p class="docs-subtitle">
+          ${meta.subtitle || 'Complete guide to vim-style browser navigation with keyboard shortcuts, advanced features, and configuration options.'}
+        </p>
+
+        <!-- Version Selector -->
+        ${include('version-selector.ejs', { currentVersion: version, allVersions: versions })}
+
+        <!-- Quick Navigation -->
+        ${include('docs-quick-nav.ejs', { quickNavItems: meta.quickNavItems || [] })}
+      </div>
+    </section>
+
+    <!-- Quick Reference -->
+    ${include('quick-reference.ejs')}
+
+    <!-- Documentation Content -->
+    <div class="docs-content">
+      <div class="container">
+        <div class="docs-layout">
+          <!-- Sidebar Navigation -->
+          ${include('docs-sidebar.ejs', { navigation: navigation })}
+
+          <!-- Main Documentation -->
+          <div class="docs-main">
+            ${renderSections()}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Helper function to render all sections for this version
+  function renderSections() {
+    let html = '';
+
+    // Define the section order to match navigation
+    const sectionOrder = [
+      'getting-started',
+      'navigation',
+      'quick-navigation',
+      'modes',
+      'vimedit-mode', // Only for v1.2.0+
+      'search',
+      'tabs',
+      'hint-mode',
+      'visual-mode',
+      'marks',
+      'commands',
+      'history',
+      'configuration',
+      'settings',
+      'troubleshooting'
+    ];
+
+    for (const sectionId of sectionOrder) {
+      if (sections[sectionId]) {
+        html += sections[sectionId];
+      }
+    }
+
+    return html;
+  }
+%>
+
+<%- include('../layouts/base.ejs', {
+  pageTitle,
+  pageDescription,
+  canonical,
+  content,
+  pageScripts
+}) %>

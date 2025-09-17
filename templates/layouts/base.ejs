@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle || 'VimNav' %></title>
+    <meta
+      name="description"
+      content="<%= pageDescription || 'Professional vim-style browser navigation for Chrome. Navigate websites with keyboard shortcuts, vim commands, and advanced text editing features.' %>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<%= canonical || 'https://vimnav.dev/' %>" />
+
+    <!-- Favicons -->
+    <%- include('../components/favicons.ejs') %>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Page-specific head content -->
+    <%- typeof pageHead !== 'undefined' ? pageHead : '' %>
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include('../components/header.ejs') %>
+
+    <!-- Main Content -->
+    <main>
+      <%- content %>
+    </main>
+
+    <!-- Footer -->
+    <%- include('../components/footer.ejs') %>
+
+    <!-- Page-specific scripts -->
+    <%- typeof pageScripts !== 'undefined' ? pageScripts : '' %>
+  </body>
+</html>

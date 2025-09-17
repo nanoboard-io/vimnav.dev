@@ -1,0 +1,41 @@
+{
+  "versions": [
+    {
+      "id": "v1.2.0",
+      "label": "v1.2.0 (Latest)",
+      "isLatest": true,
+      "outputFile": "docs.html",
+      "canonical": "https://vimnav.dev/docs.html"
+    },
+    {
+      "id": "v1.0.2",
+      "label": "v1.0.2",
+      "isLatest": false,
+      "outputFile": "v1.0.2.html",
+      "canonical": "https://vimnav.dev/v1.0.2.html"
+    }
+  ],
+  "pages": [
+    {
+      "id": "index",
+      "template": "index.ejs",
+      "outputFile": "index.html",
+      "title": "VimNav - Professional Vim-Style Browser Navigation",
+      "canonical": "https://vimnav.dev/"
+    },
+    {
+      "id": "early-access",
+      "template": "early-access.ejs",
+      "outputFile": "early-access.html",
+      "title": "Join VimNav Pro Waitlist",
+      "canonical": "https://vimnav.dev/early-access.html"
+    },
+    {
+      "id": "feedback",
+      "template": "feedback.ejs",
+      "outputFile": "feedback.html",
+      "title": "VimNav Feedback & Bug Reports",
+      "canonical": "https://vimnav.dev/feedback.html"
+    }
+  ]
+}

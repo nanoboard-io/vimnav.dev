@@ -8,10 +8,27 @@
       name="description"
       content="<%= pageDescription || 'Professional vim-style browser navigation for Chrome. Navigate websites with keyboard shortcuts, vim commands, and advanced text editing features.' %>"
     />
+    <% if (typeof pageKeywords !== 'undefined' && pageKeywords) { %>
+    <meta name="keywords" content="<%= pageKeywords %>" />
+    <% } %>
     <link rel="stylesheet" href="styles.css" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<%= canonical || 'https://vimnav.dev/' %>" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= canonical || 'https://vimnav.dev/' %>" />
+    <meta property="og:title" content="<%= pageTitle || 'VimNav - Vim Style Browser Navigation Chrome Extension' %>" />
+    <meta property="og:description" content="<%= pageDescription || 'Professional vim browser extension for Chrome. Keyboard navigation, vim keybindings, tab management, productivity tools for vim and neovim users.' %>" />
+    <meta property="og:image" content="https://vimnav.dev/assets/icon.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="<%= canonical || 'https://vimnav.dev/' %>" />
+    <meta property="twitter:title" content="<%= pageTitle || 'VimNav - Vim Style Browser Navigation Chrome Extension' %>" />
+    <meta property="twitter:description" content="<%= pageDescription || 'Professional vim browser extension for Chrome. Keyboard navigation, vim keybindings, tab management, productivity tools for vim and neovim users.' %>" />
+    <meta property="twitter:image" content="https://vimnav.dev/assets/icon.png" />
 
     <!-- Favicons -->
     <%- include('../components/favicons.ejs') %>

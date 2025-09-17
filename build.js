@@ -119,11 +119,53 @@ async function buildVersion(version) {
   }
 }
 
+// Generate dynamic sitemap.xml
+function generateSitemap() {
+  console.log("Generating sitemap.xml...");
+
+  const currentDate = new Date().toISOString();
+  const baseUrl = "https://vimnav.dev";
+
+  // Define all pages with their priorities
+  const pages = [
+    { url: "/", priority: "1.00", changefreq: "weekly" },
+    { url: "/docs.html", priority: "0.90", changefreq: "weekly" },
+    { url: "/v1.0.2.html", priority: "0.70", changefreq: "monthly" },
+    { url: "/early-access.html", priority: "0.80", changefreq: "monthly" },
+    { url: "/feedback.html", priority: "0.80", changefreq: "monthly" },
+    { url: "/privacy.html", priority: "0.60", changefreq: "yearly" }
+  ];
+
+  let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+`;
+
+  for (const page of pages) {
+    sitemap += `<url>
+  <loc>${baseUrl}${page.url}</loc>
+  <lastmod>${currentDate}</lastmod>
+  <changefreq>${page.changefreq}</changefreq>
+  <priority>${page.priority}</priority>
+</url>
+`;
+  }
+
+  sitemap += `
+</urlset>`;
+
+  fs.writeFileSync(path.join(distDir, "sitemap.xml"), sitemap);
+  console.log(`✓ Generated sitemap.xml with ${pages.length} URLs`);
+}
+
 // Copy static assets
 function copyAssets() {
   console.log("Copying static assets...");
 
-  const staticFiles = ["styles.css", "assets"];
+  const staticFiles = ["styles.css", "assets", "robots.txt"];
 
   for (const file of staticFiles) {
     if (fs.existsSync(file)) {
@@ -190,6 +232,9 @@ async function build() {
 
   // Copy static assets first
   copyAssets();
+
+  // Generate dynamic sitemap
+  generateSitemap();
 
   // Build documentation versions
   for (const version of versions.versions) {

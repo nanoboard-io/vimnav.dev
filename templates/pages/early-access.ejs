@@ -1,0 +1,104 @@
+<%
+  // Set page-specific variables
+  const pageTitle = page.title;
+  const pageDescription = 'Join VimNav Chrome extension waitlist. Get early access to vim browser navigation, keyboard shortcuts, productivity tools for vim/neovim users. Early bird pricing.';
+  const canonical = page.canonical;
+
+  // Build the main content
+  const content = `
+    <!-- Early Access Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-text">🚀 Early Access</span>
+        </div>
+        <h1 class="hero-title">
+          Join the VimNav<br />
+          <span class="hero-accent">Waitlist</span>
+        </h1>
+        <p class="hero-description">
+          Get early access to the ultimate vim browser extension. Be among the first to experience
+          professional vim navigation for Chrome with advanced features and priority support.
+        </p>
+
+        <!-- Waitlist Form -->
+        <div class="waitlist-form">
+          <form class="form">
+            <div class="form-group">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                class="form-input"
+                required
+              />
+              <button type="submit" class="cta-primary">
+                Join Waitlist
+              </button>
+            </div>
+          </form>
+          <p class="form-note">
+            ✓ No spam, just updates on VimNav release<br/>
+            ✓ Early bird pricing for Pro version<br/>
+            ✓ First access to beta features
+          </p>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Users waiting</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">Q1 2025</span>
+            <span class="stat-label">Expected launch</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="features">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why Join Early?</h2>
+          <p class="section-subtitle">
+            Early access members get exclusive benefits and priority access
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3 class="feature-title">Beta Access</h3>
+            <p class="feature-description">
+              Test features before public release and help shape the final product
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3 class="feature-title">Early Bird Pricing</h3>
+            <p class="feature-description">
+              Special discount on VimNav Pro when it launches
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🏆</div>
+            <h3 class="feature-title">Priority Support</h3>
+            <p class="feature-description">
+              Direct line to the development team for feedback and support
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+%>
+
+<%- include('../layouts/base.ejs', {
+  pageTitle,
+  pageDescription,
+  canonical,
+  content
+}) %>

@@ -1,0 +1,123 @@
+<%
+  // Set page-specific variables
+  const pageTitle = page.title;
+  const pageDescription = 'Report bugs, request features, and provide feedback for VimNav Chrome extension. Help improve vim browser navigation for the community.';
+  const canonical = page.canonical;
+
+  // Build the main content
+  const content = `
+    <!-- Feedback Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-text">🛠️ Help Us Improve</span>
+        </div>
+        <h1 class="hero-title">
+          VimNav<br />
+          <span class="hero-accent">Feedback</span>
+        </h1>
+        <p class="hero-description">
+          Help us make VimNav better! Report bugs, request features, or share your experience
+          with vim browser navigation. Your feedback shapes the future of the extension.
+        </p>
+
+        <div class="hero-actions">
+          <a href="https://github.com/vimnav/vimnav/issues" class="cta-primary">
+            <span>Report on GitHub</span>
+          </a>
+          <a href="mailto:feedback@vimnav.dev" class="cta-secondary">
+            <span>Email Us</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feedback Types -->
+    <section class="features">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">How to Provide Feedback</h2>
+          <p class="section-subtitle">
+            Choose the best way to share your thoughts with us
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🐛</div>
+            <h3 class="feature-title">Bug Reports</h3>
+            <p class="feature-description">
+              Found a bug? Report it on GitHub with detailed steps to reproduce
+            </p>
+            <a href="https://github.com/vimnav/vimnav/issues/new?template=bug_report.md" class="feature-link">
+              Report Bug →
+            </a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💡</div>
+            <h3 class="feature-title">Feature Requests</h3>
+            <p class="feature-description">
+              Have an idea for a new feature? Share it with the community
+            </p>
+            <a href="https://github.com/vimnav/vimnav/issues/new?template=feature_request.md" class="feature-link">
+              Request Feature →
+            </a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💬</div>
+            <h3 class="feature-title">General Feedback</h3>
+            <p class="feature-description">
+              Share your thoughts, suggestions, or questions via email
+            </p>
+            <a href="mailto:feedback@vimnav.dev" class="feature-link">
+              Send Email →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guidelines -->
+    <section class="support-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Feedback Guidelines</h2>
+          <p class="section-subtitle">
+            Help us help you by following these guidelines
+          </p>
+        </div>
+
+        <div class="guidelines">
+          <div class="guideline">
+            <h3>🔍 Be Specific</h3>
+            <p>Include detailed steps, expected behavior, and actual behavior</p>
+          </div>
+
+          <div class="guideline">
+            <h3>🌐 Include Environment</h3>
+            <p>Mention your browser version, OS, and VimNav version</p>
+          </div>
+
+          <div class="guideline">
+            <h3>📸 Add Screenshots</h3>
+            <p>Visual examples help us understand issues faster</p>
+          </div>
+
+          <div class="guideline">
+            <h3>🤝 Be Respectful</h3>
+            <p>Constructive feedback helps everyone improve</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+%>
+
+<%- include('../layouts/base.ejs', {
+  pageTitle,
+  pageDescription,
+  canonical,
+  content
+}) %>

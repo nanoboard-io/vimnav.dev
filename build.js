@@ -1,12 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-const ejs = require('ejs');
+const fs = require("fs");
+const path = require("path");
+const ejs = require("ejs");
 
 // Configuration
-const versions = require('./versions.json');
-const templatesDir = './templates';
-const contentDir = './content';
-const distDir = './dist';
+const versions = require("./versions.json");
+const templatesDir = "./templates";
+const contentDir = "./content";
+const distDir = "./dist";
 
 // Ensure dist directory exists
 if (!fs.existsSync(distDir)) {
@@ -16,7 +16,7 @@ if (!fs.existsSync(distDir)) {
 // Helper function to read JSON file
 function readJsonFile(filePath) {
   try {
-    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    return JSON.parse(fs.readFileSync(filePath, "utf8"));
   } catch (error) {
     console.warn(`Warning: Could not read ${filePath}`, error.message);
     return {};
@@ -26,10 +26,10 @@ function readJsonFile(filePath) {
 // Helper function to read EJS file
 function readEjsFile(filePath) {
   try {
-    return fs.readFileSync(filePath, 'utf8');
+    return fs.readFileSync(filePath, "utf8");
   } catch (error) {
     console.warn(`Warning: Could not read ${filePath}`, error.message);
-    return '';
+    return "";
   }
 }
 
@@ -40,17 +40,21 @@ async function buildVersion(version) {
   const versionContentDir = path.join(contentDir, version.id);
 
   // Load version-specific data
-  const meta = readJsonFile(path.join(versionContentDir, 'meta.json'));
-  const navigation = readJsonFile(path.join(versionContentDir, 'navigation.json'));
+  const meta = readJsonFile(path.join(versionContentDir, "meta.json"));
+  const navigation = readJsonFile(
+    path.join(versionContentDir, "navigation.json"),
+  );
 
   // Load content sections
-  const sectionsDir = path.join(versionContentDir, 'sections');
+  const sectionsDir = path.join(versionContentDir, "sections");
   const sections = {};
 
   if (fs.existsSync(sectionsDir)) {
-    const sectionFiles = fs.readdirSync(sectionsDir).filter(file => file.endsWith('.ejs'));
+    const sectionFiles = fs
+      .readdirSync(sectionsDir)
+      .filter((file) => file.endsWith(".ejs"));
     for (const file of sectionFiles) {
-      const sectionName = path.basename(file, '.ejs');
+      const sectionName = path.basename(file, ".ejs");
       const sectionTemplate = readEjsFile(path.join(sectionsDir, file));
 
       // Render the section with version data
@@ -59,10 +63,13 @@ async function buildVersion(version) {
           version: version,
           versions: versions.versions,
           meta: meta,
-          navigation: navigation
+          navigation: navigation,
         });
       } catch (error) {
-        console.warn(`Warning: Could not render section ${sectionName}:`, error.message);
+        console.warn(
+          `Warning: Could not render section ${sectionName}:`,
+          error.message,
+        );
         sections[sectionName] = sectionTemplate; // Fallback to raw content
       }
     }
@@ -76,31 +83,36 @@ async function buildVersion(version) {
     navigation: navigation,
     sections: sections,
     // Helper functions
-    include: function(componentPath, data = {}) {
-      const fullPath = path.join(templatesDir, 'components', componentPath);
+    include: function (componentPath, data = {}) {
+      const fullPath = path.join(templatesDir, "components", componentPath);
       try {
-        const template = fs.readFileSync(fullPath, 'utf8');
+        const template = fs.readFileSync(fullPath, "utf8");
         return ejs.render(template, { ...templateData, ...data });
       } catch (error) {
-        console.warn(`Warning: Could not include ${componentPath}`, error.message);
-        return '';
+        console.warn(
+          `Warning: Could not include ${componentPath}`,
+          error.message,
+        );
+        return "";
       }
-    }
+    },
   };
 
   try {
     // Render the main docs template
-    const docsTemplate = fs.readFileSync(path.join(templatesDir, 'pages', 'docs.ejs'), 'utf8');
+    const docsTemplate = fs.readFileSync(
+      path.join(templatesDir, "pages", "docs.ejs"),
+      "utf8",
+    );
     const html = ejs.render(docsTemplate, templateData, {
-      filename: path.join(templatesDir, 'pages', 'docs.ejs'),
-      root: templatesDir
+      filename: path.join(templatesDir, "pages", "docs.ejs"),
+      root: templatesDir,
     });
 
     // Write the generated HTML
     const outputPath = path.join(distDir, version.outputFile);
     fs.writeFileSync(outputPath, html);
     console.log(`✓ Generated ${outputPath}`);
-
   } catch (error) {
     console.error(`Error building ${version.id}:`, error.message);
     process.exit(1);
@@ -109,9 +121,9 @@ async function buildVersion(version) {
 
 // Copy static assets
 function copyAssets() {
-  console.log('Copying static assets...');
+  console.log("Copying static assets...");
 
-  const staticFiles = ['styles.css', 'assets'];
+  const staticFiles = ["styles.css", "assets"];
 
   for (const file of staticFiles) {
     if (fs.existsSync(file)) {
@@ -136,31 +148,36 @@ async function buildPage(page) {
     page: page,
     versions: versions.versions,
     // Helper functions
-    include: function(componentPath, data = {}) {
-      const fullPath = path.join(templatesDir, 'components', componentPath);
+    include: function (componentPath, data = {}) {
+      const fullPath = path.join(templatesDir, "components", componentPath);
       try {
-        const template = fs.readFileSync(fullPath, 'utf8');
+        const template = fs.readFileSync(fullPath, "utf8");
         return ejs.render(template, { ...templateData, ...data });
       } catch (error) {
-        console.warn(`Warning: Could not include ${componentPath}`, error.message);
-        return '';
+        console.warn(
+          `Warning: Could not include ${componentPath}`,
+          error.message,
+        );
+        return "";
       }
-    }
+    },
   };
 
   try {
     // Render the page template
-    const pageTemplate = fs.readFileSync(path.join(templatesDir, 'pages', page.template), 'utf8');
+    const pageTemplate = fs.readFileSync(
+      path.join(templatesDir, "pages", page.template),
+      "utf8",
+    );
     const html = ejs.render(pageTemplate, templateData, {
-      filename: path.join(templatesDir, 'pages', page.template),
-      root: templatesDir
+      filename: path.join(templatesDir, "pages", page.template),
+      root: templatesDir,
     });
 
     // Write the generated HTML
     const outputPath = path.join(distDir, page.outputFile);
     fs.writeFileSync(outputPath, html);
     console.log(`✓ Generated ${outputPath}`);
-
   } catch (error) {
     console.error(`Error building ${page.id}:`, error.message);
     process.exit(1);
@@ -169,7 +186,7 @@ async function buildPage(page) {
 
 // Main build function
 async function build() {
-  console.log('🏗️  Building VimNav website...\n');
+  console.log("🏗️  Building VimNav website...\n");
 
   // Copy static assets first
   copyAssets();
@@ -186,17 +203,18 @@ async function build() {
     }
   }
 
-  console.log('\n✅ Build complete!');
+  console.log("\n✅ Build complete!");
   console.log(`📁 Generated files in ${distDir}/`);
   console.log('🚀 Run "npm run serve" to preview the site');
 }
 
 // Run build if this script is executed directly
 if (require.main === module) {
-  build().catch(error => {
-    console.error('Build failed:', error);
+  build().catch((error) => {
+    console.error("Build failed:", error);
     process.exit(1);
   });
 }
 
 module.exports = { build };
+

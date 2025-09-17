@@ -1,0 +1,87 @@
+<%
+  // Set page-specific variables for the base layout
+  const pageTitle = page.title;
+  const pageDescription = 'Professional vim browser extension for Chrome. Keyboard navigation, vim keybindings, tab management, productivity tools for vim and neovim users.';
+  const canonical = page.canonical;
+
+  // Page-specific head content
+  const pageHead = `
+    <meta
+      name="keywords"
+      content="vim, neovim, chrome extension, browser navigation, vim keybindings, keyboard shortcuts, productivity tools, vim browser, neovim browser, tab management, vim navigation, browser vim, chrome vim, vim productivity, neovim productivity"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vimnav.dev/" />
+    <meta
+      property="og:title"
+      content="VimNav - Vim Style Browser Navigation Chrome Extension"
+    />
+    <meta
+      property="og:description"
+      content="Professional vim browser extension for Chrome. Keyboard navigation, vim keybindings, tab management, productivity tools for vim and neovim users."
+    />
+    <meta property="og:image" content="https://vimnav.dev/assets/icon.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://vimnav.dev/" />
+    <meta
+      property="twitter:title"
+      content="VimNav - Vim Style Browser Navigation Chrome Extension"
+    />
+    <meta
+      property="twitter:description"
+      content="Professional vim browser extension for Chrome. Keyboard navigation, vim keybindings, tab management, productivity tools for vim and neovim users."
+    />
+    <meta
+      property="twitter:image"
+      content="https://vimnav.dev/assets/icon.png"
+    />
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VimNav",
+      "operatingSystem": "Chrome",
+      "applicationCategory": "BrowserApplication",
+      "description": "Professional vim browser extension for Chrome with keyboard navigation and vim keybindings",
+      "url": "https://vimnav.dev",
+      "downloadUrl": "https://chrome.google.com/webstore",
+      "author": {
+        "@type": "Organization",
+        "name": "VimNav"
+      }
+    }
+    </script>
+  `;
+
+  // Build the main content
+  const content = `
+    <!-- Hero Section -->
+    ${include('hero.ejs')}
+
+    <!-- Features Section -->
+    ${include('features.ejs')}
+
+    <!-- Pro Version Section -->
+    ${include('pro-section.ejs')}
+
+    <!-- Support Section -->
+    ${include('support-section.ejs')}
+
+    <!-- Installation Section -->
+    ${include('install-section.ejs')}
+  `;
+%>
+
+<%- include('../layouts/base.ejs', {
+  pageTitle,
+  pageDescription,
+  canonical,
+  pageHead,
+  content
+}) %>

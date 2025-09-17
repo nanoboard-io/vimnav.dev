@@ -17,9 +17,9 @@
       // Handle version selector navigation
       document.getElementById('version-select').addEventListener('change', function(e) {
         const selectedVersion = e.target.value;
-        if (selectedVersion === 'v1.0.2') {
-          window.location.href = 'v1.0.2.html';
-        } else if (selectedVersion === 'v1.2.0') {
+        if (selectedVersion === 'v1.0') {
+          window.location.href = 'v1.0.html';
+        } else if (selectedVersion === 'v1.2') {
           window.location.href = 'docs.html';
         }
       });
@@ -73,7 +73,7 @@
       'navigation',
       'quick-navigation',
       'modes',
-      'vimedit-mode', // Only for v1.2.0+
+      'vimedit-mode', // Only for v1.2.3+
       'search',
       'tabs',
       'hint-mode',

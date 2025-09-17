@@ -12,7 +12,7 @@ The site uses an EJS templating system that generates static HTML files from reu
 ├── dist/                     # Generated static files (do not edit)
 │   ├── index.html
 │   ├── docs.html
-│   ├── v1.0.2.html
+│   ├── v1.0.html
 │   ├── early-access.html
 │   ├── feedback.html
 │   ├── privacy.html
@@ -34,8 +34,9 @@ The site uses an EJS templating system that generates static HTML files from reu
 │       ├── feedback.ejs
 │       └── privacy.ejs
 ├── content/                 # Documentation content
-│   ├── v1.2.0/sections/
-│   └── v1.0.2/sections/
+│   ├── v1.2/sections/
+│   └── v1.0/sections/
+│   └── ... more versions
 ├── build.js                 # Build script
 ├── package.json             # Dependencies and scripts
 ├── versions.json            # Site configuration
@@ -45,10 +46,12 @@ The site uses an EJS templating system that generates static HTML files from reu
 ## Development
 
 ### Prerequisites
+
 - Node.js (for EJS templating)
 - npm (for package management)
 
 ### Setup
+
 ```bash
 npm install
 ```
@@ -57,7 +60,7 @@ npm install
 
 - `npm run build` - Generate static HTML files in `dist/`
 - `npm run dev` - Build and watch for changes
-- `npm run serve` - Serve the site locally on http://localhost:3000
+- `npm run serve` - Serve the site locally on <http://localhost:3000>
 - `npm run watch` - Watch templates and rebuild automatically
 - `npm run clean` - Clean the dist directory
 
@@ -74,19 +77,20 @@ npm install
 ## Site Pages
 
 ### Generated Pages
+
 - **`index.html`** - Homepage with hero, features, pricing, and installation
-- **`docs.html`** - Latest documentation (v1.2.0) with version selector
-- **`v1.0.2.html`** - Previous version documentation
+- **`docs.html`** - Latest documentation (v1.2) with version selector
+- **`v1.0.html`** - Previous version documentation
 - **`early-access.html`** - Waitlist signup with vim experience tracking
 - **`feedback.html`** - Comprehensive feedback form with validation
 - **`privacy.html`** - Privacy policy with custom styling
 
 ### Documentation Versions
-The site supports multiple documentation versions:
-- **v1.2.0 (Latest)** - Includes VimEdit mode and all features
-- **v1.0.2** - Previous version without VimEdit mode
+
+The site supports multiple documentation versions, see file structure.
 
 Add new versions by:
+
 1. Creating content in `content/vX.X.X/sections/`
 2. Updating `versions.json`
 3. Running `npm run build`
@@ -103,6 +107,7 @@ Add new versions by:
 ## Design System
 
 ### Colors
+
 - Primary: #667eea (Purple-blue gradient)
 - Secondary: #764ba2 (Deep purple)
 - Success: #81c784 (Light green)
@@ -111,10 +116,12 @@ Add new versions by:
 - Background: #f8fafc (Light gray)
 
 ### Typography
+
 - Primary font: Inter (headings and UI)
 - Code font: JetBrains Mono (keybindings and code)
 
 ### Components
+
 - Shared header/footer across all pages
 - Responsive grid layouts
 - Card-based sections
@@ -125,14 +132,15 @@ Add new versions by:
 ## Configuration
 
 ### versions.json
+
 Controls site structure and documentation versions:
 
 ```json
 {
   "versions": [
     {
-      "id": "v1.2.0",
-      "label": "v1.2.0 (Latest)",
+      "id": "v1.2.*",
+      "label": "v1.2.* (Latest)",
       "isLatest": true,
       "outputFile": "docs.html"
     }
@@ -151,18 +159,23 @@ Controls site structure and documentation versions:
 ## Deployment
 
 ### Build for Production
+
 ```bash
 npm run build
 ```
 
 ### Deploy dist/ folder
+
 The `dist/` directory contains all static files ready for deployment to:
+
 - Netlify
 - Vercel
 - GitHub Pages
 - Any static hosting service
 
 ### Environment
+
 - Node.js build process generates static files
 - No server-side processing required in production
 - All forms use Netlify Forms for processing
+

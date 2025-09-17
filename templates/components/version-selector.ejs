@@ -1,0 +1,10 @@
+<div class="version-selector">
+  <label for="version-select">Version:</label>
+  <select id="version-select" class="version-dropdown">
+    <% allVersions.forEach(version => { %>
+      <option value="<%= version.id %>" <%= version.id === currentVersion.id ? 'selected' : '' %>>
+        <%= version.label %>
+      </option>
+    <% }); %>
+  </select>
+</div>

@@ -1,73 +1,11 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VimNav Privacy Policy - Vim Chrome Extension Data Protection</title>
-    <meta
-      name="description"
-      content="VimNav vim chrome extension privacy policy. Learn how we protect your data, privacy practices for vim browser navigation extension users."
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+<%
+  // Set page-specific variables
+  const pageTitle = page.title;
+  const pageDescription = 'VimNav vim chrome extension privacy policy. Learn how we protect your data, privacy practices for vim browser navigation extension users.';
+  const canonical = page.canonical;
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://vimnav.dev/privacy.html" />
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-    <link rel="shortcut icon" href="/assets/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon32.png" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/assets/icon48.png" />
-    <link rel="icon" type="image/png" sizes="64x64" href="/assets/icon64.png" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="/assets/favicon-96x96.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="128x128"
-      href="/assets/icon128.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/apple-touch-icon.png"
-    />
-    <meta name="apple-mobile-web-app-title" content="VimNav" />
-    <link rel="manifest" href="/assets/site.webmanifest" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <nav class="nav">
-        <div class="nav-brand">
-          <img
-            src="assets/icon.png"
-            alt="VimNav - Vim Browser Navigation Chrome Extension"
-            class="nav-logo"
-          />
-          <span class="nav-title">VimNav</span>
-        </div>
-        <div class="nav-links">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="index.html#features" class="nav-link">Features</a>
-          <a href="index.html#pro" class="nav-link">Pro</a>
-          <a href="index.html#support" class="nav-link">Support</a>
-          <a href="early-access.html" class="nav-button">Join Waitlist</a>
-        </div>
-      </nav>
-    </header>
-
+  // Build the main content
+  const content = `
     <!-- Privacy Policy Section -->
     <section class="feedback-section">
       <div class="container">
@@ -282,64 +220,10 @@
         </div>
       </div>
     </section>
+  `;
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-brand">
-            <img
-              src="assets/icon.png"
-              alt="VimNav Vim Chrome Extension Logo"
-              class="footer-logo"
-            />
-            <span class="footer-title">VimNav</span>
-            <p class="footer-tagline">
-              Professional vim-style browser navigation
-            </p>
-          </div>
-
-          <div class="footer-links">
-            <div class="footer-column">
-              <h4>Product</h4>
-              <a href="index.html#features">Features</a>
-              <a href="index.html#pro">VimNav Pro</a>
-              <a href="index.html#install">Installation</a>
-              <a href="#">Changelog</a>
-            </div>
-
-            <div class="footer-column">
-              <h4>Support</h4>
-              <a href="index.html#support">Documentation</a>
-              <a href="#">Community</a>
-              <a href="feedback.html">Bug Reports</a>
-              <a href="mailto:support@vimnav.dev">Contact</a>
-            </div>
-
-            <div class="footer-column">
-              <h4>Legal</h4>
-              <a href="privacy.html">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-              <a href="#">Cookie Policy</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p>&copy; 2025 VimNav. All rights reserved.</p>
-          <div class="footer-social">
-            <a href="#" aria-label="Twitter">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
+  // Page-specific styles
+  const pageStyles = `
     <style>
       .privacy-content {
         max-width: 1000px;
@@ -392,5 +276,13 @@
         font-weight: 600;
       }
     </style>
-  </body>
-</html>
+  `;
+%>
+
+<%- include('../layouts/base.ejs', {
+  pageTitle,
+  pageDescription,
+  canonical,
+  content,
+  pageStyles
+}) %>

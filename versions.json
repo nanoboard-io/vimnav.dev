@@ -36,6 +36,13 @@
       "outputFile": "feedback.html",
       "title": "VimNav Feedback & Bug Reports",
       "canonical": "https://vimnav.dev/feedback.html"
+    },
+    {
+      "id": "privacy",
+      "template": "privacy.ejs",
+      "outputFile": "privacy.html",
+      "title": "VimNav Privacy Policy - Vim Chrome Extension Data Protection",
+      "canonical": "https://vimnav.dev/privacy.html"
     }
   ]
 }

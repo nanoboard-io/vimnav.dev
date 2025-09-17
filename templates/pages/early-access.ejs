@@ -6,89 +6,189 @@
 
   // Build the main content
   const content = `
-    <!-- Early Access Hero -->
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="badge-text">🚀 Early Access</span>
-        </div>
-        <h1 class="hero-title">
-          Join the VimNav<br />
-          <span class="hero-accent">Waitlist</span>
-        </h1>
-        <p class="hero-description">
-          Get early access to the ultimate vim browser extension. Be among the first to experience
-          professional vim navigation for Chrome with advanced features and priority support.
-        </p>
-
-        <!-- Waitlist Form -->
-        <div class="waitlist-form">
-          <form class="form">
-            <div class="form-group">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                class="form-input"
-                required
-              />
-              <button type="submit" class="cta-primary">
-                Join Waitlist
-              </button>
-            </div>
-          </form>
-          <p class="form-note">
-            ✓ No spam, just updates on VimNav release<br/>
-            ✓ Early bird pricing for Pro version<br/>
-            ✓ First access to beta features
+    <!-- Early Access Section -->
+    <section class="feedback-section">
+      <div class="container">
+        <div class="feedback-header">
+          <h1 class="feedback-title">Join the VimNav Waitlist</h1>
+          <p class="feedback-subtitle">
+            Get notified when VimNav Pro launches and secure early bird pricing.
+            Be the first to know when vim-style browser navigation is available.
           </p>
         </div>
 
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-number">500+</span>
-            <span class="stat-label">Users waiting</span>
+        <div class="feedback-content">
+          <div class="feedback-info">
+            <div class="info-card">
+              <div class="info-icon">🔔</div>
+              <h3>Launch Notification</h3>
+              <p>
+                Be the first to know when VimNav Pro is available in the Chrome
+                Web Store.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">💰</div>
+              <h3>Early Bird Pricing</h3>
+              <p>
+                Waitlist members get access to special launch pricing for VimNav
+                Pro.
+              </p>
+            </div>
+
+            <div class="response-info">
+              <h4>What You Get</h4>
+              <p>
+                Waitlist members will receive an
+                <strong>email notification</strong> as soon as VimNav is
+                available, plus exclusive early bird pricing details.
+              </p>
+
+              <h4>Early Bird Special</h4>
+              <ul>
+                <li>Special pricing on VimNav Pro (limited time)</li>
+              </ul>
+            </div>
           </div>
-          <div class="stat">
-            <span class="stat-number">Q1 2025</span>
-            <span class="stat-label">Expected launch</span>
+
+          <div class="feedback-form-wrapper">
+            <form class="feedback-form" id="early-access" netlify>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name" class="form-label"
+                    >First Name *</label
+                  >
+                  <input
+                    type="text"
+                    id="first-name"
+                    name="first-name"
+                    class="form-input"
+                    placeholder="Your first name"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="last-name" class="form-label">Last Name</label>
+                  <input
+                    type="text"
+                    id="last-name"
+                    name="last-name"
+                    class="form-input"
+                    placeholder="Your last name"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="vim-experience" class="form-label"
+                  >Vim/Vi Experience Level</label
+                >
+                <select
+                  id="vim-experience"
+                  name="vim-experience"
+                  class="form-select"
+                >
+                  <option value="">Select your experience level</option>
+                  <option value="expert">
+                    Expert - I use Vim/Neovim daily
+                  </option>
+                  <option value="intermediate">
+                    Intermediate - I'm comfortable with Vim
+                  </option>
+                  <option value="beginner">
+                    Beginner - I know basic Vim commands
+                  </option>
+                  <option value="none">
+                    No experience - New to Vim concepts
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="referral-source" class="form-label"
+                  >How did you hear about VimNav?</label
+                >
+                <select
+                  id="referral-source"
+                  name="referral-source"
+                  class="form-select"
+                >
+                  <option value="">Select source (optional)</option>
+                  <option value="search">Search engine</option>
+                  <option value="social-media">Social media</option>
+                  <option value="friend">
+                    Friend/colleague recommendation
+                  </option>
+                  <option value="community">Developer community/forum</option>
+                  <option value="blog">Blog/article</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="cta-primary">
+                  <span>Join Waitlist</span>
+                  <svg class="cta-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+                <button type="reset" class="cta-secondary">Clear Form</button>
+              </div>
+            </form>
+
+            <div class="form-footer">
+              <p>
+                <strong>Privacy Note:</strong> Your information will only be
+                used to notify you about VimNav's launch and send early bird
+                pricing offers. We never share your information with third
+                parties. You can unsubscribe at any time.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Benefits Section -->
-    <section class="features">
+    <section class="contact-alternatives">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why Join Early?</h2>
-          <p class="section-subtitle">
-            Early access members get exclusive benefits and priority access
-          </p>
-        </div>
+        <h2 class="section-title">Why Join the Waitlist?</h2>
 
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">🎯</div>
-            <h3 class="feature-title">Beta Access</h3>
-            <p class="feature-description">
-              Test features before public release and help shape the final product
-            </p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">🔔</div>
+            <h3>Be First to Know</h3>
+            <p>Get launch notifications before public announcement</p>
           </div>
 
-          <div class="feature-card">
-            <div class="feature-icon">💰</div>
-            <h3 class="feature-title">Early Bird Pricing</h3>
-            <p class="feature-description">
-              Special discount on VimNav Pro when it launches
-            </p>
+          <div class="contact-card">
+            <div class="contact-icon">💰</div>
+            <h3>Early Bird Pricing</h3>
+            <p>Exclusive limited-time pricing on VimNav Pro</p>
           </div>
 
-          <div class="feature-card">
-            <div class="feature-icon">🏆</div>
-            <h3 class="feature-title">Priority Support</h3>
-            <p class="feature-description">
-              Direct line to the development team for feedback and support
-            </p>
+          <div class="contact-card">
+            <div class="contact-icon">⭐</div>
+            <h3>VIP Access</h3>
+            <p>Priority access to initial Pro features</p>
           </div>
         </div>
       </div>

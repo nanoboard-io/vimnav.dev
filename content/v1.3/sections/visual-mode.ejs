@@ -1,0 +1,75 @@
+<!-- Visual Mode -->
+<section id="visual-mode" class="docs-section">
+  <h2>👁️ Visual Mode</h2>
+  <p>
+    Select and manipulate text content on web pages using vim-style
+    text selection.
+  </p>
+
+  <h3>Entering Visual Mode</h3>
+  <div class="keybinding-list">
+    <div class="keybinding-item">
+      <kbd>v</kbd>
+      <span>Enter visual mode - shows hints on text elements</span>
+    </div>
+    <div class="keybinding-item">
+      <kbd>a-z</kbd>
+      <span
+        >Type hint to select a text element for manipulation</span
+      >
+    </div>
+    <div class="keybinding-item">
+      <kbd>Enter</kbd>
+      <span>Start text selection within the chosen element</span>
+    </div>
+  </div>
+
+  <h3>Text Selection</h3>
+  <p>
+    Once you've selected an element and entered text selection mode:
+  </p>
+  <div class="keybinding-grid">
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><kbd>h</kbd><kbd>l</kbd></div>
+      <div class="keybinding-desc">
+        Extend selection left/right by character
+      </div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><kbd>j</kbd><kbd>k</kbd></div>
+      <div class="keybinding-desc">
+        Extend selection down/up by line
+      </div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><kbd>w</kbd><kbd>b</kbd></div>
+      <div class="keybinding-desc">
+        Extend selection by word forward/backward
+      </div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><kbd>gg</kbd></div>
+      <div class="keybinding-desc">
+        Extend selection to start of element
+      </div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><kbd>G</kbd></div>
+      <div class="keybinding-desc">
+        Extend selection to end of element
+      </div>
+    </div>
+  </div>
+
+  <h3>Text Operations</h3>
+  <div class="keybinding-list">
+    <div class="keybinding-item">
+      <kbd>y</kbd>
+      <span>Copy selected text to clipboard</span>
+    </div>
+    <div class="keybinding-item">
+      <kbd>Esc</kbd>
+      <span>Exit visual mode</span>
+    </div>
+  </div>
+</section>

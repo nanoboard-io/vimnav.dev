@@ -1,0 +1,43 @@
+{
+  "sections": [
+    {
+      "title": "Getting Started",
+      "links": [
+        {"href": "#installation", "label": "Installation"},
+        {"href": "#first-steps", "label": "First Steps"},
+        {"href": "#basic-usage", "label": "Basic Usage"}
+      ]
+    },
+    {
+      "title": "Core Features",
+      "links": [
+        {"href": "#navigation", "label": "Page Navigation"},
+        {"href": "#quick-navigation", "label": "Quick Navigation"},
+        {"href": "#modes", "label": "Mode System"},
+        {"href": "#vimedit-mode", "label": "VimEdit Mode"},
+        {"href": "#search", "label": "Search & Find"},
+        {"href": "#tabs", "label": "Tab Management"}
+      ]
+    },
+    {
+      "title": "Advanced Features",
+      "links": [
+        {"href": "#hint-mode", "label": "Hint Mode"},
+        {"href": "#visual-mode", "label": "Visual Mode"},
+        {"href": "#marks", "label": "Marks System"},
+        {"href": "#commands", "label": "Command Mode"},
+        {"href": "#history", "label": "History Search"}
+      ]
+    },
+    {
+      "title": "Configuration",
+      "links": [
+        {"href": "#configuration", "label": "Extension Configuration"},
+        {"href": "#theme-options", "label": "Theme Options"},
+        {"href": "#settings", "label": "Settings"},
+        {"href": "#customization", "label": "Customization"},
+        {"href": "#troubleshooting", "label": "Troubleshooting"}
+      ]
+    }
+  ]
+}

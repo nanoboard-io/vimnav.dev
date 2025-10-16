@@ -1,0 +1,81 @@
+<!-- Mode System -->
+<section id="modes" class="docs-section">
+  <h2>🔄 Mode System</h2>
+  <p>
+    VimNav uses vim's modal system for different types of
+    interaction.
+  </p>
+
+  <div class="mode-card">
+    <h3>Normal Mode</h3>
+    <p>
+      The default mode for navigation and commands. Most keybindings
+      work in normal mode.
+    </p>
+    <div class="keybinding-list">
+      <div class="keybinding-item">
+        <kbd>Esc</kbd>
+        <span
+          >Always returns you to normal mode from any other
+          mode</span
+        >
+      </div>
+      <div class="keybinding-item">
+        <kbd>Esc</kbd><kbd>Esc</kbd>
+        <span>Focus main body for reliable vim navigation</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mode-card">
+    <h3>Insert Mode</h3>
+    <p>
+      Automatically activated when you focus input fields, text
+      areas, or contenteditable elements.
+    </p>
+    <div class="keybinding-list">
+      <div class="keybinding-item">
+        <kbd>i</kbd>
+        <span
+          >Manually enter insert mode (finds nearest input)</span
+        >
+      </div>
+      <div class="keybinding-item">
+        <kbd>Esc</kbd>
+        <span>Exit insert mode and return to normal mode</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mode-card">
+    <h3>Visual Mode</h3>
+    <p>
+      Select and manipulate text elements on the page. See the
+      <a href="#visual-mode" class="docs-link"
+        >Visual Mode section</a
+      >
+      for details.
+    </p>
+  </div>
+
+  <div class="mode-card">
+    <h3>Hint Mode</h3>
+    <p>
+      Click links and interactive elements using keyboard hints. See
+      the
+      <a href="#hint-mode" class="docs-link">Hint Mode section</a>
+      for details.
+    </p>
+  </div>
+
+  <% if (version.id === 'v1.2.3') { %>
+  <div class="mode-card">
+    <h3>VimEdit Mode</h3>
+    <p>
+      Advanced text editing with full vim capabilities. See the
+      <a href="#vimedit-mode" class="docs-link">VimEdit Mode section</a>
+      for details.
+    </p>
+  </div>
+  <% } %>
+</section>

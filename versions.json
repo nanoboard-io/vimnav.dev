@@ -1,11 +1,18 @@
 {
   "versions": [
     {
-      "id": "v1.2",
-      "label": "v1.2.* (Latest)",
+      "id": "v1.3",
+      "label": "v1.3.* (Latest)",
       "isLatest": true,
       "outputFile": "docs.html",
       "canonical": "https://vimnav.dev/docs.html"
+    },
+    {
+      "id": "v1.2",
+      "label": "v1.2.*",
+      "isLatest": false,
+      "outputFile": "v1.2.html",
+      "canonical": "https://vimnav.dev/v1.2.html"
     },
     {
       "id": "v1.0",

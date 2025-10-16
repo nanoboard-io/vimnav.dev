@@ -130,7 +130,8 @@ function generateSitemap() {
   const pages = [
     { url: "/", priority: "1.00", changefreq: "weekly" },
     { url: "/docs.html", priority: "0.90", changefreq: "weekly" },
-    { url: "/v1.0.html", priority: "0.70", changefreq: "monthly" },
+    { url: "/v1.2.html", priority: "0.70", changefreq: "monthly" },
+    { url: "/v1.0.html", priority: "0.60", changefreq: "monthly" },
     { url: "/early-access.html", priority: "0.80", changefreq: "monthly" },
     { url: "/feedback.html", priority: "0.80", changefreq: "monthly" },
     { url: "/privacy.html", priority: "0.60", changefreq: "yearly" },

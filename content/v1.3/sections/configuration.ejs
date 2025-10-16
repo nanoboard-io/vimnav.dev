@@ -1,0 +1,63 @@
+<!-- Extension Configuration -->
+<section id="configuration" class="docs-section">
+  <h2>⚙️ Extension Configuration</h2>
+  <p>
+    Customize VimNav to match your preferences and workflow across every tab and window.
+  </p>
+
+  <h3>Accessing Settings</h3>
+  <div class="keybinding-list">
+    <div class="keybinding-item">
+      <span>Open the extension side pane by clicking on the extension icon.</span>
+    </div>
+  </div>
+  <p>
+    You can also open <strong>Extensions → VimNav → Options</strong> or click the VimNav toolbar icon to launch the side panel configuration view.
+  </p>
+
+  <h3>Extension Options Overview</h3>
+  <ul>
+    <li><strong>Scroll Behavior</strong> - Adjust smooth scrolling and scroll distance</li>
+    <li><strong>Hint Appearance</strong> - Customize hint styling and colors</li>
+    <li><strong>Theme Options</strong> - Switch between palettes or upload custom themes</li>
+    <li><strong>Site Exclusions</strong> - Disable VimNav on specific websites</li>
+    <li><strong>Search Integration</strong> - Configure default search engine</li>
+  </ul>
+
+  <h3 id="theme-options">Theme Options</h3>
+  <p>
+    VimNav 1.3 ships with refreshed built-in palettes and the ability to import custom iTerm2 color schemes. The active theme instantly recolors overlays, the side panel, and the options UI with no page refresh required.
+  </p>
+
+  <h4>Selecting Themes</h4>
+  <p>
+    The side panel exposes a `Theme List` that mirrors the options page. Single-clicking a palette (or selecting its radio control) applies it immediately and syncs the active colors across every open tab and window. The help overlay (<kbd>?</kbd>) now reflects the currently selected palette so the keyboard reference always matches what you see.
+  </p>
+
+  <h4>Uploading Custom Themes</h4>
+  <p>
+    Use the `Upload Theme` button in the side panel to import a <code>.itermcolors</code> file. After choosing a file, VimNav validates and stores the theme before adding it to the list.
+  </p>
+  <ul>
+    <li><strong>Max file size:</strong> 200 KB</li>
+    <li><strong>Format:</strong> Valid iTerm2 XML; malformed files surface an error toast</li>
+    <li><strong>Storage:</strong> Free tier keeps up to two custom themes at a time; delete one to upload another</li>
+  </ul>
+  <p>
+    Themes adopt the embedded display name when available, otherwise VimNav falls back to the filename. Each upload persists its metadata (timestamp, source type) so you can audit when palettes were added.
+  </p>
+
+  <h4>Persistence &amp; Sync</h4>
+  <ul>
+    <li>Theme data is stored in <code>chrome.storage.local</code> and restored automatically when Chrome reopens.</li>
+    <li>Background, content, and side panel contexts listen for storage and runtime events to broadcast changes instantly.</li>
+    <li>Any active overlays update in place, keeping scroll position and focus while colors transition.</li>
+  </ul>
+
+  <h4>Removing Themes &amp; Fallback</h4>
+  <ul>
+    <li>Deleting the active custom theme automatically falls back to the VimNav default palette.</li>
+    <li>The `Delete` button is disabled for built-in themes; custom themes prompt you to confirm removal to prevent accidental loss.</li>
+    <li>Once removed, the theme disappears from both the options page and side panel lists within the same sync cycle.</li>
+  </ul>
+</section>

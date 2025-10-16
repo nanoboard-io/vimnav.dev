@@ -14,6 +14,7 @@
         { "href": "#navigation", "label": "Page Navigation" },
         { "href": "#quick-navigation", "label": "Quick Navigation" },
         { "href": "#modes", "label": "Mode System" },
+        { "href": "#vimedit-mode", "label": "VimEdit Mode" },
         { "href": "#search", "label": "Search & Find" },
         { "href": "#tabs", "label": "Tab Management" }
       ]
@@ -32,10 +33,10 @@
       "title": "Configuration",
       "links": [
         { "href": "#configuration", "label": "Extension Configuration" },
+        { "href": "#theme-options", "label": "Theme Options" },
         { "href": "#settings", "label": "Settings" },
         { "href": "#troubleshooting", "label": "Troubleshooting" }
       ]
     }
   ]
 }
-

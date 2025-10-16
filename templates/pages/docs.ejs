@@ -4,24 +4,33 @@
   const pageDescription = meta.description || 'Complete documentation for VimNav - vim-style browser navigation. Learn all keybindings, features, and advanced usage.';
   const canonical = meta.canonical || version.canonical;
 
+  // Build a map of versions to their output files for the client-side selector
+  const versionOutputMap = versions.reduce((acc, v) => {
+    acc[v.id] = v.outputFile;
+    return acc;
+  }, {});
+
   // Page-specific scripts for version navigation
   const pageScripts = `
     <script>
-      // Ensure dropdown shows correct version on page load
       document.addEventListener('DOMContentLoaded', function() {
         const versionSelect = document.getElementById('version-select');
-        // Set to current version
-        versionSelect.value = '${version.id}';
-      });
+        if (!versionSelect) return;
 
-      // Handle version selector navigation
-      document.getElementById('version-select').addEventListener('change', function(e) {
-        const selectedVersion = e.target.value;
-        if (selectedVersion === 'v1.0') {
-          window.location.href = 'v1.0.html';
-        } else if (selectedVersion === 'v1.2') {
-          window.location.href = 'docs.html';
-        }
+        const versionRoutes = ${JSON.stringify(versionOutputMap)};
+        const currentVersionId = '${version.id}';
+
+        // Ensure dropdown reflects the current version
+        versionSelect.value = currentVersionId;
+
+        versionSelect.addEventListener('change', function(e) {
+          const selectedVersion = e.target.value;
+          const target = versionRoutes[selectedVersion];
+
+          if (target && target.length > 0) {
+            window.location.href = target;
+          }
+        });
       });
     </script>
   `;

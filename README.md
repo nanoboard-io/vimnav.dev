@@ -108,12 +108,26 @@ Add new versions by:
 
 ### Colors
 
-- Primary: #667eea (Purple-blue gradient)
-- Secondary: #764ba2 (Deep purple)
-- Success: #81c784 (Light green)
-- Text: #1a1a1a (Dark gray)
-- Muted: #4a5568 (Medium gray)
-- Background: #f8fafc (Light gray)
+VimNav uses the same dark palette as the extension to keep docs, marketing, and in-product UI consistent:
+
+- Background: `#1a1b26`
+- Surface: `#16161e`
+- Surface Alt: `#24283b`
+- Overlay: `rgba(16, 24, 32, 0.85)`
+- Border: `#414868`
+- Text Primary: `#c0caf5`
+- Text Secondary: `#c5c9c5`
+- Text Muted: `#565f89`
+- Accent Primary: `#7aa2f7`
+- Accent Secondary: `#bb9af7`
+- Accent Success: `#9ece6a`
+- Accent Warning: `#e0af68`
+- Accent Danger: `#f7768e`
+- Accent Info: `#00ffff`
+
+### Theme Inspiration
+
+Parts of this palette and aesthetic are inspired by the Tokyo Night theme (folke/tokyonight.nvim). Tokyo Night is licensed under Apache-2.0. We did not copy source code, but several color values and the overall styling draw from that work.
 
 ### Typography
 
@@ -178,4 +192,3 @@ The `dist/` directory contains all static files ready for deployment to:
 - Node.js build process generates static files
 - No server-side processing required in production
 - All forms use Netlify Forms for processing
-

@@ -125,6 +125,10 @@ VimNav uses the same dark palette as the extension to keep docs, marketing, and 
 - Accent Danger: `#f7768e`
 - Accent Info: `#00ffff`
 
+### Theme Inspiration
+
+Parts of this palette and aesthetic are inspired by the Tokyo Night theme (folke/tokyonight.nvim). Tokyo Night is licensed under Apache-2.0. We did not copy source code, but several color values and the overall styling draw from that work.
+
 ### Typography
 
 - Primary font: Inter (headings and UI)

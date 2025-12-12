@@ -1,0 +1,19 @@
+{
+  "version": "v1.4.*",
+  "title": "VimNav Documentation",
+  "subtitle": "Complete guide to vim-style browser navigation with keyboard shortcuts, advanced features, and configuration options.",
+  "description": "Complete documentation for VimNav - vim-style browser navigation. Learn all keybindings, features, and advanced usage.",
+  "canonical": "https://vimnav.dev/docs.html",
+  "quickNavItems": [
+    { "href": "#getting-started", "label": "Getting Started" },
+    { "href": "#navigation", "label": "Navigation" },
+    { "href": "#quick-navigation", "label": "Quick Nav" },
+    { "href": "#modes", "label": "Modes" },
+    { "href": "#vimedit-mode", "label": "VimEdit" },
+    { "href": "#commands", "label": "Commands" },
+    { "href": "#configuration", "label": "Configuration" },
+    { "href": "#keybinds-editor", "label": "Keybinds" },
+    { "href": "#theme-options", "label": "Theme Options" },
+    { "href": "#advanced", "label": "Advanced" }
+  ]
+}

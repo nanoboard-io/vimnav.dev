@@ -1,0 +1,413 @@
+<!-- Keybinds Editor -->
+<section id="keybinds-editor" class="docs-section">
+  <h2>⌨️ Keybinds Editor</h2>
+  <p>
+    VimNav includes a built-in keymap editor that allows you to view, edit, and customize all keyboard shortcuts. The editor uses a Vim-inspired keymap system with modal editing (Normal, Insert, Visual modes) and context-specific bindings (overlays, states). All keybindings are fully customizable and changes take effect immediately—no page reload required.
+  </p>
+
+  <div class="callout callout-info">
+    <strong>Quick Start:</strong> Open command palette with <kbd>:</kbd>, type <kbd>:keybinds</kbd>, press <kbd>Enter</kbd>. Navigate with <kbd>j</kbd>/<kbd>k</kbd>, press <kbd>Enter</kbd> to edit, <kbd>a</kbd> to add, <kbd>d</kbd> to delete. Press <kbd>x</kbd> to export your keymap as backup.
+  </div>
+
+  <h3>Accessing the Editor</h3>
+  <p>Open the keymap editor using one of these methods:</p>
+  <div class="keybinding-list">
+    <div class="keybinding-item">
+      <kbd>:</kbd>
+      <span>Open command palette</span>
+    </div>
+    <div class="keybinding-item">
+      <kbd>keybinds</kbd>
+      <span>Type the keybinds command</span>
+    </div>
+  </div>
+  <p>You can also bind a custom key to the <code class="kb-command">keymap-editor.open</code> command.</p>
+
+  <h4>Editor Interface</h4>
+  <p>The editor features a three-tab interface:</p>
+  <ul>
+    <li><strong>Bindings Tab</strong> - Browse, search, and edit all keybindings</li>
+    <li><strong>Info Tab</strong> - View keymap metadata, warnings, and conflict detection</li>
+    <li><strong>Docs Tab</strong> - Quick reference for the keymap system</li>
+  </ul>
+
+  <h3>Viewing Keybindings</h3>
+  <p>Keybindings are displayed using this DSL format:</p>
+  <div class="keybind-example">
+    <div class="keybind-example-title">DSL Format</div>
+    <span class="keybind-line">
+      <span class="kb-key">&lt;keys&gt;</span>
+      <span class="kb-arrow">→</span>
+      <span class="kb-command">&lt;command&gt;</span>
+      (<span class="kb-modes">&lt;modes&gt;</span>, <span class="kb-context">&lt;contexts&gt;</span>)
+      <span class="kb-description">"description"</span>
+    </span>
+  </div>
+
+  <h4>Examples</h4>
+  <div class="keybind-example">
+    <div class="keybind-example-title">Common Keybinding Patterns</div>
+    <span class="keybind-line">
+      <span class="kb-key">j</span>
+      <span class="kb-arrow">→</span>
+      <span class="kb-command">scroll.down</span>
+      (<span class="kb-modes">n</span>, <span class="kb-context">root</span>)
+      <span class="kb-description">"Scroll down"</span>
+    </span>
+    <span class="keybind-line">
+      <span class="kb-key">&lt;C-f&gt;</span>
+      <span class="kb-arrow">→</span>
+      <span class="kb-command">scroll.pageDown</span>
+      (<span class="kb-modes">n</span>, <span class="kb-context">root</span>)
+      <span class="kb-description">"Page down"</span>
+    </span>
+    <span class="keybind-line">
+      <span class="kb-key">g g</span>
+      <span class="kb-arrow">→</span>
+      <span class="kb-command">scroll.top</span>
+      (<span class="kb-modes">n</span>, <span class="kb-context">root</span>)
+      <span class="kb-description">"Scroll to top"</span>
+    </span>
+    <span class="keybind-line">
+      <span class="kb-key">&lt;CR&gt;</span>
+      <span class="kb-arrow">→</span>
+      <span class="kb-command">tabs.activate</span>
+      (<span class="kb-modes">n</span>, <span class="kb-context">tabs-overlay</span>)
+      <span class="kb-description">"Activate selected tab"</span>
+    </span>
+  </div>
+
+  <h4>Navigation Keys</h4>
+  <div class="keybinding-list">
+    <div class="keybinding-item">
+      <kbd>j</kbd> / <kbd>k</kbd>
+      <span>Move down/up through bindings</span>
+    </div>
+    <div class="keybinding-item">
+      <kbd>g g</kbd> / <kbd>G</kbd>
+      <span>Jump to first/last binding</span>
+    </div>
+    <div class="keybinding-item">
+      <kbd>/</kbd>
+      <span>Focus search input to filter bindings</span>
+    </div>
+    <div class="keybinding-item">
+      <kbd>Ctrl+h</kbd> / <kbd>Ctrl+l</kbd>
+      <span>Switch between tabs</span>
+    </div>
+  </div>
+
+  <h3>Editing Keybindings</h3>
+  <p>To edit an existing keybinding:</p>
+  <ol>
+    <li>Navigate to a binding with <kbd>j</kbd>/<kbd>k</kbd> or search with <kbd>/</kbd></li>
+    <li>Press <kbd>Enter</kbd> to enter edit mode</li>
+    <li>Modify the <strong>Keys</strong> field (e.g., change <code>j</code> to <code>&lt;C-j&gt;</code>)</li>
+    <li>Update the <strong>Description</strong> field if desired</li>
+    <li>Press <kbd>Enter</kbd> to save or <kbd>Escape</kbd> to cancel</li>
+  </ol>
+
+  <div class="callout callout-warning">
+    <strong>Note:</strong> Command, modes, and contexts are read-only during editing. To change these, delete the binding and recreate it with the desired values.
+  </div>
+
+  <h4>Context-Aware Escape Behavior</h4>
+  <ul>
+    <li><strong>While editing:</strong> Cancels edit, returns to browse mode (editor stays open)</li>
+    <li><strong>While browsing:</strong> Closes the entire editor</li>
+  </ul>
+
+  <h3>Adding New Keybindings</h3>
+  <p>To add a new keybinding:</p>
+  <ol>
+    <li>Navigate to where you want to insert the binding</li>
+    <li>Press <kbd>a</kbd> to add a new binding</li>
+    <li>Fill in all required fields in the DSL format:</li>
+  </ol>
+  <div class="keybind-example">
+    <span class="keybind-line">
+      <span class="kb-key">&lt;C-d&gt;</span>
+      <span class="kb-arrow">→</span>
+      <span class="kb-command">scroll.halfPageDown</span>
+      (<span class="kb-modes">n</span>, <span class="kb-context">root</span>)
+      <span class="kb-description">"Scroll half page down"</span>
+    </span>
+  </div>
+  <ol start="4">
+    <li>Press <kbd>Enter</kbd> to save</li>
+  </ol>
+
+  <h4>Key Notation Reference</h4>
+  <div class="keybinding-grid">
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><code>&lt;C-x&gt;</code></div>
+      <div class="keybinding-desc">Ctrl + x</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><code>&lt;A-x&gt;</code></div>
+      <div class="keybinding-desc">Alt + x</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><code>&lt;S-x&gt;</code></div>
+      <div class="keybinding-desc">Shift + x</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><code>&lt;M-x&gt;</code></div>
+      <div class="keybinding-desc">Meta (Cmd) + x</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><code>&lt;Space&gt;</code></div>
+      <div class="keybinding-desc">Space bar</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><code>&lt;CR&gt;</code></div>
+      <div class="keybinding-desc">Enter/Return</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><code>&lt;Esc&gt;</code></div>
+      <div class="keybinding-desc">Escape</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><code>&lt;BS&gt;</code></div>
+      <div class="keybinding-desc">Backspace</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><code>&lt;Tab&gt;</code></div>
+      <div class="keybinding-desc">Tab</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><code>g g</code></div>
+      <div class="keybinding-desc">Multi-key sequence</div>
+    </div>
+  </div>
+
+  <h3>Deleting Keybindings</h3>
+  <p>To delete a keybinding:</p>
+  <ol>
+    <li>Navigate to the binding you want to remove</li>
+    <li>Press <kbd>d</kbd></li>
+    <li>Confirm the deletion when prompted</li>
+  </ol>
+  <p>Deleted bindings are removed immediately and persist across sessions.</p>
+
+  <h3>Conflict Detection</h3>
+  <p>
+    VimNav automatically detects conflicting keybindings. Conflicts are indicated with badges showing <strong>⚠️ N</strong> where N is the number of conflicts.
+  </p>
+
+  <h4>Example Conflicts</h4>
+  <div class="keybind-example">
+    <div class="keybind-example-title">Conflicting Keybindings</div>
+    <span class="keybind-line">
+      <span class="kb-key">&lt;Space&gt;</span>
+      <span class="kb-arrow">→</span>
+      <span class="kb-command">scroll.pageDown</span>
+      (<span class="kb-modes">n</span>, <span class="kb-context">root</span>)
+      <span class="kb-conflict">⚠️ 1</span>
+    </span>
+    <span class="keybind-line">
+      <span class="kb-key">&lt;Space&gt;</span>
+      <span class="kb-arrow">→</span>
+      <span class="kb-command">scroll.bottom</span>
+      (<span class="kb-modes">n</span>, <span class="kb-context">root</span>)
+      <span class="kb-conflict">⚠️ 1</span>
+    </span>
+  </div>
+
+  <p>Hovering over a conflict badge shows details: "Conflicts with 1 other binding(s): scroll.bottom"</p>
+
+  <div class="callout callout-warning">
+    <strong>Note:</strong> If conflicts remain, the last binding loaded wins at runtime.
+  </div>
+
+  <h4>Resolving Conflicts</h4>
+  <ol>
+    <li>Navigate to the conflicting binding</li>
+    <li>Press <kbd>Enter</kbd> to edit</li>
+    <li>Change keys to something unique</li>
+    <li>Press <kbd>Enter</kbd> to save</li>
+    <li>Conflict warning disappears</li>
+  </ol>
+
+  <h3>Exporting Keymaps</h3>
+  <p>To export your current keymap:</p>
+  <ol>
+    <li>Press <kbd>x</kbd> from any tab in the editor</li>
+    <li>File <code>vimnav-keymap.json</code> downloads automatically</li>
+    <li>JSON contains all current keybindings with metadata</li>
+  </ol>
+
+  <h4>Export Use Cases</h4>
+  <ul>
+    <li>Backup before making major changes</li>
+    <li>Share custom keymaps with others</li>
+    <li>Edit manually in a text editor</li>
+    <li>Version control your configuration</li>
+  </ul>
+
+  <h3>Importing Keymaps</h3>
+  <p>To import a keymap:</p>
+  <ol>
+    <li>Press <kbd>i</kbd> from any tab in the editor</li>
+    <li>Select a valid JSON keymap file</li>
+    <li>File is validated and loaded immediately</li>
+    <li>Invalid files show error toast with details</li>
+  </ol>
+
+  <div class="callout callout-warning">
+    <strong>Warning:</strong> Import replaces the entire current keymap. Export first as backup!
+  </div>
+
+  <h4>Validation Errors</h4>
+  <p>Import may fail due to:</p>
+  <ul>
+    <li>Invalid JSON syntax</li>
+    <li>Missing required fields (keys, command, modes)</li>
+    <li>Unknown modes or contexts</li>
+    <li>Malformed key notation</li>
+  </ul>
+
+  <h3>Resetting to Defaults</h3>
+  <p>To reset all keybindings to defaults:</p>
+  <ol>
+    <li>Press <kbd>R</kbd> from the keymap editor</li>
+    <li>Confirm the reset action</li>
+    <li>All custom bindings are cleared</li>
+    <li>Default VimNav keymap is restored</li>
+  </ol>
+
+  <div class="callout callout-danger">
+    <strong>Warning:</strong> This action cannot be undone. Export your keymap first!
+  </div>
+
+  <h3>Modes and Contexts</h3>
+
+  <h4>Vim-Style Modes</h4>
+  <ul>
+    <li><strong>n</strong> - Normal mode (default navigation mode)</li>
+    <li><strong>i</strong> - Insert mode (when typing in input fields)</li>
+    <li><strong>v</strong> - Visual mode (text selection)</li>
+  </ul>
+
+  <h4>Common Contexts</h4>
+  <ul>
+    <li><strong>root</strong> - Base page navigation</li>
+    <li><strong>tabs-overlay</strong> - Tabs overlay</li>
+    <li><strong>hint</strong> - Hint overlay (link navigation)</li>
+    <li><strong>keymap-editor</strong> - Keymap editor itself</li>
+    <li><strong>command-palette</strong> - Command palette</li>
+    <li><strong>input-select</strong> - Input selector overlay</li>
+  </ul>
+
+  <p>Context-specific bindings only work when that context is active (e.g., tabs-overlay bindings only work when tabs overlay is open).</p>
+
+  <h3>Command Categories</h3>
+  <p>VimNav uses a <code>category.action</code> naming pattern for consistency:</p>
+
+  <ul>
+    <li><strong>scroll.*</strong> - Page scrolling (scroll.down, scroll.pageUp, scroll.top)</li>
+    <li><strong>tabs.*</strong> - Tab management (tabs.open, tabs.navigateDown, tabs.activate)</li>
+    <li><strong>hint.*</strong> - Link navigation (hint.open, hint.click)</li>
+    <li><strong>history.*</strong> - Browser history (history.back, history.forward)</li>
+    <li><strong>mode.*</strong> - Mode switching (mode.insert, mode.visual)</li>
+    <li><strong>marks.*</strong> - Marks system (marks.startCreate, marks.startNavigate)</li>
+    <li><strong>search.*</strong> - In-page search (search.start, search.next)</li>
+  </ul>
+
+  <h3>Persistence &amp; Sync</h3>
+  <ul>
+    <li>VimNav writes keymap data to <code>chrome.storage.local</code></li>
+    <li>Changes take effect immediately across all tabs and windows</li>
+    <li>Reopening Chrome restores custom keymap automatically</li>
+    <li>The editor itself updates live when saving changes (no need to close and reopen)</li>
+  </ul>
+
+  <h3>Example Customizations</h3>
+  <p>Here are some common customization examples:</p>
+
+  <div class="code-block-group">
+    <div class="keybind-example">
+      <div class="keybind-example-title">Make Space+G scroll to top instead of gg</div>
+      <span class="keybind-line">
+        <span class="kb-key">&lt;Space&gt; g</span>
+        <span class="kb-arrow">→</span>
+        <span class="kb-command">scroll.top</span>
+        (<span class="kb-modes">n</span>, <span class="kb-context">root</span>)
+        <span class="kb-description">"Scroll to top"</span>
+      </span>
+    </div>
+
+    <div class="keybind-example">
+      <div class="keybind-example-title">Add Ctrl+d for half-page scroll</div>
+      <span class="keybind-line">
+        <span class="kb-key">&lt;C-d&gt;</span>
+        <span class="kb-arrow">→</span>
+        <span class="kb-command">scroll.halfPageDown</span>
+        (<span class="kb-modes">n</span>, <span class="kb-context">root</span>)
+        <span class="kb-description">"Scroll half page down"</span>
+      </span>
+      <span class="keybind-line">
+        <span class="kb-key">&lt;C-u&gt;</span>
+        <span class="kb-arrow">→</span>
+        <span class="kb-command">scroll.halfPageUp</span>
+        (<span class="kb-modes">n</span>, <span class="kb-context">root</span>)
+        <span class="kb-description">"Scroll half page up"</span>
+      </span>
+    </div>
+
+    <div class="keybind-example">
+      <div class="keybind-example-title">Create custom hint key</div>
+      <span class="keybind-line">
+        <span class="kb-key">&lt;Space&gt;</span>
+        <span class="kb-arrow">→</span>
+        <span class="kb-command">hint.open</span>
+        (<span class="kb-modes">n</span>, <span class="kb-context">root</span>)
+        <span class="kb-description">"Open hint overlay"</span>
+      </span>
+    </div>
+  </div>
+
+  <h3>Best Practices</h3>
+  <ul>
+    <li><strong>Export before major changes</strong> - Keep backups of working configurations</li>
+    <li><strong>Test incrementally</strong> - Make one change at a time and test</li>
+    <li><strong>Use consistent patterns</strong> - Follow <code>category.action</code> naming for custom commands</li>
+    <li><strong>Be specific with descriptions</strong> - Help your future self understand each binding</li>
+    <li><strong>Leverage contexts</strong> - Use context-specific bindings to avoid conflicts</li>
+    <li><strong>Respect browser shortcuts</strong> - Avoid overriding critical browser keys (Ctrl+T, Ctrl+W, etc.)</li>
+    <li><strong>Document your customizations</strong> - Add clear descriptions for custom bindings</li>
+  </ul>
+
+  <h3>Troubleshooting</h3>
+
+  <h4>Keybinding not working after edit</h4>
+  <ul>
+    <li>Verify the binding saved correctly (check in editor list)</li>
+    <li>Ensure mode is correct (<code>n</code> for normal page navigation)</li>
+    <li>Ensure context is correct (<code>root</code> for general page navigation)</li>
+    <li>Check browser console for keymap errors</li>
+    <li>Try reloading the page</li>
+  </ul>
+
+  <h4>Export/Import issues</h4>
+  <ul>
+    <li>Check browser console for errors</li>
+    <li>Ensure browser allows file downloads (export)</li>
+    <li>Verify JSON file is valid (import)</li>
+    <li>Try exporting default keymap first to see correct format</li>
+  </ul>
+
+  <h4>Conflict warnings</h4>
+  <ul>
+    <li>Last binding wins at runtime</li>
+    <li>Use different keys, or different modes/contexts to resolve</li>
+    <li>Check Info tab for full conflict report</li>
+  </ul>
+
+  <h4>Editor not opening</h4>
+  <ul>
+    <li>Ensure command palette is working (<kbd>:</kbd> key)</li>
+    <li>Check that the VimNav version is <code class="kb-command">v1.4.1</code> or greater</li>
+    <li>Try reloading the extension</li>
+  </ul>
+</section>

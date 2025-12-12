@@ -1,0 +1,116 @@
+<!-- Tab Management -->
+<section id="tabs" class="docs-section">
+  <h2>📑 Tab Management</h2>
+  <p>
+    VimNav provides powerful tab navigation and management inspired
+    by NERDTree.
+  </p>
+
+  <h3>Opening Tab Navigator</h3>
+  <div class="keybinding-list">
+    <div class="keybinding-item">
+      <kbd>e</kbd>
+      <span
+        >Toggle tabs overlay - shows all open tabs in current
+        window</span
+      >
+    </div>
+    <div class="keybinding-item">
+      <kbd>Ctrl+P</kbd>
+      <span
+        >Telescope-style tab search (Chrome shortcut
+        integration)</span
+      >
+    </div>
+  </div>
+
+  <h3>Tab Navigation</h3>
+  <p>When the tabs overlay is open:</p>
+  <div class="keybinding-grid">
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><kbd>j</kbd><kbd>k</kbd></div>
+      <div class="keybinding-desc">Navigate tabs up/down</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><kbd>gg</kbd></div>
+      <div class="keybinding-desc">Jump to first tab</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><kbd>G</kbd></div>
+      <div class="keybinding-desc">Jump to last tab</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><kbd>Enter</kbd></div>
+      <div class="keybinding-desc">Switch to selected tab</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><kbd>o</kbd></div>
+      <div class="keybinding-desc">Expand all tab groups</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><kbd>c</kbd></div>
+      <div class="keybinding-desc">Collapse all tab groups</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><kbd>h</kbd><kbd>l</kbd></div>
+      <div class="keybinding-desc">Collapse/expand focused group (persists)</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><kbd>x</kbd><kbd>d</kbd></div>
+      <div class="keybinding-desc">Close selected tab</div>
+    </div>
+    <div class="keybinding-card">
+      <div class="keybinding-keys"><kbd>/</kbd></div>
+      <div class="keybinding-desc">Focus tab search input</div>
+    </div>
+  </div>
+  <p>
+    Use move mode to reposition tabs without leaving the overlay.
+  </p>
+  <div class="keybinding-list">
+    <div class="keybinding-item">
+      <kbd>m</kbd>
+      <span>Enter move mode for the highlighted tab</span>
+    </div>
+    <div class="keybinding-item">
+      <kbd>j</kbd><kbd>k</kbd>
+      <span>Select the destination tab or group while moving</span>
+    </div>
+    <div class="keybinding-item">
+      <kbd>P</kbd>
+      <span>Toggle before/after placement relative to the target</span>
+    </div>
+    <div class="keybinding-item">
+      <kbd>Enter</kbd>
+      <span>Confirm the move (tab stays highlighted in its new spot)</span>
+    </div>
+    <div class="keybinding-item">
+      <kbd>Esc</kbd>
+      <span>Cancel move mode and restore the original position</span>
+    </div>
+  </div>
+  <p>
+    Grouped tabs respect the destination group’s expansion state, and VimNav preserves your scroll position while the list refreshes so you never lose context.
+  </p>
+
+  <h3>Tab Actions</h3>
+  <div class="keybinding-list">
+    <div class="keybinding-item">
+      <kbd>r</kbd>
+      <span>Reload selected tab</span>
+    </div>
+    <div class="keybinding-item">
+      <kbd>a</kbd>
+      <span>Show tab group editor for organizing tabs</span>
+    </div>
+    <div class="keybinding-item">
+      <kbd>Esc</kbd>
+      <span>Close tabs overlay and return to normal mode</span>
+    </div>
+  </div>
+
+
+  <div class="docs-tip">
+    <strong>Tip:</strong> The help overlay (<kbd>?</kbd>) and keyboard reference tables now surface the move mode and group control keys directly above the tabs overlay shortcuts.
+  </div>
+</section>

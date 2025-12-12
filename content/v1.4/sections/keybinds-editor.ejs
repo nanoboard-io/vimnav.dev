@@ -17,11 +17,11 @@
       <span>Open command palette</span>
     </div>
     <div class="keybinding-item">
-      <kbd>:keybinds</kbd>
+      <kbd>keybinds</kbd>
       <span>Type the keybinds command</span>
     </div>
   </div>
-  <p>You can also bind a custom key to the <code>keymap-editor.open</code> command.</p>
+  <p>You can also bind a custom key to the <code class="kb-command">keymap-editor.open</code> command.</p>
 
   <h4>Editor Interface</h4>
   <p>The editor features a three-tab interface:</p>
@@ -33,7 +33,16 @@
 
   <h3>Viewing Keybindings</h3>
   <p>Keybindings are displayed using this DSL format:</p>
-  <pre><code>&lt;keys&gt; → &lt;command&gt; (&lt;modes&gt;, &lt;contexts&gt;) "description"</code></pre>
+  <div class="keybind-example">
+    <div class="keybind-example-title">DSL Format</div>
+    <span class="keybind-line">
+      <span class="kb-key">&lt;keys&gt;</span>
+      <span class="kb-arrow">→</span>
+      <span class="kb-command">&lt;command&gt;</span>
+      (<span class="kb-modes">&lt;modes&gt;</span>, <span class="kb-context">&lt;contexts&gt;</span>)
+      <span class="kb-description">"description"</span>
+    </span>
+  </div>
 
   <h4>Examples</h4>
   <div class="keybind-example">
@@ -115,7 +124,15 @@
     <li>Press <kbd>a</kbd> to add a new binding</li>
     <li>Fill in all required fields in the DSL format:</li>
   </ol>
-  <pre><code>&lt;C-d&gt; → scroll.halfPageDown (n, root) "Scroll half page down"</code></pre>
+  <div class="keybind-example">
+    <span class="keybind-line">
+      <span class="kb-key">&lt;C-d&gt;</span>
+      <span class="kb-arrow">→</span>
+      <span class="kb-command">scroll.halfPageDown</span>
+      (<span class="kb-modes">n</span>, <span class="kb-context">root</span>)
+      <span class="kb-description">"Scroll half page down"</span>
+    </span>
+  </div>
   <ol start="4">
     <li>Press <kbd>Enter</kbd> to save</li>
   </ol>
@@ -390,7 +407,7 @@
   <h4>Editor not opening</h4>
   <ul>
     <li>Ensure command palette is working (<kbd>:</kbd> key)</li>
-    <li>Check that <code>keymap-editor.open</code> command exists</li>
+    <li>Check that the VimNav version is <code class="kb-command">v1.4.1</code> or greater</li>
     <li>Try reloading the extension</li>
   </ul>
 </section>
